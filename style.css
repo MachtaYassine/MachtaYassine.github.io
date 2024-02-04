@@ -1,0 +1,43 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    text-align: center;
+    padding: 50px;
+    background-color: #f0f0f0;
+}
+
+h1 {
+    margin: 0;
+}
+
+.animation-section {
+    position: relative;
+    height: 695px; /* Adjust the height */
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;
+}
+
+.node {
+    position: absolute;
+    background-color: #ec0d0d; /* Adjust the color */
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    animation: multiply 5s infinite;
+}
+
+@keyframes multiply {
+    0% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 0;
+    }
+}
