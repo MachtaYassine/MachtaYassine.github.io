@@ -28,7 +28,7 @@ h1 {
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    animation: multiply 5s infinite;
+    animation: multiply infinite;
 }
 
 @keyframes multiply {
