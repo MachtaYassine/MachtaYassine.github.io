@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Grid of Circles</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #333;
+    }
+    .circle {
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: red;
+        border-radius: 50%;
+    }
+    .line {
+        position: absolute;
+        background-color: white;
+        z-index: -1;
+    }
+</style>
+</head>
+<body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script>
+    // Get the width and height of the window
+    const { innerWidth, innerHeight } = window;
+    const numRows = innerHeight / 50 - 1; // Number of rows in the grid
+    const numCols = innerWidth / 50 - 1; // Number of columns in the grid
+    const circleSize = 20; // Diameter of each circle
+    const gap = 30; // Gap between circles
+
+    // Function to create a circle at the specified position
+    function createCircle(x, y) {
+        const circle = document.createElement('div');
+        circle.classList.add('circle');
+        circle.style.left = `${x}px`;
+        circle.style.top = `${y}px`;
+        document.body.appendChild(circle);
+        return circle;
+    }
+
+    // Randomly select a position for the initial circle
+    const initialCol = Math.floor(Math.random() * numCols);
+    const initialRow = Math.floor(Math.random() * numRows);
+    const initialX = initialCol * (circleSize + gap);
+    const initialY = initialRow * (circleSize + gap);
+    const initialCircle = createCircle(initialX, initialY);
+
+    // Create the rest of the circles sequentially from the initial circle
+    for (let row = 0; row < numRows; row++) {
+        for (let col = 0; col < numCols; col++) {
+            const x = col * (circleSize + gap);
+            const y = row * (circleSize + gap);
+            if (x === initialX && y === initialY) continue; // Skip the initial circle
+            const distance = Math.sqrt((x - initialX) ** 2 + (y - initialY) ** 2); // Calculate distance
+            const delay = Math.log10(distance + 1); // Adjust delay based on distance
+            const circle = createCircle(x, y);
+            gsap.from(
+                circle,
+                { opacity: 0, scale: 0, duration: 1, delay }
+            );
+        }
+    }
+
+    // Function to create a line between two points with a specified delay
+    function createLine(x, y, angle, lineHeight, delay) {
+        const line = document.createElement('div');
+        line.classList.add('line');
+        line.style.width = `${25 + circleSize / 2}px`;
+        line.style.height = `${lineHeight}px`;
+        line.style.backgroundColor = 'white';
+        line.style.transform = `translate(${x - innerWidth / 2}px, ${y - innerHeight / 2}px) rotate(${angle}deg)`;
+        document.body.appendChild(line);
+        gsap.from(
+            line,
+            { width: 0, duration: 1, delay }
+        );
+    }
+
+    // Create the lines sequentially after a delay
+    const lineDelay = numRows * numCols * 0.2; // Delay for lines to start after circles
+    setTimeout(() => {
+        for (let row = 0; row < numRows; row++) {
+            for (let col = 0; col < numCols; col++) {
+                const x = col * (circleSize + gap);
+                const y = row * (circleSize + gap);
+                if (x === initialX && y === initialY) continue; // Skip the initial circle
+                const distance = Math.sqrt((x - initialX) ** 2 + (y - initialY) ** 2); // Calculate distance
+                const delay = Math.log10(distance + 1); // Adjust delay based on distance
+                if (x - initialX > 0) {
+                    createLine(x - 15, y + circleSize / 2, 0, 2, delay - 0.2);
+                } else {
+                    createLine(x + 35, y + circleSize / 2, 180, 2, delay - 0.2);
+                }
+                if (y - initialY > 0) {
+                    createLine(x + circleSize / 2, y - 15, 90, 2, delay - 0.2);
+                } else {
+                    createLine(x + circleSize / 2, y + 35, 270, 2, delay - 0.2);
+                }
+            }
+        }
+    }, lineDelay);
+</script>
+</body>
+</html>
