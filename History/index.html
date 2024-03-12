@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adaptive Grid Layout</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+    }
+
+    .grid-container {
+        display: grid;
+        grid-gap: 2px; /* Gap between grid items */
+        padding: 2px; /* Padding around the grid container */
+        width: calc(100% - 4px); /* Take the full width of the viewport minus padding */
+        height: calc(100% - 4px); /* Take the full height of the viewport minus padding */
+        overflow: hidden; /* Prevent overflow */
+        grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Auto-size columns */
+    }
+
+    .grid-item {
+        /* background-color: #f0f0f0;  */
+        text-align: center; /* Center align text */
+        width: 100%; /* Set width to fill the grid cell */
+        height: 100%; /* Set height to fill the grid cell */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .circle {
+        width: 30px;
+        height: 30px;
+        fill: #ff0000;
+    }
+</style>
+</head>
+<body>
+
+<div class="grid-container" id="gridContainer">
+</div>
+
+<script>
+    // Function to create SVG circle
+    function createCircle(ncol, nrow) {
+        // Create SVG circle
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "circle");
+        svg.setAttribute("viewBox", "0 0 100 100");
+        var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        // Add a random offset to the position of the circle
+        var offset_x = Math.floor(Math.random() * 30) - 15; 
+        var offset_y = Math.floor(Math.random() * 30) - 15; 
+        circle.setAttribute("cx", 50 + offset_x);
+        circle.setAttribute("cy", 50 + offset_y);
+        circle.setAttribute("r", "35");
+        svg.appendChild(circle);
+        
+         // Animate the radius of the circle to completely fill up the grid item
+         anime({
+            targets: circle,
+            r: '50', // End radius (half of the SVG size)
+            duration: 800, // Duration of animation
+            easing: 'easeInOutSine', // Easing function
+        });
+        
+        return svg;
+    }
+
+    // JavaScript to dynamically create grid items
+    function createGridItems() {
+        var gridContainer = document.getElementById('gridContainer');
+        var itemWidth = 40; // Set initial width of grid items
+        var itemHeight = 40; // Set initial height of grid items
+        var gridGap = 2; // Gap between grid items
+
+        // Calculate the number of columns and rows based on viewport size and grid item size
+        var numColumns = Math.floor((window.innerWidth - 4 + gridGap) / (itemWidth + gridGap)); 
+        var numRows = Math.floor((window.innerHeight - 4 + gridGap) / (itemHeight + gridGap));
+        var numItems = numColumns * numRows; // Calculate total number of items
+
+        gridContainer.innerHTML = ''; // Clear previous items
+
+        for (var i = 1; i <= numItems; i++) {
+            var gridItem = document.createElement('div');
+            gridItem.className = 'grid-item';
+            
+            // Create circle
+            var circle = createCircle(numColumns, numRows);
+            gridItem.appendChild(circle);
+            
+            gridContainer.appendChild(gridItem);
+        }
+    }
+
+    // Initial call to create grid items
+    createGridItems();
+
+    // Update grid items on window resize
+    window.addEventListener('resize', function() {
+        createGridItems();
+    });
+</script>
+
+</body>
+</html>
