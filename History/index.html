@@ -9,14 +9,15 @@
         margin: 0;
         padding: 0;
         height: 100%;
+        background-color: black;
     }
 
     .grid-container {
         display: grid;
-        grid-gap: 2px; /* Gap between grid items */
+        grid-gap: 0px; /* Gap between grid items */
         padding: 2px; /* Padding around the grid container */
-        width: calc(100% - 4px); /* Take the full width of the viewport minus padding */
-        height: calc(100% - 4px); /* Take the full height of the viewport minus padding */
+        width: calc(100% - 6px); /* Take the full width of the viewport minus padding */
+        height: calc(100% - 6px); /* Take the full height of the viewport minus padding */
         overflow: hidden; /* Prevent overflow */
         grid-template-columns: repeat(auto-fill, minmax(40px, 1fr)); /* Auto-size columns */
     }
@@ -29,12 +30,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        position: relative; /* Set position to relative */
     }
 
     .circle {
-        width: 30px;
-        height: 30px;
-        fill: #ff0000;
+        width: 100%;
+        height: 100%;
+        fill: #790e0e;
+    }
+
+    .coordinates {
+        position: absolute; /* Position the text relative to the grid item */
+        bottom: 5px; /* Adjust the position from bottom */
+        color: white; /* Text color */
+        font-size: 10px; /* Text font size */
     }
 </style>
 </head>
@@ -43,9 +52,10 @@
 <div class="grid-container" id="gridContainer">
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
-    // Function to create SVG circle
-    function createCircle(ncol, nrow) {
+    // Function to create SVG circle with anime.js animation
+    function createCircle() {
         // Create SVG circle
         var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
         svg.setAttribute("class", "circle");
@@ -56,15 +66,16 @@
         var offset_y = Math.floor(Math.random() * 30) - 15; 
         circle.setAttribute("cx", 50 + offset_x);
         circle.setAttribute("cy", 50 + offset_y);
-        circle.setAttribute("r", "35");
+        circle.setAttribute("r", "25");
         svg.appendChild(circle);
         
-         // Animate the radius of the circle to completely fill up the grid item
-         anime({
+        // Animate the radius of the circle to completely fill up the grid item
+        anime({
             targets: circle,
-            r: '50', // End radius (half of the SVG size)
-            duration: 800, // Duration of animation
+            r: '100', // End radius (half of the SVG size)
+            duration: 1500, // Duration of animation
             easing: 'easeInOutSine', // Easing function
+            delay: 1000,
         });
         
         return svg;
@@ -72,25 +83,53 @@
 
     // JavaScript to dynamically create grid items
     function createGridItems() {
-        var gridContainer = document.getElementById('gridContainer');
+        let gridContainer = document.getElementById('gridContainer');
         var itemWidth = 40; // Set initial width of grid items
         var itemHeight = 40; // Set initial height of grid items
-        var gridGap = 2; // Gap between grid items
+        var gridGap = 0; // Gap between grid items
 
         // Calculate the number of columns and rows based on viewport size and grid item size
-        var numColumns = Math.floor((window.innerWidth - 4 + gridGap) / (itemWidth + gridGap)); 
-        var numRows = Math.floor((window.innerHeight - 4 + gridGap) / (itemHeight + gridGap));
+        let numColumns = Math.floor((window.innerWidth - 0 + gridGap) / (itemWidth + gridGap)); 
+        let numRows = Math.floor((window.innerHeight - 0 + gridGap) / (itemHeight + gridGap));
         var numItems = numColumns * numRows; // Calculate total number of items
-
+        intial_x = Math.floor(Math.random() * numColumns)
+        intial_y = Math.floor(Math.random() * numRows)
+        console.log(intial_x, intial_y)
         gridContainer.innerHTML = ''; // Clear previous items
+        var gridItem = document.createElement('div');
+        gridItem.className = 'grid-item';
+        gridItem.style.gridColumn = intial_x + 1; // Add 1 to convert to 1-based indexing
+        gridItem.style.gridRow = intial_y + 1;
+        // Create circle with anime.js animation
+        var circle = createCircle();
+        gridItem.appendChild(circle); // Append the SVG element
 
-        for (var i = 1; i <= numItems; i++) {
+        // Create text for coordinates
+        var coordinates = document.createElement('div');
+        coordinates.className = 'coordinates';
+        coordinates.textContent = '(' + (intial_x + 1) + ', ' + (intial_y + 1) + ')';
+        gridItem.appendChild(coordinates); // Append the text element
+        gridContainer.appendChild(gridItem);
+
+        for (var i = 0; i < numItems; i++) {
+            y= Math.floor((i) / numColumns)
+            x= (i)% numColumns
+            
             var gridItem = document.createElement('div');
             gridItem.className = 'grid-item';
             
-            // Create circle
-            var circle = createCircle(numColumns, numRows);
-            gridItem.appendChild(circle);
+            // console.log(i, numColumns, numRows, x, y)
+            // gridItem.style.gridColumn = x + 1; // Add 1 to convert to 1-based indexing
+            // gridItem.style.gridRow = y + 1
+            // Create circle with anime.js animation
+            var circle = createCircle();
+            gridItem.appendChild(circle); // Append the SVG element
+
+            // Create text for coordinates
+            var coordinates = document.createElement('div');
+            coordinates.className = 'coordinates';
+            coordinates.textContent = '(' +x  + ', ' + y + ')';
+            gridItem.appendChild(coordinates); // Append the text element
             
             gridContainer.appendChild(gridItem);
         }
