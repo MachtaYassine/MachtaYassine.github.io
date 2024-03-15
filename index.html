@@ -191,9 +191,7 @@
 
     //function that checks if a line is inside the grid and not assigned to a line already
     function isLineValid(x,y,dim){
-    //     console.log("x: " + x + " y: " + y + " dim: " + dim );
-    //   if(x>=0 && x<numCols-1 && y>=0 && y<numRows-1){
-    //     console.log(" line_matrix[x][y][dim]: " + line_matrix[x][y][dim]); }
+    
       if(x>=0 && x<numCols-1 && y>=0 && y<numRows-1 && line_matrix[x][y][dim]==0){
         return true;
       }
