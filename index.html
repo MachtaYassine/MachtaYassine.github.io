@@ -1,427 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anime.js Circle Animation</title>
-  <style>
-    body {
-      margin: 0;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Adaptive Grid Layout</title>
+<style>
+        body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        background-color: black;
     }
-    #container {
-      position: relative;
+
+    .grid-container {
+        display: grid;
+        grid-gap: 0px; /* Gap between grid items */
+        padding: 0; /* Remove padding */
+        width: 100%; /* Take the full width of the viewport */
+        height: 100%; /* Take the full height of the viewport */
+        overflow: hidden; /* Prevent overflow */
+        position: relative; /* Position relative for absolutely positioned children */
     }
-    #circle {
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background-color: blue;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+
+    .grid-item {
+        background-color: #ffffff; 
+        text-align: center; /* Center align text */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative; /* Set position to relative */
+        border: 0; /* Remove border */
     }
-    .line {
-      position: absolute;
-      width: 2px;
-      height: 0; /* Start with height 0 */
-      background-color: red;
-      transform-origin: top; /* Rotate around the top */
-      z-index: -1; /* Set z-index behind the circle */
-    }
+
     .circle {
-      position: absolute;
-      width: 25px;
-      height: 25px;
-      border-radius: 50%;
-      background-color: blue;
-      z-index: 1; /* Set z-index above the lines */
+        width: 100%;
+        height: 100%;
+        fill: #790e0e;
     }
-  </style>
+
+    .coordinates {
+        position: absolute; /* Position the text relative to the grid item */
+        bottom: 5px; /* Adjust the position from bottom */
+        color: white; /* Text color */
+        font-size: 10px; /* Text font size */
+    }
+
+</style>
 </head>
 <body>
-  <div id="container">
-    
-  </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <script>
-    // Function to generate a random number between min and max (inclusive)
-    function getRandomNumber(upperbound, lowerbound = 0) {
-    return Math.floor(Math.random() * (upperbound - lowerbound) + lowerbound);}
+<div class="grid-container" id="gridContainer">
+</div>
 
-    const circle_radius = 25;
-    const CONTAINER=document.getElementById('container');
-    let viewportWidth = document.body.clientWidth;
-    let viewportHeight = document.body.clientHeight;
-    const pixel = 50; // Size of each grid cell in pixels
-    let numCols = Math.floor(viewportWidth / pixel); // Number of columns in the grid
-    let numRows = Math.floor(viewportHeight / pixel); // Number of rows in the grid
-    let remnant_x = viewportWidth % pixel;
-    let remnant_y = viewportHeight % pixel;
-    if (remnant_y>pixel*0.8){
-        numRows+=1;
-        remnant_y=-remnant_y*0.3;
-    }
-    console.log(" Viewport width: " + viewportWidth + " Viewport height: " + viewportHeight + " numCols: " + numCols + " numRows: " + numRows+ " pixel: " + pixel);
-    const circle_count=0
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script>
+    var numColumns, numRows;
+    var itemWidth = 70; // Set initial width of grid items
+    var itemHeight = 70; // Set initial height of grid items
+    var gridGap = 0; // Gap between grid items
+    let gridContainer = document.getElementById('gridContainer');
+    // Calculate the number of columns and rows based on viewport size and grid item size
+    numColumns = Math.floor((window.innerWidth - 0) / (itemWidth + gridGap));
+    numRows = Math.floor((window.innerHeight - 0) / (itemHeight + gridGap));
+    var numItems = numColumns * numRows; // Calculate total number of items
+    gridContainer.innerHTML = ''; // Clear previous items
+    var svgLines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+    svgLines.style.position = 'absolute';
+    svgLines.setAttribute("width", window.innerWidth);
+    svgLines.setAttribute("height", window.innerHeight);
+    svgLines.setAttribute("fill", "transparent");
+    rect= document.createElementNS("http://www.w3.org/2000/svg", "rect");
+    rect.setAttribute("x", 0);
+    rect.setAttribute("y", 0);
+    rect.setAttribute("width", window.innerWidth);
+    rect.setAttribute("height", window.innerHeight);
+    rect.setAttribute("border", "white");
+    rect.setAttribute("fill", "transparent");
+    // svgLines.appendChild(rect);
+    var drawnLines = {}; // Object to keep track of drawn lines
 
-    // Function to initialize a matrix with specific dimensions and a default value
-    function initializeMatrix(rows, cols, depth, defaultValue) {
-    const matrix = [];
-    if (arguments.length === 3) {
-        defaultValue = depth;
-        depth = 1; // Default depth to 1 if not provided
-    }
-    for (let i = 0; i < rows; i++) {
-        const row = [];
-        for (let j = 0; j < cols; j++) {
-            const column = [];
-            for (let k = 0; k < depth; k++) {
-                column.push(defaultValue);
-            }
-            row.push(column);
-        }
-        matrix.push(row);
-    }
-    return matrix;
-}
 
-    circle_matrix = initializeMatrix(numCols,numRows, 0);
-    line_matrix = initializeMatrix(numCols,numRows,2, 0);
-    console.log("circle_matrix: " + circle_matrix+ "number of values: " + circle_matrix.length + " " + circle_matrix[0].length + " " + circle_matrix[0][0].length);
-    console.log("line_matrix: " + line_matrix);
-
-    //function to create a circle
-    function createCircle(x,y,grid_coord=false,scale=1, color="blue",z_index=1){
-      const circle = document.createElement('div');
-      circle.classList.add('circle');
-    //   console.log("scale: " + scale);
-      //check ig grid coord is boolean
-      if(grid_coord == true){
-        circle.style.left = Math.ceil(x- numCols/2) * pixel  + 'px';
-        circle.style.top = Math.ceil(y- numRows/2) * pixel - remnant_y + 'px';
-    }else{
-      circle.style.left = x + 'px';
-      circle.style.top = y + 'px';}
-      circle.style.backgroundColor = color;
-      circle.style.zIndex = z_index;
-      circle.style.scale = scale;
-      CONTAINER.appendChild(circle);
-      console.log(CONTAINER.children.length);
-      return circle;
+    // Function to create SVG circle
+    function createCircle() {
+        var svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svg.setAttribute("class", "circle");
+        svg.setAttribute("viewBox", "0 0 100 100");
+        var circle = document.createElementNS("http://www.w3.org/2000/svg", "circle");
+        offset_x = 50 + (Math.random() * 50) - 25;
+        offset_y = 50 + (Math.random() * 50) - 25;
+        circle.setAttribute("cx", offset_x);
+        circle.setAttribute("cy", offset_y);
+        circle.setAttribute("r", "1");
+        svg.appendChild(circle);
+        return svg;
     }
 
-    
-    // Function to randomly create and animate the first point
-    function createFirstPoint() {
-        const randomRow = getRandomNumber(numRows); // Ensure the circle is not too close to the edges
-        const randomCol = getRandomNumber(numCols);
+    // Function to draw lines between neighboring circle centers
+    function drawLines() {
+        var gridContainer = document.getElementById('gridContainer');
+        var svgLines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+        svgLines.style.position = 'absolute';
+        svgLines.setAttribute("width", window.innerWidth);
+        svgLines.setAttribute("height", window.innerHeight);
 
-        const randomX = Math.ceil(randomCol-numCols/2) * pixel;
-        const randomY = Math.ceil(randomRow-numRows/2)* pixel - remnant_y;
+        var drawnLines = {}; // Object to keep track of drawn lines
 
-        //create the circle and add it to the container
-        const circle = createCircle(randomX,randomY,undefined,0.01,"red");
-        console.log("First circle properties: " + circle.style.left + " " + circle.style.top+ " " + circle.style.backgroundColor+ " " + circle.style.zIndex+ " " + circle.style.scale, "col and row: " + randomCol + " " + randomRow);
-        //animate the circle
-        anime({
-            targets: circle,
-            //animate opacity from 0 to 1
-            scale: 100,
-            duration: 1000, // Animation duration
-            easing: 'easeInOutQuad', // Easing function
-            complete: function() {
-                //create the lines and circles in the 4 directions
-                createLinesAndCircles(randomCol,randomRow);
-            }
-        });
-        return [randomCol, randomRow];
-      }
+        for (var y = 1; y <= numRows; y++) {
+            for (var x = 1; x <= numColumns; x++) {
+                var gridItem = getGridItem(x, y);
+                var circle1 = gridItem.querySelector('.circle circle');
+                var circle1Rect = circle1.getBoundingClientRect();
 
-    //for debuggin purposes, function that creates circles in all the grid
-    function createGridCircles() {
-      
+                for (var j = y - 1; j <= y + 1; j++) {
+                    for (var i = x - 1; i <= x + 1; i++) {
+                        // Skip the current cell and cells out of bounds
+                        if ((i === x && j === y) || i < 1 || i > numColumns || j < 1 || j > numRows)
+                            continue;
 
-      for (let i = 0;  i< numRows; i++) { // the max distance between two furthest points in the grid
-        for (let j = 0; j<numCols; j++){
-          const circle = document.createElement('div');
-          circle.classList.add('circle');
-          const diff_row = i- numRows/2;
-            const diff_col = j- numCols/2;
-            
-            circle.style.left = Math.ceil(diff_col) * pixel -5 + 'px';
-        
-            circle.style.top = Math.ceil(diff_row) * pixel - remnant_y -5 + 'px';
-            
-          circle.style.width = '50px';
-          
-          //add text to the circle
-            circle.textContent  = j + "," + i;
+                        // Sort the coordinates to avoid duplicates
+                        var coordinates = [[x, y], [i, j]].sort();
 
-          document.getElementById('container').appendChild(circle);
-        //   console.log("i: " + i + " j: " + j + " left: " + circle.style.left + " top: " + circle.style.top);
-        }
-      }
-      //create a red circle in 0,0
-      const circle = document.createElement('div');
-        circle.classList.add('circle');
-        circle.style.left =  + 'px';
-        circle.style.top = -remnant_y + 'px';   
-        circle.style.backgroundColor = "red"; 
-        CONTAINER.appendChild(circle);
-    }
-    
-    //function that checks if a point is inside the grid and not assigned to a circle already
-    function isPointValid(x,y){
-        // console.log("x: " + x + " y: " + y);
-        // if(x>=0 && x<numCols && y>=0 && y<numRows && circle_matrix[x][y]==0){
-        //     console.log("circle_matrix[x][y]: " + circle_matrix[x][y]);
-        // }
-        
-      if(x>=0 && x<numCols && y>=0 && y<numRows && circle_matrix[x][y]==0){
-        return true;
-      }
-      return false;
-    }
+                        // Check if the line between the two points has already been drawn
+                        if (!drawnLines[coordinates.toString()]) {
+                            var grid2Item = getGridItem(i, j);
+                            var circle2 = grid2Item.querySelector('.circle circle');
+                            var circle2Rect = circle2.getBoundingClientRect();
 
-    //function that checks if a line is inside the grid and not assigned to a line already
-    function isLineValid(x,y,dim){
-    
-      if(x>=0 && x<numCols-1 && y>=0 && y<numRows-1 && line_matrix[x][y][dim]==0){
-        return true;
-      }
+                            // Calculate the center of circle1 and circle2
+                            var cx1 = circle1Rect.left + circle1Rect.width / 2;
+                            var cy1 = circle1Rect.top + circle1Rect.height / 2;
+                            var cx2 = circle2Rect.left + circle2Rect.width / 2;
+                            var cy2 = circle2Rect.top + circle2Rect.height / 2;
 
-      if (x>=0 && x<numCols-1 && y>=0 && y<numRows &&dim==0 && line_matrix[x][y][dim]==0)
-        {
-            return true;
-        }
+                            // Create line between the centers of circle1 and circle2
+                            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+                            line.setAttribute("x1", cx1);
+                            line.setAttribute("y1", cy1);
+                            line.setAttribute("x2", cx1);
+                            line.setAttribute("y2", cy1);
+                            line.setAttribute("stroke", "#790e0e");
+                            svgLines.appendChild(line);
 
-        if (x>=0 && x<numCols && y>=0 && y<numRows-1 &&dim==1 && line_matrix[x][y][dim]==0)
-            {
-                return true;
-            }
-    
-      
-      return false;
-    }
+                            // Animate the propagation of lines
+                            anime({
+                                targets: line,
+                                x2: cx2,
+                                y2: cy2,
+                                duration: 1000,
+                                easing: 'linear',
+                                delay: Math.random() * 1000
+                            });
 
-    //function to create a line
-    function createLine(x,y,x1,y1,width=pixel){
-      const center_offset_x= -14;
-        const center_offset_y= 15;
-
-    // x,y are the coordinates of the first circle
-    // x1,y1 are the coordinates of the second circle
-      const line = document.createElement('div');
-      line.classList.add('line');
-      //define coordinate of the line according to the coordinates of the circles
-      line.style.left = (Math.ceil(x- numCols/2)+(x1-x)/2) * pixel + center_offset_x  + 'px';
-      line.style.top = (Math.ceil(y- numRows/2)+(y1-y)/2) * pixel - remnant_y +center_offset_y+ 'px';
-    //   console.log("x-x1", x-x1, "y-y1", y-y1, "left: " + line.style.left + " top: " + line.style.top);
-      line.style.width = width + 'px';
-      line.style.height = '2px';
-      line.style.backgroundColor = "red";
-        //calculate the angle of the line
-        let angle = Math.atan2(y1 - y, x1 - x) * 180 / Math.PI;
-      line.style.transform = "rotate(" + angle + "deg)";
-      CONTAINER.appendChild(line);
-      //assing dim if this is ahorizontal or vertical line
-      
-        if(x==x1){
-            // console.log("Marking vertical line at indexes: " + Math.max(Math.min(x,x1),0) + " " + Math.max(Math.min(y,y1),0));
-            line_matrix[Math.max(Math.min(x,x1),0)][Math.max(Math.min(y,y1),0)][1]=1;
-        }else{
-            // console.log("Marking horizontal line at indexes: " + Math.max(Math.min(x,x1),0) + " " + Math.max(Math.min(y,y1),0));
-            line_matrix[Math.max(Math.min(x,x1),0)][Math.max(Math.min(y,y1),0)][0]=1;
-        }
-      return line;
-    }
-    //function to animate the line
-    function animateLine_circle(line,circle,col,row){
-      anime({
-        targets: line,
-        // scaleY: , // Animate the height to 100px
-        width:pixel, // Animate the height to 100px
-        duration: Math.max(getRandomNumber(300,50)-CONTAINER.children.length,25), // Animation duration
-        easing: 'easeOutCirc', // Easing function
-        complete: function() {
-            if (circle){anime({
-            targets: circle,
-            scale: 100, // Animate scale to 1
-            duration: Math.max(getRandomNumber(200,10)-CONTAINER.children.length,25), // Animation duration
-            easing: 'easeInOutQuad', // Easing function
-            complete: function() {
-                createLinesAndCircles(col,row);
-            }
-          });}}
-      });
-    }
-
-
-
-    //function that given a circle's coordinates, creates the lines and circles in the 4 directions (up, down, left, right) by 1 move in the grid
-    function createLinesAndCircles(x,y){
-      //create the lines and circles in the 4 directions
-      const init_line_width = 0.1;
-      const inti_circle_scale = 0.01;
-    
-        function handle_direction(x,y,dim,value){
-            
-            //x and y are the grid coordinates of the circle dim means the direction of the line (0 horizontal, 1 vertical) and value is the vamue of the movement -1 or 1
-            const line_value = (value-1)/2;
-            if(dim==0){
-                // console.log("currently at: " + x + " " + y+" " + dim + " " + value +" line_value: " + line_value + " line_matrix[x][y][dim]: " + line_matrix[x][y][dim] + " circle_matrix[x][y]: " + circle_matrix[x][y] + " isLineValid: " + isLineValid(x+line_value,y,dim) + " isPointValid: " + isPointValid(x,y));
-                if(isLineValid(x+line_value,y,0)){
-                    // console.log("Drawing the line starting at: " + x + " " + y + " to  " + (x+value) + " " + y)
-                    const line = createLine(x,y,x+value,y,init_line_width);
-                    if (circle_matrix[x+value][y]==0){
-                        circle_matrix[x+value][y]=1;
-                        const circle=createCircle(x+value,y,true,inti_circle_scale,"red",1);
-                        animateLine_circle(line,circle,x+value,y);}
-                        else{
-                            animateLine_circle(line,undefined,x+value,y);
-                        }}
-            }else{
-                if(isLineValid(x,y+line_value,1)){
-                    const line = createLine(x,y,x,y+value,init_line_width);
-                    if (circle_matrix[x][y+value]==0){
-                        circle_matrix[x][y+value]=1;
-                        const circle=createCircle(x,y+value,true,inti_circle_scale,"red",1);
-                        animateLine_circle(line,circle,x,y+value)}
-                    else{
-                        animateLine_circle(line,undefined,x,y+value);
+                            // Mark the line as drawn
+                            drawnLines[coordinates.toString()] = true;
+                        }
                     }
                 }
             }
-            
         }
 
-
-        handle_direction(x,y,0,1);
-        handle_direction(x,y,0,-1);
-        handle_direction(x,y,1,1);
-        handle_direction(x,y,1,-1);
-
-
-    //   if (isLineValid(x,y,0)){
-    //     console.log("Drawing the lien starting at: " + x + " " + y + " to  " + (x+1) + " " + y)
-    //     const line = createLine(x,y,x+1,y,init_line_width);
-    //     if(isPointValid(x+1,y)){
-    //         // const line = createLine(x,y,x+1,y,init_line_width);
-    //         circle_matrix[x+1][y]=1;
-    //         circle=createCircle(x+1,y,true,inti_circle_scale,"red",1);
-    //         animateLine_circle(line,circle,x+1,y);
-    //         // console.log("circle: " + circle.style.left + " " + circle.style.top + " " + circle.style.backgroundColor + " " + circle.style.zIndex + " " + circle.style.scale+ " line: " + line.style.left + " " + line.style.top + " " + line.style.width + " " + line.style.height + " " + line.style.backgroundColor + " " + line.style.transform);
-    //   }
-    // }
-    //   if(isPointValid(x-1,y)){
-    //     const line = createLine(x,y,x-1,y,init_line_width);
-    //     CONTAINER.appendChild(line);
-    //     circle_matrix[x-1][y]=1;
-    //     circle=createCircle(x-1,y,true,inti_circle_scale,"red",1);
-    //     animateLine_circle(line,circle,x-1,y);
-    //     // console.log("circle: " + circle.style.left + " " + circle.style.top + " " + circle.style.backgroundColor + " " + circle.style.zIndex + " " + circle.style.scale+ " line: " + line.style.left + " " + line.style.top + " " + line.style.width + " " + line.style.height + " " + line.style.backgroundColor + " " + line.style.transform);
-    //   }
-    //   if(isPointValid(x,y+1)){
-    //     const line = createLine(x,y,x,y+1,init_line_width);
-    //     circle_matrix[x][y+1]=1;
-    //     circle=createCircle(x,y+1,true,inti_circle_scale,"red",1);
-    //     animateLine_circle(line,circle,x,y+1);
-    //     // console.log("circle: " + circle.style.left + " " + circle.style.top + " " + circle.style.backgroundColor + " " + circle.style.zIndex + " " + circle.style.scale+ " line: " + line.style.left + " " + line.style.top + " " + line.style.width + " " + line.style.height + " " + line.style.backgroundColor + " " + line.style.transform);
-    //   }
-    //   if(isPointValid(x,y-1)){
-    //     const line = createLine(x,y,x,y-1,init_line_width);
-    //     circle_matrix[x][y-1]=1;
-    //     circle=createCircle(x,y-1,true,inti_circle_scale,"red",1);
-    //     animateLine_circle(line,circle,x,y-1);
-    //     // console.log("circle: " + circle.style.left + " " + circle.style.top + " " + circle.style.backgroundColor + " " + circle.style.zIndex + " " + circle.style.scale+ " line: " + line.style.left + " " + line.style.top + " " + line.style.width + " " + line.style.height + " " + line.style.backgroundColor + " " + line.style.transform);
-    //   }
-
-
+        gridContainer.appendChild(svgLines);
     }
-    
-    // Function to animate sunray lines using Anime.js
-    function animateSunrays() {
-      const container = document.getElementById('container');
-      const circle = document.getElementById('circle');
-      const lines = [];
-      const circles = [];
 
-      
+    // JavaScript to dynamically create grid items
+    function createGridItems() {
+        
 
-      // Generate random coordinates within the viewport
-      const randomRow = getRandomNumber(numRows); // Ensure the circle is not too close to the edges
-      const randomCol = getRandomNumber(numCols);
+        for (var y = 0; y < numRows; y++) {
+            for (var x = 0; x < numColumns; x++) {
+                var gridItem = document.createElement('div');
+                gridItem.className = 'grid-item';
+                gridItem.style.width = itemWidth + 'px';
+                gridItem.style.height = itemHeight + 'px';
 
-      const randomX = (randomCol-numRows/2) * pixel;
-      const randomY = (randomRow-numCols/2)* pixel;
+                // // Create circle
+                // var circle = createCircle();
+                // gridItem.appendChild(circle);
 
-      circle.style.left = randomX + 'px';
-      circle.style.top = randomY + 'px';
+                // Position grid item
+                gridItem.style.gridColumn = x + 1; // Add 1 to convert to 1-based indexing
+                gridItem.style.gridRow = y + 1;
+                
+                // coordinates = document.createElement('div');
+                // coordinates.className = 'coordinates';
+                // coordinates.innerHTML = (x + 1) + ', ' + (y + 1);
+                // gridItem.appendChild(coordinates);
 
-      for (let i = 0;  i< numCols; i++) { // the max distance between two furthest points in the grid
-        for (let j = 0; j<numRows; j++){
-            const c=i+j;
+                // Append grid item to container
+                gridContainer.appendChild(gridItem);
+            }
+        }
+    }
 
+    function propagate_to_next(x, y) {
+        // Define the animation parameters
+        const circle_scale = 0.01;
+        const circle_color = "red";
+        distance_from_initial_random_points= Math.abs(x-randomX) + Math.abs(y-randomY);
+        const circle_animation_duration = Math.max(10,300 - distance_from_initial_random_points*10);
+        const circle_animation_delay = circle_animation_duration;
+        const gridItem_animation_delay = 2*circle_animation_duration;
+        function createLineBetweenCircles(x1, y1, x2, y2) {
+            // Get the circles and their bounding rects
+            const circle1 = getGridItem(x1, y1).querySelector('.circle circle');
+            const circle2 = getGridItem(x2, y2).querySelector('.circle circle');
+            const circle1Rect = circle1.getBoundingClientRect();
+            const circle2Rect = circle2.getBoundingClientRect();
 
+            // Calculate the center coordinates of the circles
+            const cx1 = circle1Rect.left + circle1Rect.width / 2;
+            const cy1 = circle1Rect.top + circle1Rect.height / 2;
+            const cx2 = circle2Rect.left + circle2Rect.width / 2;
+            const cy2 = circle2Rect.top + circle2Rect.height / 2;
 
+            // Create the SVG line element
+            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            line.setAttribute("x1", cx1);
+            line.setAttribute("y1", cy1);
+            line.setAttribute("x2", cx1);
+            line.setAttribute("y2", cy1);
+            line.setAttribute("stroke", "#790e0e");
 
+            svgLines.appendChild(line);
+            //animate the line
+            anime({
+                targets: line,
+                x2: cx2,
+                y2: cy2,
+                duration: circle_animation_duration,
+                easing: 'linear',
+            });
+        }
 
+        
+        // Define a function to handle direction (horizontal, vertical, and diagonal)
+        function handle_direction(x, y, dx, dy) {
+            const newX = x + dx;
+            const newY = y + dy;
 
-            const line = document.createElement('div');
-            line.classList.add('line');
-            line.style.transform = `rotate(${i * 90}deg)`; // Rotate each line by 90 degrees
-            line.style.left = '50%'; // Position horizontally at the center
-            line.style.top = '50%'; // Position vertically at the center
-            line.style.height = '0'; // Start with height 0
-            container.appendChild(line);
-            lines.push(line);
+            // Skip cells out of bounds or already filled
+            if (newX < 1 || newX > numColumns || newY < 1 || newY > numRows || !getGridItem(newX, newY) ) {
+                return;
+            }
+            if (getGridItem(newX, newY).querySelector('.circle') != null) {
+            createLineBetweenCircles(x, y, newX, newY);
+            return;
+            }
 
-            const angle = (i / 4) * Math.PI * 2; // Angle for each sunray
+            // console.log("   propagating to ", newX, newY);
+
+            // Create circle and animate its expansion
+            var gridItem = getGridItem(newX, newY);
+            var circle = createCircle();
+            gridItem.appendChild(circle);
+            //create line between the two points
+            createLineBetweenCircles(x, y, newX, newY);
+            
 
             anime({
-            targets: line,
-            scaleY: 1, // Animate the height to 100px
-            height: '100px', // Animate the height to 100px
-            duration: 1000, // Animation duration
-            easing: 'easeInOutElastic', // Easing function
-            complete: function() {
-                const circle = document.createElement('div');
-                circle.classList.add('circle');
-                circle.style.left = Math.cos(angle) * 100 - 25 + 'px'; // Adjust position relative to the center of the line
-                circle.style.top = Math.sin(angle) * 100 - 25 + 'px';
-                circle.style.transform = `scale(0)`; // Start with scale 0
-
-                container.appendChild(circle);
-                circles.push(circle);
-
-                anime({
-                targets: circle,
-                scale: 1, // Animate scale to 1
-                duration: 500, // Animation duration
-                easing: 'easeInOutQuad' // Easing function
-        });
-        }
+                targets: circle.querySelector('circle'),
+                r: '10',
+                duration: circle_animation_duration,
+                easing: 'easeInOutSine',
+                complete: function () {
+                    propagate_to_next(newX, newY);
+                }
             });
-          
-        };
-      }
+
+            // anime({
+            //     targets: circle.querySelector('circle'),
+            //     r: '75',
+            //     duration: circle_animation_duration,
+            //     delay: circle_animation_delay,
+            //     easing: 'easeInOutSine'
+            // });
+
+            // anime({
+            //     targets: gridItem,
+            //     backgroundColor: '#790e0e',
+            //     delay: gridItem_animation_delay,
+            // });
+        }
+
+        // Handle horizontal, vertical, and diagonal directions
+        handle_direction(x, y, 1, 0); // Right
+        handle_direction(x, y, -1, 0); // Left
+        handle_direction(x, y, 0, 1); // Down
+        handle_direction(x, y, 0, -1); // Up
+        handle_direction(x, y, 1, 1); // Down-Right
+        handle_direction(x, y, -1, 1); // Down-Left
+        handle_direction(x, y, 1, -1); // Up-Right
+        handle_direction(x, y, -1, -1); // Up-Left
     }
 
-    // Animate sunrays when document is ready
-    document.addEventListener('DOMContentLoaded', function() {
-      // createGridCircles();
-      const [x0,y0]=createFirstPoint();
-      
-    //   console.log("x0: " + x0 + " y0: " + y0);
-    //   createLinesAndCircles(x0,y0);
-    //   animateSunrays();
-    })
-  </script>
+
+
+
+
+
+
+
+
+
+    // Initial call to create grid items
+    createGridItems();
+
+    // Update grid items and draw lines on window resize
+    window.addEventListener('resize', function () {
+        createGridItems();
+        drawLines();
+    });
+
+    // Function to get grid item by coordinates
+    function getGridItem(x, y) {
+        return document.querySelector('.grid-item:nth-child(' + ((y - 1) * numColumns + x) + ')');
+    }
+
+    // Function to animate circle expansion
+    function animateCircleExpansion(randomX, randomY) {
+        console.log("randomX: ", randomX, "randomY: ", randomY);
+        var gridItem = getGridItem(randomX, randomY);
+        var circle = createCircle();
+        gridItem.appendChild(circle);
+        var circle = gridItem.querySelector('.circle circle');
+
+        // Expand circle animation
+        anime({
+            targets: circle,
+            r: '60',
+            duration: 1000,
+            easing: 'easeInOutSine',
+            complete: function() {
+                propagate_to_next(randomX,randomY);
+            }
+        });
+
+        anime({
+            targets: circle,
+            r: '75',
+            duration: 1000,
+            delay: 1000,
+            easing: 'easeInOutSine'
+        });
+
+        anime({
+            targets: gridItem,
+            backgroundColor: '#790e0e',
+            delay: 2000,
+        });
+    }
+
+    var randomX = Math.floor(Math.random() * numColumns) + 1;
+    var randomY = Math.floor(Math.random() * numRows) + 1;
+    function launch_loading_anim() {
+        
+        animateCircleExpansion(randomX, randomY);
+        gridContainer.appendChild(svgLines);
+        // drawLines(); // Draw lines after circle animation
+    }
+
+    // Example usage:
+    window.addEventListener('load', function () {
+        launch_loading_anim();
+    });
+</script>
+
 </body>
 </html>
