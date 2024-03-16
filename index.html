@@ -9,7 +9,7 @@
         margin: 0;
         padding: 0;
         height: 100%;
-        background-color: black;
+        background-color: rgb(0, 0, 0);
     }
 
     .grid-container {
@@ -20,16 +20,18 @@
         height: 100%; /* Take the full height of the viewport */
         overflow: hidden; /* Prevent overflow */
         position: relative; /* Position relative for absolutely positioned children */
+        grid-template-columns:  repeat(var(--columns), 1fr) ;
+        grid-template-rows:  repeat(var(--rows), 1fr)  ;
     }
 
     .grid-item {
-        background-color: #ffffff; 
-        text-align: center; /* Center align text */
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative; /* Set position to relative */
-        border: 0; /* Remove border */
+    background-color: #000000; 
+    text-align: center; /* Center align text */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative; /* Set position to relative */
+    border: 0px solid transparent; /* Add a thin border */
     }
 
     .circle {
@@ -63,7 +65,11 @@
     numColumns = Math.floor((window.innerWidth - 0) / (itemWidth + gridGap));
     numRows = Math.floor((window.innerHeight - 0) / (itemHeight + gridGap));
     var numItems = numColumns * numRows; // Calculate total number of items
+    console.log("numColumns: ", numColumns, "numRows: ", numRows, "numItems: ", numItems);
     gridContainer.innerHTML = ''; // Clear previous items
+    gridContainer.style.setProperty("--columns", numColumns);
+    gridContainer.style.setProperty("--rows", numRows);
+    console.log("gridContainer grid-template-value is ", gridContainer.style);
     var svgLines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svgLines.style.position = 'absolute';
     svgLines.setAttribute("width", window.innerWidth);
@@ -170,8 +176,11 @@
             for (var x = 0; x < numColumns; x++) {
                 var gridItem = document.createElement('div');
                 gridItem.className = 'grid-item';
-                gridItem.style.width = itemWidth + 'px';
-                gridItem.style.height = itemHeight + 'px';
+                if ( x==0 || x==numColumns-1) {
+                    // gridItem.style.width = gridItem.style.width/2;
+                    // gridItem.style.height = gridItem.style.height/2;
+                }
+                
 
                 // // Create circle
                 // var circle = createCircle();
@@ -181,13 +190,14 @@
                 gridItem.style.gridColumn = x + 1; // Add 1 to convert to 1-based indexing
                 gridItem.style.gridRow = y + 1;
                 
-                // coordinates = document.createElement('div');
-                // coordinates.className = 'coordinates';
-                // coordinates.innerHTML = (x + 1) + ', ' + (y + 1);
-                // gridItem.appendChild(coordinates);
+                //coordinates = document.createElement('div');
+                //coordinates.className = 'coordinates';
+                //coordinates.innerHTML = (x + 1) + ', ' + (y + 1);
+                //gridItem.appendChild(coordinates);
 
                 // Append grid item to container
                 gridContainer.appendChild(gridItem);
+                // console.log("gridContainer grid-template-value is ", gridContainer.style);
             }
         }
     }
@@ -197,10 +207,10 @@
         const circle_scale = 0.01;
         const circle_color = "red";
         distance_from_initial_random_points= Math.abs(x-randomX) + Math.abs(y-randomY);
-        const circle_animation_duration = Math.max(10,300 - distance_from_initial_random_points*10);
-        const circle_animation_delay = circle_animation_duration;
-        const gridItem_animation_delay = 2*circle_animation_duration;
-        function createLineBetweenCircles(x1, y1, x2, y2) {
+        const circle_animation_duration = Math.max(50,200 - distance_from_initial_random_points*17);
+        const circle_animation_delay = 4*circle_animation_duration;
+        const gridItem_animation_delay = 4*circle_animation_duration;
+        function createLineBetweenCircles(x1, y1, x2, y2,propagate_to_next_bool=true) {
             // Get the circles and their bounding rects
             const circle1 = getGridItem(x1, y1).querySelector('.circle circle');
             const circle2 = getGridItem(x2, y2).querySelector('.circle circle');
@@ -227,8 +237,40 @@
                 targets: line,
                 x2: cx2,
                 y2: cy2,
-                duration: circle_animation_duration,
+                duration: circle_animation_duration+ Math.random()*3*circle_animation_duration -(3*circle_animation_duration/2),
                 easing: 'linear',
+                complete: function () {
+                    if (propagate_to_next_bool) {
+                        // Once the line animation is complete, create and animate the circle
+                    // console.log("x2: ", x2, "y2: ", y2);
+                    var gridItem = getGridItem(x2, y2);
+                    var circle = gridItem.querySelector('.circle');
+                    
+                    anime({
+                        targets: circle.querySelector('circle'),
+                        r: '20',
+                        duration: circle_animation_duration,
+                        easing: 'easeInOutSine',
+                        complete: function () {
+                            // After the circle animation is complete, propagate to the next point
+                            propagate_to_next(x2, y2);
+                            if (y2!=numRows) {
+                                anime({
+                                targets: circle.querySelector('circle'),
+                                r: '150',
+                                duration: circle_animation_duration,
+                                easing: 'easeInOutSine',
+                                delay: 1000,
+                                duration: 250,
+                            });
+
+                            }
+                            
+                        }
+                    });
+                    }
+                    
+                }
             });
         }
 
@@ -243,7 +285,7 @@
                 return;
             }
             if (getGridItem(newX, newY).querySelector('.circle') != null) {
-            createLineBetweenCircles(x, y, newX, newY);
+            createLineBetweenCircles(x, y, newX, newY,propagate_to_next_bool=false);
             return;
             }
 
@@ -257,29 +299,11 @@
             createLineBetweenCircles(x, y, newX, newY);
             
 
-            anime({
-                targets: circle.querySelector('circle'),
-                r: '10',
-                duration: circle_animation_duration,
-                easing: 'easeInOutSine',
-                complete: function () {
-                    propagate_to_next(newX, newY);
-                }
-            });
+            
 
-            // anime({
-            //     targets: circle.querySelector('circle'),
-            //     r: '75',
-            //     duration: circle_animation_duration,
-            //     delay: circle_animation_delay,
-            //     easing: 'easeInOutSine'
-            // });
+            
 
-            // anime({
-            //     targets: gridItem,
-            //     backgroundColor: '#790e0e',
-            //     delay: gridItem_animation_delay,
-            // });
+            
         }
 
         // Handle horizontal, vertical, and diagonal directions
@@ -296,7 +320,29 @@
 
 
 
+    // Function to expand the grid
+    function ExpandGrid(){
+        //Expands the circles to fill the grid
+        for (var y = 1; y < numRows; y++) {
+            for (var x = 1; x <= numColumns; x++) {
+                var gridItem = getGridItem(x, y);
+                var circle = createCircle();
+                gridItem.appendChild(circle);
+                var circle = gridItem.querySelector('.circle circle');
 
+                // Expand circle animation
+                anime({
+                    targets: circle,
+                    r: '100',
+                    duration: 1000,
+                    easing: 'easeInOutSine',
+                    complete: function() {
+                        
+                    }
+                });
+            }
+        }
+    }
 
 
 
@@ -307,8 +353,7 @@
 
     // Update grid items and draw lines on window resize
     window.addEventListener('resize', function () {
-        createGridItems();
-        drawLines();
+        pass
     });
 
     // Function to get grid item by coordinates
@@ -327,28 +372,23 @@
         // Expand circle animation
         anime({
             targets: circle,
-            r: '60',
+            r: '20',
             duration: 1000,
             easing: 'easeInOutSine',
             complete: function() {
                 propagate_to_next(randomX,randomY);
-            }
-        });
+                if (randomY!=numRows) {
+                    anime({
+                    targets: circle,
+                    r: '150',
+                    easing: 'easeInOutSine',
+                    delay: 1000,
+                    duration: 250,
+                });
+            }}
+        });}
 
-        anime({
-            targets: circle,
-            r: '75',
-            duration: 1000,
-            delay: 1000,
-            easing: 'easeInOutSine'
-        });
-
-        anime({
-            targets: gridItem,
-            backgroundColor: '#790e0e',
-            delay: 2000,
-        });
-    }
+        
 
     var randomX = Math.floor(Math.random() * numColumns) + 1;
     var randomY = Math.floor(Math.random() * numRows) + 1;
@@ -356,7 +396,9 @@
         
         animateCircleExpansion(randomX, randomY);
         gridContainer.appendChild(svgLines);
-        // drawLines(); // Draw lines after circle animation
+
+        // ExpandGrid();
+        
     }
 
     // Example usage:
