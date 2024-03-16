@@ -37,7 +37,7 @@
     .circle {
         width: 100%;
         height: 100%;
-        fill: #790e0e;
+        fill: #5e0202;
     }
 
     .coordinates {
@@ -205,7 +205,7 @@
     function propagate_to_next(x, y) {
         // Define the animation parameters
         const circle_scale = 0.01;
-        const circle_color = "red";
+        const circle_color = '#5e0202';
         distance_from_initial_random_points= Math.abs(x-randomX) + Math.abs(y-randomY);
         const circle_animation_duration = Math.max(50,200 - distance_from_initial_random_points*17);
         const circle_animation_delay = 4*circle_animation_duration;
@@ -229,7 +229,7 @@
             line.setAttribute("y1", cy1);
             line.setAttribute("x2", cx1);
             line.setAttribute("y2", cy1);
-            line.setAttribute("stroke", "#790e0e");
+            line.setAttribute("stroke", "#5e0202");
 
             svgLines.appendChild(line);
             //animate the line
@@ -254,17 +254,16 @@
                         complete: function () {
                             // After the circle animation is complete, propagate to the next point
                             propagate_to_next(x2, y2);
-                            if (y2!=numRows) {
+                            // if (y2!=numRows) {
                                 anime({
                                 targets: circle.querySelector('circle'),
                                 r: '150',
                                 duration: circle_animation_duration,
-                                easing: 'easeInOutSine',
+                                easing: 'easeInOutBack',
                                 delay: 1000,
-                                duration: 250,
+                                duration: 1000,
                             });
-
-                            }
+                            // }
                             
                         }
                     });
