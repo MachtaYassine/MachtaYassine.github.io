@@ -46,13 +46,125 @@
         color: white; /* Text color */
         font-size: 10px; /* Text font size */
     }
+    #headerContainer {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: flex;
+            align-items: center;
+            color: #F89D13; /* Set color to #F89D13 */
+            z-index: 2; /* Ensure it's on top */
+        }
 
-</style>
+        /* Style for the image container */
+        #imageContainer {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            width: 150px; /* Set width of container */
+            height: 150px; /* Set height of container */
+            border-radius: 50%; /* Make it a circle */
+            overflow: hidden; /* Hide overflow to ensure the image stays within the container */
+            z-index: 2; /* Ensure it's on top */
+        }
+
+        /* Style for the profile picture */
+        #profilePicture {
+            width: 100%; /* Set the width of the image to 100% of the container */
+            height: auto; /* Automatically adjust height to maintain aspect ratio */
+            object-fit: contain; /* Resize the image to fit inside the container without cropping */
+            z-index: 2; /* Ensure it's on top */
+        }
+
+        #topBarContainer {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%; /* Take the full width */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.8); /* Set background color with transparency */
+            z-index: 2; /* Ensure it's on top */
+        }
+
+        /* Bottom bar container */
+        #bottomBarContainer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%; /* Take the full width */
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            color: white;
+            background-color: rgba(0, 0, 0, 0); /* Set background color with transparency */
+            z-index: 2; /* Ensure it's on top */
+        }
+        #bottomBarContainer p {
+            margin: 0; /* Remove default margin */
+            font-size: 14px; /* Adjust font size */
+            opacity: 0.5; /* Set opacity for subtle appearance */
+            text-align: center;
+            flex-grow: 1;
+        }
+        /* Style for the resume button */
+        #resumeButton {
+            padding: 10px 20px;
+            background-color: #F89D13; /* Set color to #F89D13 */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none; /* Remove default link underline */
+            color: white;
+        }
+
+        /* Style for the introduction paragraph */
+        #introduction {
+            position: absolute;
+            top: 120px;
+            left: 10px;
+            width: calc(100% - 20px); /* Adjust width */
+            color: white; /* Set color to white */
+            z-index: 2; /* Ensure it's on top */
+        }
+    </style>
 </head>
 <body>
 
-<div class="grid-container" id="gridContainer">
+<!-- Header container -->
+<div id="headerContainer">
+    <h1>Yassine Machta</h1> <!-- Your name -->
 </div>
+
+<!-- Image container -->
+<div id="imageContainer">
+    <!-- Add your picture here -->
+    <img src="assets/photo_ensae.jpg" alt="Your Picture" id="profilePicture">
+</div>
+
+<!-- Bar container -->
+<div id="topBarContainer">
+    <!-- Resume button -->
+    <a id="resumeButton" href="path/to/your/resume.pdf" target="_blank">Resume</a>
+</div>
+
+<!-- Introduction paragraph -->
+<p id="introduction">
+    Here you can introduce yourself. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Sed aliquet feugiat eros, vel euismod lacus congue quis. Integer euismod sem nec erat efficitur, at varius quam luctus.
+    Quisque sodales nibh in consectetur faucibus. Nunc tincidunt libero velit, id cursus felis aliquet et.
+</p>
+
+<!-- Bottom bar container -->
+<div id="bottomBarContainer">
+    <!-- Copyright notice -->
+    <p>&copy; 2024 Yassine Machta. All rights reserved.</p>
+</div>
+<!-- Grid container for animations -->
+<div class="grid-container" id="gridContainer"></div>
+
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script>
@@ -96,7 +208,7 @@
         offset_y = 50 + (Math.random() * 50) - 25;
         circle.setAttribute("cx", offset_x);
         circle.setAttribute("cy", offset_y);
-        circle.setAttribute("r", "1");
+        circle.setAttribute("r", "1.5");
         svg.appendChild(circle);
         return svg;
     }
@@ -190,10 +302,10 @@
                 gridItem.style.gridColumn = x + 1; // Add 1 to convert to 1-based indexing
                 gridItem.style.gridRow = y + 1;
                 
-                //coordinates = document.createElement('div');
-                //coordinates.className = 'coordinates';
-                //coordinates.innerHTML = (x + 1) + ', ' + (y + 1);
-                //gridItem.appendChild(coordinates);
+                // coordinates = document.createElement('div');
+                // coordinates.className = 'coordinates';
+                // coordinates.innerHTML = (x + 1) + ', ' + (y + 1);
+                // gridItem.appendChild(coordinates);
 
                 // Append grid item to container
                 gridContainer.appendChild(gridItem);
@@ -206,7 +318,7 @@
         // Define the animation parameters
         const circle_scale = 0.01;
         const circle_color = '#5e0202';
-        distance_from_initial_random_points= Math.abs(x-randomX) + Math.abs(y-randomY);
+        distance_from_initial_random_points= 0;
         const circle_animation_duration = Math.max(50,200 - distance_from_initial_random_points*17);
         const circle_animation_delay = 4*circle_animation_duration;
         const gridItem_animation_delay = 4*circle_animation_duration;
@@ -373,27 +485,36 @@
             targets: circle,
             r: '20',
             duration: 1000,
-            easing: 'easeInOutSine',
+            easing: 'easeInOutBack',
             complete: function() {
                 propagate_to_next(randomX,randomY);
                 // if (randomY!=numRows) {
                     anime({
                     targets: circle,
                     r: '150',
-                    easing: 'easeInOutSine',
+                    easing: 'easeInOutBack',
                     delay: 1000,
-                    duration: 250,
+                    duration: 1000,
                 });
             }
         });}
 
         
 
-    var randomX = Math.floor(Math.random() * numColumns) + 1;
-    var randomY = Math.floor(Math.random() * numRows) + 1;
-    function launch_loading_anim() {
-        
-        animateCircleExpansion(randomX, randomY);
+    
+    function launch_loading_anim(n) {
+        for (var i = 0; i < n; i++) {
+            var randomX = Math.floor(Math.random() * numColumns) + 1;
+            var randomY = Math.floor(Math.random() * numRows) + 1;
+            //check if there is already a circle in the grid item
+            if (getGridItem(randomX, randomY).querySelector('.circle') != null) {
+                continue;
+            }
+            animateCircleExpansion(randomX, randomY);
+            
+        }
+
+    
         gridContainer.appendChild(svgLines);
 
         // ExpandGrid();
@@ -402,7 +523,7 @@
 
     // Example usage:
     window.addEventListener('load', function () {
-        launch_loading_anim();
+        launch_loading_anim(10);
     });
 </script>
 
