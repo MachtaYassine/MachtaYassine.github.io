@@ -52,7 +52,7 @@
     #headerContainer {
         position: absolute;
         top: 2.5%; /* 2% from the top of the viewport */
-        left: 10%; /* 2% from the left of the viewport */
+        left: 20%; /* 2% from the left of the viewport */
         display: flex;
         align-items: center;
         color: #F89D13; /* Set color to #F89D13 */
@@ -108,14 +108,14 @@
         align-items: center;
         justify-content: space-between;
         color: white;
-        background-color: rgba(0, 0, 0, 0); /* Set background color with transparency */
+        background-color: rgba(0, 0, 0, 0.8); /* Set background color with transparency */
         z-index: 2; /* Ensure it's on top */
         transition: bottom 0.5s ease
     }
     #bottomBarContainer p {
         margin: 0; /* Remove default margin */
         font-weight: 200;
-        font-size: 1.1em;
+        font-size: 0.6em;
         opacity: 0.5; /* Set opacity for subtle appearance */
         text-align: center;
         flex-grow: 1;
@@ -127,12 +127,14 @@
     color: #ffffff; /* Button text color */
     text-decoration: none;
     border-radius: 5px;
+    font-size: 1.1em;
 }
 
     .button-content {
         display: flex;
         align-items: center;
         gap: 5px; /* Adjust spacing between icon and text */
+        font-size: 1.1em;
     }
 
     #resumeButton:hover lord-icon {
@@ -145,7 +147,7 @@
     #introduction {
         position: absolute;
         top: 140px;
-        left: 15px;
+        left: 5%;
         width: 65%; /* Adjust width */
         color: white; /* Set color to white */
         z-index: 2; /* Ensure it's on top */
@@ -173,7 +175,7 @@
 <!-- Bar container -->
 <div id="topBarContainer">
     <!-- Resume button -->
-    <a id="resumeButton" href="path/to/your/resume.pdf" target="_blank" onmouseover="startAnimation()" onmouseout="stopAnimation()">
+    <a id="resumeButton" href="resume/resume.pdf" target="_blank" onmouseover="startAnimation()" onmouseout="stopAnimation()">
     <div class="button-content" >
         <lord-icon
             src="assets/resume.json"
@@ -217,7 +219,7 @@
 <!-- Bottom bar container -->
 <div id="bottomBarContainer">
     <!-- Copyright notice -->
-    <p>&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com</p>
+    <p>&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com. FavIcon from favicon.io</p>
 </div>
 <!-- Grid container for animations -->
 <div class="grid-container" id="gridContainer"></div>
@@ -286,73 +288,6 @@
         circle.setAttribute("r", "1.5");
         svg.appendChild(circle);
         return svg;
-    }
-
-    // Function to draw lines between neighboring circle centers
-    function drawLines() {
-        var gridContainer = document.getElementById('gridContainer');
-        var svgLines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-        svgLines.style.position = 'absolute';
-        svgLines.setAttribute("width", window.innerWidth);
-        svgLines.setAttribute("height", window.innerHeight);
-
-        var drawnLines = {}; // Object to keep track of drawn lines
-
-        for (var y = 1; y <= numRows; y++) {
-            for (var x = 1; x <= numColumns; x++) {
-                var gridItem = getGridItem(x, y);
-                var circle1 = gridItem.querySelector('.circle circle');
-                var circle1Rect = circle1.getBoundingClientRect();
-
-                for (var j = y - 1; j <= y + 1; j++) {
-                    for (var i = x - 1; i <= x + 1; i++) {
-                        // Skip the current cell and cells out of bounds
-                        if ((i === x && j === y) || i < 1 || i > numColumns || j < 1 || j > numRows)
-                            continue;
-
-                        // Sort the coordinates to avoid duplicates
-                        var coordinates = [[x, y], [i, j]].sort();
-
-                        // Check if the line between the two points has already been drawn
-                        if (!drawnLines[coordinates.toString()]) {
-                            var grid2Item = getGridItem(i, j);
-                            var circle2 = grid2Item.querySelector('.circle circle');
-                            var circle2Rect = circle2.getBoundingClientRect();
-
-                            // Calculate the center of circle1 and circle2
-                            var cx1 = circle1Rect.left + circle1Rect.width / 2;
-                            var cy1 = circle1Rect.top + circle1Rect.height / 2;
-                            var cx2 = circle2Rect.left + circle2Rect.width / 2;
-                            var cy2 = circle2Rect.top + circle2Rect.height / 2;
-
-                            // Create line between the centers of circle1 and circle2
-                            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
-                            line.setAttribute("x1", cx1);
-                            line.setAttribute("y1", cy1);
-                            line.setAttribute("x2", cx1);
-                            line.setAttribute("y2", cy1);
-                            line.setAttribute("stroke", "#790e0e");
-                            svgLines.appendChild(line);
-
-                            // Animate the propagation of lines
-                            anime({
-                                targets: line,
-                                x2: cx2,
-                                y2: cy2,
-                                duration: 1000,
-                                easing: 'linear',
-                                delay: Math.random() * 1000
-                            });
-
-                            // Mark the line as drawn
-                            drawnLines[coordinates.toString()] = true;
-                        }
-                    }
-                }
-            }
-        }
-
-        gridContainer.appendChild(svgLines);
     }
 
     // JavaScript to dynamically create grid items
@@ -506,32 +441,6 @@
 
 
 
-    // Function to expand the grid
-    function ExpandGrid(){
-        //Expands the circles to fill the grid
-        for (var y = 1; y < numRows; y++) {
-            for (var x = 1; x <= numColumns; x++) {
-                var gridItem = getGridItem(x, y);
-                var circle = createCircle();
-                gridItem.appendChild(circle);
-                var circle = gridItem.querySelector('.circle circle');
-
-                // Expand circle animation
-                anime({
-                    targets: circle,
-                    r: '100',
-                    duration: 1000,
-                    easing: 'easeInOutSine',
-                    complete: function() {
-                        
-                    }
-                });
-            }
-        }
-    }
-
-
-
 
 
     // Initial call to create grid items
@@ -608,6 +517,30 @@
 
     gridContainer.appendChild(svgLines);
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+    const gridItems = document.querySelectorAll('.grid-item');
+
+    gridItems.forEach(item => {
+        item.addEventListener('click', function(event) {
+            let circle = event.target.querySelector('.circle circle');
+            if (circle) {
+                circle.setAttribute('r', '20');
+            }
+        });
+
+        item.addEventListener('mouseleave', function(event) {
+            let circle = event.target.querySelector('.circle circle');
+            if (circle) {
+                circle.setAttribute('r', '1.5');
+            }
+        });
+    });
+});
+
+
+
+
 
 // Example usage:
 window.addEventListener('load', function () {
