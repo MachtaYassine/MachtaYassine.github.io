@@ -10,6 +10,8 @@
         padding: 0;
         height: 100%;
         background-color: rgb(0, 0, 0);
+        border: #ffffff;
+        overflow-x: hidden;
     }
 
     .grid-container {
@@ -37,7 +39,7 @@
     .circle {
         width: 100%;
         height: 100%;
-        fill: #5e0202;
+        fill: #141414;
     }
 
     .coordinates {
@@ -46,100 +48,124 @@
         color: white; /* Text color */
         font-size: 10px; /* Text font size */
     }
+    /* Style for the header container */
     #headerContainer {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            display: flex;
-            align-items: center;
-            color: #F89D13; /* Set color to #F89D13 */
-            z-index: 2; /* Ensure it's on top */
-        }
+        position: absolute;
+        top: 2.5%; /* 2% from the top of the viewport */
+        left: 10%; /* 2% from the left of the viewport */
+        display: flex;
+        align-items: center;
+        color: #F89D13; /* Set color to #F89D13 */
+        z-index: 2; /* Ensure it's on top */
+        font-weight: 200;
+        font-size: 2em;
+        overflow: hidden;
+    }
 
-        /* Style for the image container */
-        #imageContainer {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            width: 150px; /* Set width of container */
-            height: 150px; /* Set height of container */
-            border-radius: 50%; /* Make it a circle */
-            overflow: hidden; /* Hide overflow to ensure the image stays within the container */
-            z-index: 2; /* Ensure it's on top */
-        }
+    #imageContainer {
+        position: absolute;
+        top: 15%; /* 10% from the top of the viewport */
+        right: 5%; /* 10% from the right of the viewport */
+        width:fit-content; /* 30% of the viewport width */
+        height: 70%; /* 70% of the viewport height */
+        border: 5px solid #F89D13;
+        display: flex; /* Use flexbox */
+        align-items: center; 
+        justify-content: center; 
+        overflow: hidden; 
+        z-index: 2; 
+    }
 
-        /* Style for the profile picture */
-        #profilePicture {
-            width: 100%; /* Set the width of the image to 100% of the container */
-            height: auto; /* Automatically adjust height to maintain aspect ratio */
-            object-fit: contain; /* Resize the image to fit inside the container without cropping */
-            z-index: 2; /* Ensure it's on top */
-        }
+    #profilePicture {
+    width: auto; /* Auto width */
+    height: 100%; /* 100% height */
+    object-fit: cover; /* Cover the container while maintaining aspect ratio */
+    z-index: 2; /* Ensure it's on top */
+    }
 
-        #topBarContainer {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%; /* Take the full width */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: white;
-            background-color: rgba(0, 0, 0, 0.8); /* Set background color with transparency */
-            z-index: 2; /* Ensure it's on top */
-        }
 
-        /* Bottom bar container */
-        #bottomBarContainer {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%; /* Take the full width */
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            color: white;
-            background-color: rgba(0, 0, 0, 0); /* Set background color with transparency */
-            z-index: 2; /* Ensure it's on top */
-        }
-        #bottomBarContainer p {
-            margin: 0; /* Remove default margin */
-            font-size: 14px; /* Adjust font size */
-            opacity: 0.5; /* Set opacity for subtle appearance */
-            text-align: center;
-            flex-grow: 1;
-        }
-        /* Style for the resume button */
-        #resumeButton {
-            padding: 10px 20px;
-            background-color: #F89D13; /* Set color to #F89D13 */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none; /* Remove default link underline */
-            color: white;
-        }
+    #topBarContainer {
+        position: fixed;
+        top: -100px;
+        left: 0;
+        width: 100%; /* Take the full width */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        background-color: rgba(0, 0, 0, 0.8); /* Set background color with transparency */
+        z-index: 2; /* Ensure it's on top */
+        transition: top 0.5s ease;
+    }
 
-        /* Style for the introduction paragraph */
-        #introduction {
-            position: absolute;
-            top: 120px;
-            left: 10px;
-            width: calc(100% - 20px); /* Adjust width */
-            color: white; /* Set color to white */
-            z-index: 2; /* Ensure it's on top */
-        }
+    /* Bottom bar container */
+    #bottomBarContainer {
+        position: fixed;
+        bottom: -100px;
+        left: 0;
+        width: 100%; /* Take the full width */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: white;
+        background-color: rgba(0, 0, 0, 0); /* Set background color with transparency */
+        z-index: 2; /* Ensure it's on top */
+        transition: bottom 0.5s ease
+    }
+    #bottomBarContainer p {
+        margin: 0; /* Remove default margin */
+        font-weight: 200;
+        font-size: 1.1em;
+        opacity: 0.5; /* Set opacity for subtle appearance */
+        text-align: center;
+        flex-grow: 1;
+    }
+    #resumeButton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #F89D13; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+    .button-content {
+        display: flex;
+        align-items: center;
+        gap: 5px; /* Adjust spacing between icon and text */
+    }
+
+    #resumeButton:hover lord-icon {
+        animation: play 1s infinite; /* Add animation on hover */
+    }
+
+
+
+    /* Style for the introduction paragraph */
+    #introduction {
+        position: absolute;
+        top: 140px;
+        left: 15px;
+        width: 65%; /* Adjust width */
+        color: white; /* Set color to white */
+        z-index: 2; /* Ensure it's on top */
+        font-weight: 200;
+        font-size: 1.1em;
+    }
     </style>
 </head>
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
 <body>
 
 <!-- Header container -->
-<div id="headerContainer">
+<div id="headerContainer" style="opacity: 0; transform: translateX(-100%);">
     <h1>Yassine Machta</h1> <!-- Your name -->
 </div>
 
 <!-- Image container -->
-<div id="imageContainer">
+<div id="imageContainer" style="opacity: 0; transform: translateX(100%);">
     <!-- Add your picture here -->
     <img src="assets/photo_ensae.jpg" alt="Your Picture" id="profilePicture">
 </div>
@@ -147,27 +173,76 @@
 <!-- Bar container -->
 <div id="topBarContainer">
     <!-- Resume button -->
-    <a id="resumeButton" href="path/to/your/resume.pdf" target="_blank">Resume</a>
+    <a id="resumeButton" href="path/to/your/resume.pdf" target="_blank" onmouseover="startAnimation()" onmouseout="stopAnimation()">
+    <div class="button-content" >
+        <lord-icon
+            src="assets/resume.json"
+            colors="primary:#ffffff"
+            style="width:25px;height:25px">
+        </lord-icon>
+        <span>Resume</span>
+    </div>
+</a>
+
 </div>
 
 <!-- Introduction paragraph -->
-<p id="introduction">
-    Here you can introduce yourself. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Sed aliquet feugiat eros, vel euismod lacus congue quis. Integer euismod sem nec erat efficitur, at varius quam luctus.
-    Quisque sodales nibh in consectetur faucibus. Nunc tincidunt libero velit, id cursus felis aliquet et.
-</p>
+<div id="introduction" style="opacity: 0; transform: translateX(-100%);">
+    <h2>Website Presentation</h2>
+    <p>
+        Hi, this page is part of my personal endeavor to try and learn HTML/CSS and JavaScript Frameworks.  <br>
+        <br>
+        As a wannabe aspiring researcher I will also be using it to introduce myself, present my interests, and showcase my work. <br>
+        <span style="color: #F89D13; font-weight: bold;">This page is incomplete.</span> Feel free to come back in the future to see the progress. Doesn't look like much now, but it's honest work!
+    </p>
+    
+
+    <h2>About me</h2>
+    I am currenty on a gap year between my 2nd and 3rd year of the ENSAE Paris. (Masters 1 and 2). <br>
+    I am interested in improving my skills and knowledge in programming, but also proabiblity and statistics. <br>
+    If you wish to know more about me, feel free to take a look at my resume attached to the bar above. <br>
+    <h2>Research Statement</h2>
+
+    Right now I am attempting to get acquainted with as many research fields as possible in order to better narrow my focus. <br>
+    My interests are : <br>
+    - AI in Healthcare  <br>
+    - Visual Computing  <br>
+    - Agent decision making, in Robotics but preferrably Game AI <br>
+    - Game development (Small indie project on my side where I try to experiment with my above interest) <br>
+    - Finance Research <br>
+    - Recommendation Systems <br>
+</div>
+
 
 <!-- Bottom bar container -->
 <div id="bottomBarContainer">
     <!-- Copyright notice -->
-    <p>&copy; 2024 Yassine Machta. All rights reserved.</p>
+    <p>&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com</p>
 </div>
 <!-- Grid container for animations -->
 <div class="grid-container" id="gridContainer"></div>
 
-
+<script src="https://cdn.lordicon.com/lordicon.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
+    
+    function startAnimation() {
+        var icon = document.querySelector('.button-content lord-icon');
+        // icon.setAttribute('loop', 'true');
+        icon.playerInstance.play();
+        icon.playerInstance.direction *= -1;
+        console.log('start animation')
+    }
+
+    function stopAnimation() {
+        var icon = document.querySelector('.button-content lord-icon');
+        icon.setAttribute('loop', 'false');
+        icon.playerInstance.direction *= -1;
+        icon.playerInstance.play();
+        
+    }
+
     var numColumns, numRows;
     var itemWidth = 70; // Set initial width of grid items
     var itemHeight = 70; // Set initial height of grid items
@@ -317,11 +392,11 @@
     function propagate_to_next(x, y) {
         // Define the animation parameters
         const circle_scale = 0.01;
-        const circle_color = '#5e0202';
+        const circle_color = '#141414';
         distance_from_initial_random_points= 0;
-        const circle_animation_duration = Math.max(50,200 - distance_from_initial_random_points*17);
-        const circle_animation_delay = 4*circle_animation_duration;
-        const gridItem_animation_delay = 4*circle_animation_duration;
+        const circle_animation_duration = Math.max(50,200 - distance_from_initial_random_points*22);
+        const circle_animation_delay = 2*circle_animation_duration;
+        const gridItem_animation_delay = 2*circle_animation_duration;
         function createLineBetweenCircles(x1, y1, x2, y2,propagate_to_next_bool=true) {
             // Get the circles and their bounding rects
             const circle1 = getGridItem(x1, y1).querySelector('.circle circle');
@@ -341,7 +416,7 @@
             line.setAttribute("y1", cy1);
             line.setAttribute("x2", cx1);
             line.setAttribute("y2", cy1);
-            line.setAttribute("stroke", "#5e0202");
+            line.setAttribute("stroke", "#141414");
 
             svgLines.appendChild(line);
             //animate the line
@@ -373,7 +448,7 @@
                                 duration: circle_animation_duration,
                                 easing: 'easeInOutBack',
                                 delay: 1000,
-                                duration: 1000,
+                                duration: 500,
                             });
                             // }
                             
@@ -474,7 +549,7 @@
 
     // Function to animate circle expansion
     function animateCircleExpansion(randomX, randomY) {
-        console.log("randomX: ", randomX, "randomY: ", randomY);
+    return new Promise((resolve, reject) => {
         var gridItem = getGridItem(randomX, randomY);
         var circle = createCircle();
         gridItem.appendChild(circle);
@@ -484,47 +559,91 @@
         anime({
             targets: circle,
             r: '20',
-            duration: 1000,
+            duration: 500,
             easing: 'easeInOutBack',
-            complete: function() {
-                propagate_to_next(randomX,randomY);
-                // if (randomY!=numRows) {
-                    anime({
+            complete: () => {
+                propagate_to_next(randomX, randomY);
+                anime({
                     targets: circle,
                     r: '150',
                     easing: 'easeInOutBack',
                     delay: 1000,
-                    duration: 1000,
+                    duration: 500,
+                    complete: () => resolve("done") // Resolve the promise when animation is complete
                 });
             }
-        });}
+        });
+        
+    });
+}
+
+
+
 
         
 
     
-    function launch_loading_anim(n) {
-        for (var i = 0; i < n; i++) {
-            var randomX = Math.floor(Math.random() * numColumns) + 1;
-            var randomY = Math.floor(Math.random() * numRows) + 1;
-            //check if there is already a circle in the grid item
-            if (getGridItem(randomX, randomY).querySelector('.circle') != null) {
-                continue;
-            }
-            animateCircleExpansion(randomX, randomY);
-            
+        function launch_loading_anim(n, callback) {
+    var animationsCompleted = 0;
+    var target=n;        
+    for (var i = 0; i < n; i++) {
+        var randomX = Math.floor(Math.random() * numColumns) + 1;
+        var randomY = Math.floor(Math.random() * numRows) + 1;
+        
+        // Check if there is already a circle in the grid item
+        if (getGridItem(randomX, randomY).querySelector('.circle') != null) {
+            target--;
+            continue;
         }
-
-    
-        gridContainer.appendChild(svgLines);
-
-        // ExpandGrid();
         
+        // Animate circle expansion
+        // console.log(animateCircleExpansion(randomX, randomY));
+        animateCircleExpansion(randomX, randomY).then(() => {
+            animationsCompleted++;
+            if (animationsCompleted === target && typeof callback === 'function') {
+                callback(); // Call the callback function when all animations are completed
+            }
+        });
     }
 
-    // Example usage:
-    window.addEventListener('load', function () {
-        launch_loading_anim(10);
+    gridContainer.appendChild(svgLines);
+}
+
+// Example usage:
+window.addEventListener('load', function () {
+    launch_loading_anim(10, function() {
+        // After the loading animation is complete, animate the header, profile picture, and introduction
+        anime.timeline({
+            easing: 'easeOutExpo',
+            duration: 1000,
+            autoplay: true
+        })
+        .add({
+            targets: '#headerContainer',
+            opacity: [0, 1],
+            translateX: ['-100%', '0']
+        })
+        .add({
+            targets: '#imageContainer',
+            opacity: [0, 1],
+            translateX: ['100%', '0']
+        }, '-=500') // Start this animation 500ms before the previous one ends
+        .add({
+            targets: '#introduction',
+            opacity: [0, 1],
+            translateX: ['-100%', '0']
+        }, '-=500'); // Start this animation 500ms before the previous one ends
+
+        // Animate the appearance of the top and bottom bars
+        setTimeout(function () {
+            document.getElementById('topBarContainer').style.top = '0';
+        }, 1000);
+        setTimeout(function () {
+            document.getElementById('bottomBarContainer').style.bottom = '0';
+        }, 1000);
     });
+});
+
 </script>
 
 </body>
