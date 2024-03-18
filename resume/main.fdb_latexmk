@@ -1,5 +1,5 @@
 # Fdb version 4
-["pdflatex"] 1710717388.77382 "c:/Users/macht/MachtaYassine.github.io/resume/main.tex" "main.pdf" "main" 1710717479.39686 2
+["pdflatex"] 1710804159.55259 "c:/Users/macht/MachtaYassine.github.io/resume/main.tex" "main.pdf" "main" 1710804161.89456 2
   "C:/Users/macht/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map" 1710717462 122551 69f3446fe9ae5d1b957d7877b29c1ac9 ""
   "C:/Users/macht/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/eccc1200.pk" 1710717474 30576 860f5fb61c0914e5ae06b364d6f638f0 ""
   "C:/Users/macht/AppData/Local/MiKTeX/fonts/pk/ljfour/jknappen/ec/dpi600/ecrb0900.pk" 1710717466 20384 23a842eb961b312b4f97ee00540fa053 ""
@@ -129,8 +129,8 @@
   "C:/Users/macht/AppData/Local/Programs/MiKTeX/tex/latex/url/url.sty" 1388490452 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "C:/Users/macht/AppData/Local/Programs/MiKTeX/tex/latex/xcolor/xcolor.sty" 1700127522 55487 80a65caedd3722f4c20a14a69e785d8f ""
   "c:/Users/macht/MachtaYassine.github.io/resume/main.tex" 1710714434 10506 8ad8757ab3ec4220ee3e3ac58f551e91 ""
-  "main.aux" 1710717463 913 c9205f648b221a0721e46981280dc7ab "pdflatex"
-  "main.out" 1710717463 557 9292a144098c66a5139fa3161c018d8c "pdflatex"
+  "main.aux" 1710804161 913 c9205f648b221a0721e46981280dc7ab "pdflatex"
+  "main.out" 1710804161 557 9292a144098c66a5139fa3161c018d8c "pdflatex"
   "main.tex" 1710714434 10506 8ad8757ab3ec4220ee3e3ac58f551e91 ""
   (generated)
   "main.aux"
