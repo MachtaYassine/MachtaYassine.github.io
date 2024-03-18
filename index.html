@@ -19,9 +19,10 @@
         grid-gap: 0px; /* Gap between grid items */
         padding: 0; /* Remove padding */
         width: 100%; /* Take the full width of the viewport */
-        height: 100%; /* Take the full height of the viewport */
-        overflow: hidden; /* Prevent overflow */
-        position: relative; /* Position relative for absolutely positioned children */
+        height: 100%; /* Automatically adjust height based on content */
+        overflow-y: auto; /* Prevent overflow */
+        overflow-x: hidden;
+        position: absolute; /* Position relative for absolutely positioned children */
         grid-template-columns:  repeat(var(--columns), 1fr) ;
         grid-template-rows:  repeat(var(--rows), 1fr)  ;
     }
@@ -32,8 +33,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow-x: hidden;
     position: relative; /* Set position to relative */
-    border: 0px solid transparent; /* Add a thin border */
+    border: 0px solid white; /* Add a thin border */
     }
 
     .circle {
@@ -48,23 +50,45 @@
         color: white; /* Text color */
         font-size: 10px; /* Text font size */
     }
-    /* Style for the header container */
     #headerContainer {
-        position: absolute;
-        top: 2.5%; /* 2% from the top of the viewport */
-        left: 20%; /* 2% from the left of the viewport */
-        display: flex;
-        align-items: center;
-        color: #F89D13; /* Set color to #F89D13 */
-        z-index: 2; /* Ensure it's on top */
-        font-weight: 200;
-        font-size: 2em;
-        overflow: hidden;
-    }
+    position: relative;
+    top: 5px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #F89D13;
+    font-weight: 200;
+    font-size: 2em;
+    z-index: 2; /* Ensure it's on top */
+}
 
-    #imageContainer {
+/* Common styles for both introduction and image */
+#introduction,
+#imageContainer {
+    position: relative;
+    
+    overflow: hidden;
+    z-index: 2; /* Ensure it's on top */
+}
+
+
+
+/* Introduction specific styles */
+#introduction {
+    width: 60%;
+    left: 5%;
+    color: white;
+    padding: 1%;
+    font-weight: 200;
+    font-size: 1.1em;
+}
+
+#imageContainer {
         position: absolute;
-        top: 15%; /* 10% from the top of the viewport */
+        top: 25%; /* 10% from the top of the viewport */
         right: 5%; /* 10% from the right of the viewport */
         width:fit-content; /* 30% of the viewport width */
         height: 70%; /* 70% of the viewport height */
@@ -82,6 +106,37 @@
     object-fit: cover; /* Cover the container while maintaining aspect ratio */
     z-index: 2; /* Ensure it's on top */
     }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    #introduction,
+    #imageContainer {
+        max-width: 95%; /* Occupy full width */
+        min-width: 95%; /* Occupy full width */
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Image container specific styles */
+#imageContainer {
+    top:-5px;
+    left: 1%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto; /* Adjust height as needed */
+    position: relative;
+    overflow-y: auto;
+}
+
+#profilePicture {
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+}
+}
+
 
 
     #topBarContainer {
@@ -143,31 +198,22 @@
 
 
 
-    /* Style for the introduction paragraph */
-    #introduction {
-        position: absolute;
-        top: 140px;
-        left: 5%;
-        width: 65%; /* Adjust width */
-        color: white; /* Set color to white */
-        z-index: 2; /* Ensure it's on top */
-        font-weight: 200;
-        font-size: 1.1em;
-    }
+    
     </style>
 </head>
 <link rel="apple-touch-icon" sizes="180x180" href="/assets/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon-16x16.png">
 <body>
-
+<!-- Grid container for animations -->
+<div class="grid-container" id="gridContainer"></div>
 <!-- Header container -->
 <div id="headerContainer" style="opacity: 0; transform: translateX(-100%);">
     <h1>Yassine Machta</h1> <!-- Your name -->
 </div>
 
 <!-- Image container -->
-<div id="imageContainer" style="opacity: 0; transform: translateX(100%);">
+<div id="imageContainer" style="opacity: 0; transform: translateX(100%); overflow: hidden;">
     <!-- Add your picture here -->
     <img src="assets/photo_ensae.jpg" alt="Your Picture" id="profilePicture">
 </div>
@@ -190,7 +236,7 @@
 
 <!-- Introduction paragraph -->
 <div id="introduction" style="opacity: 0; transform: translateX(-100%);">
-    <h2>Website Presentation</h2>
+    
     <p>
         Hi, this page is part of my personal endeavor to try and learn HTML/CSS and JavaScript Frameworks.  <br>
         <br>
@@ -213,6 +259,9 @@
     - Game development (Small indie project on my side where I try to experiment with my above interest) <br>
     - Finance Research <br>
     - Recommendation Systems <br>
+    <br>
+    <br>
+    <br>
 </div>
 
 
@@ -221,14 +270,41 @@
     <!-- Copyright notice -->
     <p>&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com. FavIcon from favicon.io</p>
 </div>
-<!-- Grid container for animations -->
-<div class="grid-container" id="gridContainer"></div>
+
 
 <script src="https://cdn.lordicon.com/lordicon.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 <script>
     
+
+    window.addEventListener('scroll', function() {
+    var topBarContainer = document.getElementById('topBarContainer');
+    var bottomBarContainer = document.getElementById('bottomBarContainer');
+    var scrollHeight = document.documentElement.scrollHeight;
+    var scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
+    var clientHeight = document.documentElement.clientHeight;
+    // console.log("scrollHeight: ", scrollHeight, "scrollTop: ", scrollTop, "clientHeight: ", clientHeight)
+    
+    // Check if the user has scrolled to the top or if the page is small enough that no scrolling is required
+    if (scrollTop === 0 || clientHeight >= scrollHeight) {
+        topBarContainer.style.top = '0'; // Show the top bar
+    } else {
+        topBarContainer.style.top = '-100px'; // Hide the top bar
+    }
+    
+    // Check if the user has scrolled to the bottom or if the page is small enough that no scrolling is required
+    if (scrollTop + clientHeight >= scrollHeight || clientHeight >= scrollHeight) {
+        bottomBarContainer.style.bottom = '0'; // Show the bottom bar
+    } else {
+        bottomBarContainer.style.bottom = '-100px'; // Hide the bottom bar
+    }
+});
+
+    
+
+
+
     function startAnimation() {
         var icon = document.querySelector('.button-content lord-icon');
         // icon.setAttribute('loop', 'true');
@@ -246,14 +322,27 @@
     }
 
     var numColumns, numRows;
-    var itemWidth = 70; // Set initial width of grid items
-    var itemHeight = 70; // Set initial height of grid items
+    var itemWidth = 100; // Set initial width of grid items
+    var itemHeight = 100; // Set initial height of grid items
     var gridGap = 0; // Gap between grid items
     let gridContainer = document.getElementById('gridContainer');
+    var maxDocumentWidth = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
+    var maxDocumentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
+
+    // Log the maximum document dimensions
+    console.log("Max document width:", maxDocumentWidth);
+    console.log("Max document height:", maxDocumentHeight);
+    console.log("Viewport height:", window.innerHeight);
+    console.log("body height" , document.body.clientHeight)
+    console.log("scroll height ", document.body.scrollHeight, document.documentElement.scrollHeight)
+    document.body.style.height = maxDocumentHeight+ "px";
+    gridContainer.style.height = maxDocumentHeight+ "px";
+    console.log("body height" , document.body.clientHeight)
+    console.log("grid Container height", gridContainer.style.height)
     // Calculate the number of columns and rows based on viewport size and grid item size
-    numColumns = Math.floor((window.innerWidth - 0) / (itemWidth + gridGap));
-    numRows = Math.floor((window.innerHeight - 0) / (itemHeight + gridGap));
-    var numItems = numColumns * numRows; // Calculate total number of items
+    var numColumns = Math.floor((maxDocumentWidth - 0) / (itemWidth + gridGap));
+    var numRows = Math.floor((maxDocumentHeight - 0) / (itemHeight + gridGap));
+    var numItems = numColumns * numRows;
     console.log("numColumns: ", numColumns, "numRows: ", numRows, "numItems: ", numItems);
     gridContainer.innerHTML = ''; // Clear previous items
     gridContainer.style.setProperty("--columns", numColumns);
@@ -261,17 +350,17 @@
     console.log("gridContainer grid-template-value is ", gridContainer.style);
     var svgLines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svgLines.style.position = 'absolute';
-    svgLines.setAttribute("width", window.innerWidth);
-    svgLines.setAttribute("height", window.innerHeight);
+    svgLines.setAttribute("width", maxDocumentWidth + "px");
+    svgLines.setAttribute("height", maxDocumentHeight + "px");
     svgLines.setAttribute("fill", "transparent");
     rect= document.createElementNS("http://www.w3.org/2000/svg", "rect");
     rect.setAttribute("x", 0);
     rect.setAttribute("y", 0);
-    rect.setAttribute("width", window.innerWidth);
-    rect.setAttribute("height", window.innerHeight);
-    rect.setAttribute("border", "white");
+    rect.setAttribute("width", maxDocumentWidth + "px");
+    rect.setAttribute("height", maxDocumentHeight + "px");
+    rect.setAttribute("border", "4px solid white");
     rect.setAttribute("fill", "transparent");
-    // svgLines.appendChild(rect);
+    svgLines.appendChild(rect);
     var drawnLines = {}; // Object to keep track of drawn lines
 
 
@@ -377,14 +466,14 @@
                             // After the circle animation is complete, propagate to the next point
                             propagate_to_next(x2, y2);
                             // if (y2!=numRows) {
-                                anime({
-                                targets: circle.querySelector('circle'),
-                                r: '150',
-                                duration: circle_animation_duration,
-                                easing: 'easeInOutBack',
-                                delay: 1000,
-                                duration: 500,
-                            });
+                                 anime({
+                                 targets: circle.querySelector('circle'),
+                                 r: '150',
+                                 duration: circle_animation_duration,
+                                 easing: 'easeInOutBack',
+                                 delay: 1000,
+                                 duration: 500,
+                             });
                             // }
                             
                         }
@@ -566,14 +655,9 @@ window.addEventListener('load', function () {
             opacity: [0, 1],
             translateX: ['-100%', '0']
         }, '-=500'); // Start this animation 500ms before the previous one ends
-
-        // Animate the appearance of the top and bottom bars
-        setTimeout(function () {
-            document.getElementById('topBarContainer').style.top = '0';
-        }, 1000);
-        setTimeout(function () {
-            document.getElementById('bottomBarContainer').style.bottom = '0';
-        }, 1000);
+    setTimeout(function () {
+        window.dispatchEvent(new Event('scroll'));
+        }, 1000)
     });
 });
 
