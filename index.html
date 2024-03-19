@@ -25,6 +25,7 @@
         position: absolute; /* Position relative for absolutely positioned children */
         grid-template-columns:  repeat(var(--columns), 1fr) ;
         grid-template-rows:  repeat(var(--rows), 1fr)  ;
+        
     }
 
     .grid-item {
@@ -42,6 +43,7 @@
         width: 100%;
         height: 100%;
         fill: #CF3030;
+        z-index: 1;
     }
 
     .coordinates {
@@ -175,18 +177,19 @@
         display: flex;
         align-items: center;
         justify-content: space-between;
-        color: white;
-        background-color: rgba(0, 0, 0, 0.8); /* Set background color with transparency */
+        color: black;
+        background-color: rgba(217, 217, 217,1); /* Set background color with transparency */
         z-index: 2; /* Ensure it's on top */
         transition: bottom 0.5s ease
     }
     #bottomBarContainer p {
         margin: 0; /* Remove default margin */
-        font-weight: 200;
+        font-weight: 1000;
         font-size: 0.8em;
         opacity: 0.5; /* Set opacity for subtle appearance */
         text-align: center;
         flex-grow: 1;
+        color: black;
     }
     #resumeButton {
     display: inline-block;
@@ -289,7 +292,7 @@
 <!-- Bottom bar container -->
 <div id="bottomBarContainer">
     <!-- Copyright notice -->
-    <p>&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com. FavIcon from favicon.io</p>
+    <p style="color: #000000;">&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com. FavIcon from favicon.io</p>
 </div>
 
 
@@ -372,6 +375,7 @@
     svgLines.setAttribute("width", maxDocumentWidth + "px");
     svgLines.setAttribute("height", maxDocumentHeight + "px");
     svgLines.setAttribute("fill", "transparent");
+    svgLines.setAttribute("z-index", "-1")
     rect= document.createElementNS("http://www.w3.org/2000/svg", "rect");
     rect.setAttribute("x", 0);
     rect.setAttribute("y", 0);
@@ -460,6 +464,7 @@
             line.setAttribute("x2", cx1);
             line.setAttribute("y2", cy1);
             line.setAttribute("stroke", "#CF3030");
+           
 
             svgLines.appendChild(line);
             //animate the line
@@ -594,6 +599,12 @@
                 anime({
                     targets: circle,
                     fill: '#141414',
+                    easing: 'easeInOutBack',
+                    delay: 500,
+                    duration: 500,
+                });
+                anime({
+                    targets: circle,
                     r: '150',
                     easing: 'easeInOutBack',
                     delay: 1000,
@@ -641,17 +652,32 @@ document.addEventListener('DOMContentLoaded', function() {
     const gridItems = document.querySelectorAll('.grid-item');
 
     gridItems.forEach(item => {
-        item.addEventListener('click', function(event) {
-            let circle = event.target.querySelector('.circle circle');
+        item.addEventListener('mouseenter', function(event) {
+            console.log("mouse entered grid number ", item.style.gridColumn, item.style.gridRow)
+            let circle = item.querySelector('.circle circle');
             if (circle) {
-                circle.setAttribute('r', '20');
+                console.log("circle is ", circle)
+                anime({
+                    targets: circle,
+                    r: '20',
+                    duration: 500,
+                    easing: 'easeInOutBack'
+                })
             }
         });
 
         item.addEventListener('mouseleave', function(event) {
-            let circle = event.target.querySelector('.circle circle');
+            console.log("mouse left grid number ", item.style.gridColumn, item.style.gridRow)
+            let circle = item.querySelector('.circle circle');
             if (circle) {
-                circle.setAttribute('r', '1.5');
+                console.log("circle is ", circle)
+
+                anime({
+                    targets: circle,
+                    r: '150',
+                    duration: 500,
+                    easing: 'easeInOutBack'
+                })
             }
         });
     });
