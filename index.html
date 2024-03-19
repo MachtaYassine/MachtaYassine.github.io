@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yassine Machta - Draft</title>
+<title>Yassine Machta - Personal page</title>
 <style>
         body, html {
         margin: 0;
@@ -41,7 +41,7 @@
     .circle {
         width: 100%;
         height: 100%;
-        fill: #141414;
+        fill: #CF3030;
     }
 
     .coordinates {
@@ -92,15 +92,17 @@
         right: 5%; /* 10% from the right of the viewport */
         width:fit-content; /* 30% of the viewport width */
         height: 70%; /* 70% of the viewport height */
-        border: 5px solid #F89D13;
+        /* border: 5px solid #F89D13; */
         display: flex; /* Use flexbox */
         align-items: center; 
         justify-content: center; 
         overflow: hidden; 
         z-index: 2; 
+        border: 5px solid #F89D13;
     }
 
     #profilePicture {
+    
     width: auto; /* Auto width */
     height: 100%; /* 100% height */
     object-fit: cover; /* Cover the container while maintaining aspect ratio */
@@ -117,24 +119,35 @@
         align-items: center;
     }
 
-    /* Image container specific styles */
-#imageContainer {
-    top:-5px;
-    left: 1%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    height: auto; /* Adjust height as needed */
-    position: relative;
-    overflow-y: auto;
-}
+        /* Image container specific styles */
+    #imageContainer {
+        border: 0px solid #F89D13;
+        top:-5px;
+        left: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        height: auto; /* Adjust height as needed */
+        position: relative;
+        overflow-y: auto;
+    }
 
 #profilePicture {
+    border: 5px solid #F89D13;
     height: auto;
-    max-width: 100%;
+    max-width:50%;
     object-fit: contain;
 }
+
+    #introduction {
+        width: 60%;
+        left: 5%;
+        color: white;
+        padding: 0;
+        font-weight: 200;
+        font-size: 1.1em;
+    }
 }
 
 
@@ -170,7 +183,7 @@
     #bottomBarContainer p {
         margin: 0; /* Remove default margin */
         font-weight: 200;
-        font-size: 0.6em;
+        font-size: 0.8em;
         opacity: 0.5; /* Set opacity for subtle appearance */
         text-align: center;
         flex-grow: 1;
@@ -241,24 +254,32 @@
         Hi, this page is part of my personal endeavor to try and learn HTML/CSS and JavaScript Frameworks.  <br>
         <br>
         As a wannabe aspiring researcher I will also be using it to introduce myself, present my interests, and showcase my work. <br>
-        <span style="color: #F89D13; font-weight: bold;">This page is incomplete.</span> Feel free to come back in the future to see the progress. Doesn't look like much now, but it's honest work!
+        🚧<span style="color: #F89D13; font-weight: bold;">This page is incomplete.</span>🚧 Feel free to come back in the future to see the progress. Doesn't look like much now, but it's honest work!
     </p>
     
 
-    <h2>About me</h2>
+    <h2 style="color : #CF3030; font-weight: bold;">About me</h2>
     I am currenty on a gap year between my 2nd and 3rd year of the ENSAE Paris. (Masters 1 and 2). <br>
     I am interested in improving my skills and knowledge in programming, but also proabiblity and statistics. <br>
     If you wish to know more about me, feel free to take a look at my resume attached to the bar above. <br>
-    <h2>Research Statement</h2>
+    <h2 style="color : #CF3030; font-weight: bold;">Research Statement</h2>
 
-    Right now I am attempting to get acquainted with as many research fields as possible in order to better narrow my focus. <br>
+    Currently, I am attempting to get acquainted with as many research fields as possible in order to better narrow my focus for my PhD applications. <br>
     My interests are : <br>
-    - AI in Healthcare  <br>
-    - Visual Computing  <br>
+    - AI in Healthcare ✅  <br>
+    - Visual Computing 🔄 (In progress)  <br>
     - Agent decision making, in Robotics but preferrably Game AI <br>
-    - Game development (Small indie project on my side where I try to experiment with my above interest) <br>
-    - Finance Research <br>
-    - Recommendation Systems <br>
+    - Game development (🔄 Small indie project on my side where I plan to experiment with my above interest) <br>
+    <div>
+        - Subjects to pursue out of curiosity and to avoid regretting not pursuing them: <br>
+        <div style="text-indent: 20px;">
+            - Recommendation Systems <br>
+        </div>
+        <div style="text-indent: 20px;">
+            - Finance research <br>
+        </div>
+    </div>
+    
     <br>
     <br>
     <br>
@@ -284,7 +305,6 @@
     var scrollHeight = document.documentElement.scrollHeight;
     var scrollTop = window.scrollY || window.pageYOffset || document.documentElement.scrollTop;
     var clientHeight = document.documentElement.clientHeight;
-    // console.log("scrollHeight: ", scrollHeight, "scrollTop: ", scrollTop, "clientHeight: ", clientHeight)
     
     // Check if the user has scrolled to the top or if the page is small enough that no scrolling is required
     if (scrollTop === 0 || clientHeight >= scrollHeight) {
@@ -294,7 +314,7 @@
     }
     
     // Check if the user has scrolled to the bottom or if the page is small enough that no scrolling is required
-    if (scrollTop + clientHeight >= scrollHeight || clientHeight >= scrollHeight) {
+    if (scrollTop + clientHeight >= scrollHeight*0.9 || clientHeight >= scrollHeight*0.9) {
         bottomBarContainer.style.bottom = '0'; // Show the bottom bar
     } else {
         bottomBarContainer.style.bottom = '-100px'; // Hide the bottom bar
@@ -310,7 +330,7 @@
         // icon.setAttribute('loop', 'true');
         icon.playerInstance.play();
         icon.playerInstance.direction *= -1;
-        console.log('start animation')
+        // console.log('start animation')
     }
 
     function stopAnimation() {
@@ -322,32 +342,31 @@
     }
 
     var numColumns, numRows;
-    var itemWidth = 100; // Set initial width of grid items
-    var itemHeight = 100; // Set initial height of grid items
-    var gridGap = 0; // Gap between grid items
-    let gridContainer = document.getElementById('gridContainer');
     var maxDocumentWidth = Math.max(document.body.scrollWidth, document.documentElement.scrollWidth, document.body.offsetWidth, document.documentElement.offsetWidth, document.body.clientWidth, document.documentElement.clientWidth);
     var maxDocumentHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight, document.body.offsetHeight, document.documentElement.offsetHeight, document.body.clientHeight, document.documentElement.clientHeight);
 
+    var itemWidth = Math.max(maxDocumentHeight,maxDocumentWidth)/20; // Set initial width of grid items
+    var itemHeight = itemWidth; // Set initial height of grid items
+    var gridGap = 0; // Gap between grid items
+    let gridContainer = document.getElementById('gridContainer');
+    
     // Log the maximum document dimensions
-    console.log("Max document width:", maxDocumentWidth);
-    console.log("Max document height:", maxDocumentHeight);
-    console.log("Viewport height:", window.innerHeight);
-    console.log("body height" , document.body.clientHeight)
-    console.log("scroll height ", document.body.scrollHeight, document.documentElement.scrollHeight)
+    // console.log("Max document width:", maxDocumentWidth);
+    // console.log("Max document height:", maxDocumentHeight);
+    // console.log("Viewport height:", window.innerHeight);
+    // console.log("body height" , document.body.clientHeight)
+    // console.log("scroll height ", document.body.scrollHeight, document.documentElement.scrollHeight)
     document.body.style.height = maxDocumentHeight+ "px";
     gridContainer.style.height = maxDocumentHeight+ "px";
-    console.log("body height" , document.body.clientHeight)
-    console.log("grid Container height", gridContainer.style.height)
+    // console.log("body height" , document.body.clientHeight)
+    // console.log("grid Container height", gridContainer.style.height)
     // Calculate the number of columns and rows based on viewport size and grid item size
     var numColumns = Math.floor((maxDocumentWidth - 0) / (itemWidth + gridGap));
     var numRows = Math.floor((maxDocumentHeight - 0) / (itemHeight + gridGap));
     var numItems = numColumns * numRows;
-    console.log("numColumns: ", numColumns, "numRows: ", numRows, "numItems: ", numItems);
     gridContainer.innerHTML = ''; // Clear previous items
     gridContainer.style.setProperty("--columns", numColumns);
     gridContainer.style.setProperty("--rows", numRows);
-    console.log("gridContainer grid-template-value is ", gridContainer.style);
     var svgLines = document.createElementNS("http://www.w3.org/2000/svg", "svg");
     svgLines.style.position = 'absolute';
     svgLines.setAttribute("width", maxDocumentWidth + "px");
@@ -435,12 +454,12 @@
             const cy2 = circle2Rect.top + circle2Rect.height / 2;
 
             // Create the SVG line element
-            const line = document.createElementNS("http://www.w3.org/2000/svg", "line");
+            var line = document.createElementNS("http://www.w3.org/2000/svg", "line");
             line.setAttribute("x1", cx1);
             line.setAttribute("y1", cy1);
             line.setAttribute("x2", cx1);
             line.setAttribute("y2", cy1);
-            line.setAttribute("stroke", "#141414");
+            line.setAttribute("stroke", "#CF3030");
 
             svgLines.appendChild(line);
             //animate the line
@@ -448,32 +467,44 @@
                 targets: line,
                 x2: cx2,
                 y2: cy2,
-                duration: circle_animation_duration+ Math.random()*3*circle_animation_duration -(3*circle_animation_duration/2),
+                duration: circle_animation_duration*1.2+ Math.random()*3*circle_animation_duration -(3*circle_animation_duration/2),
                 easing: 'linear',
                 complete: function () {
+                    anime({
+                            targets: line,
+                            stroke: '#141414',
+                            duration: circle_animation_duration*1.2+ Math.random()*3*circle_animation_duration -(3*circle_animation_duration/2),
+                            delay: 500,
+                        })
                     if (propagate_to_next_bool) {
                         // Once the line animation is complete, create and animate the circle
-                    // console.log("x2: ", x2, "y2: ", y2);
                     var gridItem = getGridItem(x2, y2);
                     var circle = gridItem.querySelector('.circle');
-                    
                     anime({
                         targets: circle.querySelector('circle'),
                         r: '20',
                         duration: circle_animation_duration,
                         easing: 'easeInOutSine',
                         complete: function () {
+                            anime({
+                                 targets: circle.querySelector('circle'),
+                                 fill: circle_color,
+                                 easing: 'easeInOutBack',
+                                 delay: 500,
+                                 duration: 500,
+                             });
                             // After the circle animation is complete, propagate to the next point
                             propagate_to_next(x2, y2);
                             // if (y2!=numRows) {
                                  anime({
                                  targets: circle.querySelector('circle'),
                                  r: '150',
-                                 duration: circle_animation_duration,
                                  easing: 'easeInOutBack',
                                  delay: 1000,
                                  duration: 500,
                              });
+
+                            
                             // }
                             
                         }
@@ -499,7 +530,6 @@
             return;
             }
 
-            // console.log("   propagating to ", newX, newY);
 
             // Create circle and animate its expansion
             var gridItem = getGridItem(newX, newY);
@@ -563,6 +593,7 @@
                 propagate_to_next(randomX, randomY);
                 anime({
                     targets: circle,
+                    fill: '#141414',
                     r: '150',
                     easing: 'easeInOutBack',
                     delay: 1000,
@@ -595,7 +626,6 @@
         }
         
         // Animate circle expansion
-        // console.log(animateCircleExpansion(randomX, randomY));
         animateCircleExpansion(randomX, randomY).then(() => {
             animationsCompleted++;
             if (animationsCompleted === target && typeof callback === 'function') {
