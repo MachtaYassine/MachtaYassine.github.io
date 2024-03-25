@@ -188,7 +188,6 @@
         margin: 0; /* Remove default margin */
         font-weight: 1000;
         font-size: 0.8em;
-        opacity: 0.5; /* Set opacity for subtle appearance */
         text-align: center;
         flex-grow: 1;
         color: black;
@@ -253,42 +252,58 @@
 </div>
 
 <!-- Introduction paragraph -->
-<div id="introduction" style="opacity: 0; transform: translateX(-100%);">
-    
-    <p>
-        Hi, this page is part of my personal endeavor to try and learn HTML/CSS and JavaScript Frameworks.  <br>
-        <br>
-        As a wannabe aspiring researcher I will also be using it to introduce myself, present my interests, and showcase my work. <br>
-        🚧<span style="color: #F89D13; font-weight: bold;">This page is incomplete.</span>🚧 Feel free to come back in the future to see the progress. Doesn't look like much now, but it's honest work!
-    </p>
-    
-
-    <h2 style="color : #CF3030; font-weight: bold;">About me</h2>
-    I am currenty on a gap year between my 2nd and 3rd year of the ENSAE Paris. (Masters 1 and 2). <br>
-    I am interested in improving my skills and knowledge in programming, but also proabiblity and statistics. <br>
-    If you wish to know more about me, feel free to take a look at my resume attached to the bar above. <br>
-    <h2 style="color : #CF3030; font-weight: bold;">Research Statement</h2>
-
-    Currently, I am attempting to get acquainted with as many research fields as possible in order to better narrow my focus for my PhD applications. <br>
-    My interests are : <br>
-    - AI in Healthcare ✅  <br>
-    - Visual Computing 🔄 (In progress)  <br>
-    - Agent decision making, in Robotics but preferrably Game AI <br>
-    - Game development (🔄 Small indie project on my side where I plan to experiment with my above interest) <br>
-    <div>
-        - Subjects to pursue out of curiosity and to avoid regretting not pursuing them: <br>
-        <div style="text-indent: 20px;">
-            - Recommendation Systems <br>
-        </div>
-        <div style="text-indent: 20px;">
-            - Finance research <br>
-        </div>
+<div id="introduction" style="opacity: 0; transform: translateX(-100%);">  
+    <div>        
+        <p>
+            Hi, this page is part of my personal endeavor to try and learn HTML/CSS and JavaScript Frameworks.
+            <br>
+            <br>
+            As an aspiring researcher, I will also be using it to introduce myself, present my interests, and showcase my work.
+            <br>
+            🚧<span style="color: #F89D13; font-weight: bold;">This page is incomplete.</span>🚧 Feel free to come back in the future to see the progress: from technical work to a better color palette hopefully 🤞. Doesn't look like much now, but it's honest work.
+        </p>
     </div>
-    
-    <br>
-    <br>
-    <br>
+
+
+    <div>
+        <h2 style="color: #CF3030; font-weight: bold;">About me</h2>
+        <p>
+            I am currently on a gap year between my 2nd and 3rd year at ENSAE Paris. (Masters 1 and 2).
+            <br>
+            I am interested in improving my skills and knowledge in programming, but also probability and statistics.
+            <br>
+            If you wish to know more about me, feel free to take a look at my resume attached to the bar above.
+        </p>
+    </div>
+
+    <div>
+        <h2 style="color: #CF3030; font-weight: bold;">Research Statement</h2>
+        <p>
+            Currently, I am attempting to get acquainted with as many research fields as possible in order to better narrow my focus for my PhD applications.
+            <br>
+            My interests are:
+        </p>
+        <ul>
+            <li>AI in Healthcare ✅</li>
+            <li>Visual Computing 🔄 (In progress)</li>
+            <li>Agent decision making: Reinforcement learning for Robotics or Game AI</li>
+            <li>Game development (🔄 Small indie project on my side where I plan to experiment with my above interests)</li>
+            <li>Subjects to pursue out of curiosity and to avoid regrets:
+                <ul>
+                    <li>Recommendation Systems</li>
+                    <li>AI research in Finance </li>
+                </ul></li>
+        </ul>       
+    </div>
+    <div>
+        <h2 style="color: #CF3030; font-weight: bold;">Current objectives</h2>
+        <p>
+            I am seeking a 3 month internship this Summer in Tunis (July-September). Or a 2 month internship in Paris (August-September) and maybe beyond as I am also interested by work study programs for my 3rd Year at ENSAE. 
+             
+        </p>
+    </div>
 </div>
+
 
 
 <!-- Bottom bar container -->
@@ -650,40 +665,40 @@
     gridContainer.appendChild(svgLines);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-    const gridItems = document.querySelectorAll('.grid-item');
+// document.addEventListener('DOMContentLoaded', function() {
+//     const gridItems = document.querySelectorAll('.grid-item');
 
-    gridItems.forEach(item => {
-        item.addEventListener('mouseenter', function(event) {
-            console.log("mouse entered grid number ", item.style.gridColumn, item.style.gridRow)
-            let circle = item.querySelector('.circle circle');
-            if (circle) {
-                console.log("circle is ", circle)
-                anime({
-                    targets: circle,
-                    r: '20',
-                    duration: 500,
-                    easing: 'easeInOutBack'
-                })
-            }
-        });
+//     gridItems.forEach(item => {
+//         item.addEventListener('mouseenter', function(event) {
+//             console.log("mouse entered grid number ", item.style.gridColumn, item.style.gridRow)
+//             let circle = item.querySelector('.circle circle');
+//             if (circle) {
+//                 console.log("circle is ", circle)
+//                 anime({
+//                     targets: circle,
+//                     r: '20',
+//                     duration: 500,
+//                     easing: 'easeInOutBack'
+//                 })
+//             }
+//         });
 
-        item.addEventListener('mouseleave', function(event) {
-            console.log("mouse left grid number ", item.style.gridColumn, item.style.gridRow)
-            let circle = item.querySelector('.circle circle');
-            if (circle) {
-                console.log("circle is ", circle)
+//         item.addEventListener('mouseleave', function(event) {
+//             console.log("mouse left grid number ", item.style.gridColumn, item.style.gridRow)
+//             let circle = item.querySelector('.circle circle');
+//             if (circle) {
+//                 console.log("circle is ", circle)
 
-                anime({
-                    targets: circle,
-                    r: '150',
-                    duration: 500,
-                    easing: 'easeInOutBack'
-                })
-            }
-        });
-    });
-});
+//                 anime({
+//                     targets: circle,
+//                     r: '150',
+//                     duration: 500,
+//                     easing: 'easeInOutBack'
+//                 })
+//             }
+//         });
+//     });
+// });
 
 
 
