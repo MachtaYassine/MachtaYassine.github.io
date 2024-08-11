@@ -13,15 +13,135 @@
     <script src="build/build.js"></script>
     <link rel="shortcut icon" href="https://p5js.org/assets/img/favicon.ico" />
     <link rel="icon" href="https://p5js.org/assets/img/favicon.ico" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <style>
       * {
         padding: 0px;
         margin: 0px;
       }
+      #canvas-container {
+      position: absolute;
+      z-index: 0;
+      }
+      #navbar {
+            position: relative;
+            z-index: 1; /* Ensure navbar is above the canvas */
+        }
+         /* Style for the introduction div */
+         #introduction {
+            opacity: 0;
+            z-index: 1;
+        }
+
+        /* Style for the about me section */
+        #aboutMe h2 {
+            color: #CF3030;
+            font-weight: bold;
+            z-index: 1; 
+        }
+
+        /* Style for the research statement section */
+        #researchStatement h2 {
+            color: #CF3030;
+            font-weight: bold;
+            z-index:  1;
+        }
+
+        /* Style for the current objectives section */
+        #currentObjectives h2 {
+            color: #CF3030;
+            font-weight: bold;
+            z-index: 1;
+        }
+
+        /* Style for the bottom bar container */
+        #bottomBarContainer p {
+            color: #000000;
+            z-index: 1;
+        }
     </style>
     <script></script>
   </head>
 
-  <body></body>
+  <body>
+    <div id="canvas-container">
+      <!-- p5.js canvas will be inserted here -->
+  </div>
+  
+
+  <header id="navbar" class="text-white py-2 bg-gray-900 fixed w-full top-0 z-10">
+    <div class="container mx-auto flex justify-between items-center">
+        <!-- Logo -->
+        <div class="text-xl font-bold">Logo</div>
+        
+        <!-- Navigation Links -->
+        <nav>
+            <ul class="flex space-x-4">
+                <li><a href="#" class="hover:text-gray-300">Home</a></li>
+                <li><a href="#" class="hover:text-gray-300">About</a></li>
+                <li><a href="#" class="hover:text-gray-300">Services</a></li>
+                <!-- Add more links as needed -->
+            </ul>
+        </nav>
+    </div>
+    <div id="introduction" class="container mx-auto py-8 px-4">
+      <div>
+          <p class="mb-4">
+              Hi, this page is part of my personal endeavor to try and learn HTML/CSS and JavaScript Frameworks.
+              <br>
+              <br>
+              As an aspiring researcher, I will also be using it to introduce myself, present my interests, and showcase my work.
+              <br>
+              🚧<span class="text-orange-500 font-bold">This page is incomplete.</span>🚧 Feel free to come back in the future to see the progress: from technical work to a better color palette hopefully 🤞. Doesn't look like much now, but it's honest work.
+          </p>
+      </div>
+  
+      <div id="aboutMe" class="mb-4">
+          <h2>About me</h2>
+          <p class="mb-2">
+              I am currently on a gap year between my 2nd and 3rd year at ENSAE Paris. (Masters 1 and 2).
+              <br>
+              I am interested in improving my skills and knowledge in programming, but also probability and statistics.
+              <br>
+              If you wish to know more about me, feel free to take a look at my resume attached to the bar above.
+          </p>
+      </div>
+  
+      <div id="researchStatement" class="mb-4">
+          <h2>Research Statement</h2>
+          <p class="mb-2">
+              Currently, I am attempting to get acquainted with as many research fields as possible in order to better narrow my focus for my PhD applications.
+              <br>
+              My interests are:
+          </p>
+          <ul class="list-disc ml-6 mb-2">
+              <li>AI in Healthcare ✅</li>
+              <li>Visual Computing 🔄 (In progress)</li>
+              <li>Agent decision making: Reinforcement learning for Robotics or Game AI</li>
+              <li>Game development (🔄 Small indie project on my side where I plan to experiment with my above interests)</li>
+              <li>Subjects to pursue out of curiosity and to avoid regrets:
+                  <ul class="list-disc ml-6">
+                      <li>Recommendation Systems</li>
+                      <li>AI research in Finance</li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+  
+      <div id="currentObjectives" class="mb-8">
+          <h2>Current objectives</h2>
+          <p>
+              I am seeking a 3-month internship this Summer in Tunis (July-September). Or a 2-month internship in Paris (August-September) and maybe beyond as I am also interested by work-study programs for my 3rd Year at ENSAE.
+          </p>
+      </div>
+  </div>
+  
+  <!-- Bottom bar container -->
+  <div id="bottomBarContainer" class="bg-gray-200 py-4 px-4 text-center">
+      <!-- Copyright notice -->
+      <p>&copy; 2024 Yassine Machta. All rights reserved. Icons are from lordicon.com. FavIcon from favicon.io</p>
+  </div>
+</header>
+  </body>
 </html>

@@ -1,66 +1,174 @@
-var ColorHelper = (function () {
-    function ColorHelper() {
+function convergeTo(x, target, step) {
+    if (step > 0) {
+        if (x < target) {
+            x += step;
+        }
+        else {
+            x = target;
+        }
     }
-    ColorHelper.getColorVector = function (c) {
-        return createVector(red(c), green(c), blue(c));
+    else {
+        if (x > target) {
+            x += step;
+        }
+        else {
+            x = target;
+        }
+    }
+    return x;
+}
+var Circle = (function () {
+    function Circle(x, y, inter_radius, parent) {
+        this.initial_radius = 0;
+        this.circle_width = 0;
+        this.circle_height = 0;
+        this.circle_radius = 0;
+        this.propagated = false;
+        this.finished_growing_circle = false;
+        this.radius_increase = random(3, 6);
+        this.toggle_rect_mode = false;
+        this.baseColor = color(153, 0, 0);
+        this.Color = this.baseColor;
+        this.mouseOverQueue = -1;
+        this.TargetColor = color(128, 0, 0);
+        this.position = createVector(x, y);
+        this.intermediate_radius = inter_radius;
+        this.circle_radius = this.initial_radius;
+        this.circle_height = this.circle_radius;
+        this.circle_width = this.circle_radius;
+        this.velocity = createVector(0, 0);
+        this.parent = parent;
+        this.Neighbors = null;
+        this.SpecialNeighbors = null;
+        this.circle_type = (this.parent.j === 0) ? 'top' : (this.parent.j === numRows - 1) ? 'bottom' : "inner";
+    }
+    Circle.prototype.getNeighbours = function () {
+        var neighbours = [];
+        var special_neighbors = [];
+        for (var i = -1; i < 2; i++) {
+            for (var j = -1; j < 2; j++) {
+                if (i === 0 && j === 0)
+                    continue;
+                if (this.parent.i + i >= 0 &&
+                    this.parent.j + j >= 0 &&
+                    this.parent.i + i < numColumns &&
+                    this.parent.j + j < numRows) {
+                    neighbours.push(get_element(this.parent.i + i, this.parent.j + j).circle);
+                }
+                else {
+                    special_neighbors.push(get_element(positiveModulo(this.parent.i + i, numColumns), positiveModulo(this.parent.j + j, numRows)).circle);
+                }
+            }
+        }
+        this.Neighbors = neighbours;
+        this.SpecialNeighbors = special_neighbors;
     };
-    ColorHelper.rainbowColorBase = function () {
-        return [
-            color('red'),
-            color('orange'),
-            color('yellow'),
-            color('green'),
-            color(38, 58, 150),
-            color('indigo'),
-            color('violet')
-        ];
-    };
-    ColorHelper.getColorsArray = function (total, baseColorArray) {
+    Circle.prototype.propagate_while_creating_lines_to_neighbours = function () {
         var _this = this;
-        if (baseColorArray === void 0) { baseColorArray = null; }
-        if (baseColorArray == null) {
-            baseColorArray = ColorHelper.rainbowColorBase();
+        if (!this.Neighbors) {
+            this.getNeighbours();
         }
-        var rainbowColors = baseColorArray.map(function (x) { return _this.getColorVector(x); });
-        ;
-        var colours = new Array();
-        for (var i = 0; i < total; i++) {
-            var colorPosition = i / total;
-            var scaledColorPosition = colorPosition * (rainbowColors.length - 1);
-            var colorIndex = Math.floor(scaledColorPosition);
-            var colorPercentage = scaledColorPosition - colorIndex;
-            var nameColor = this.getColorByPercentage(rainbowColors[colorIndex], rainbowColors[colorIndex + 1], colorPercentage);
-            colours.push(color(nameColor.x, nameColor.y, nameColor.z));
+        this.propagated = true;
+        this.Neighbors.forEach(function (neighbour) {
+            if (!neighbour.propagated) {
+                lineList.push(new Line(_this, neighbour));
+            }
+        });
+        this.SpecialNeighbors.forEach(function (neighbour) {
+            if (!neighbour.propagated) {
+                lineList.push(new SpecialLine(_this, neighbour));
+            }
+        });
+    };
+    Circle.prototype.display = function () {
+        if (this.toggle_rect_mode) {
+            this.update_when_rect();
+            noStroke();
         }
-        return colours;
+        else {
+            this.update_when_circle();
+            this.checkEdges();
+        }
+        this.handleMouseOver();
+        this.handleMovement();
+        fill(this.Color);
+        rect(this.position.x - this.circle_radius / 2, this.position.y - this.circle_radius / 2, this.circle_width, this.circle_height, this.circle_radius);
     };
-    ColorHelper.getColorByPercentage = function (firstColor, secondColor, percentage) {
-        var firstColorCopy = firstColor.copy();
-        var secondColorCopy = secondColor.copy();
-        var deltaColor = secondColorCopy.sub(firstColorCopy);
-        var scaledDeltaColor = deltaColor.mult(percentage);
-        return firstColorCopy.add(scaledDeltaColor);
+    Circle.prototype.handleMovement = function () {
+        if (!this.toggle_rect_mode) {
+            this.position.add(this.velocity);
+        }
     };
-    return ColorHelper;
+    Circle.prototype.update_when_circle = function () {
+        if (this.circle_radius < this.intermediate_radius && this.propagated) {
+            this.circle_radius += this.radius_increase;
+            this.circle_height = this.circle_radius;
+            this.circle_width = this.circle_radius;
+        }
+        if (this.circle_radius > this.intermediate_radius) {
+            this.finished_growing_circle = true;
+            growing_circle_counter += 1;
+            this.circle_radius = this.intermediate_radius;
+            this.circle_height = this.circle_radius;
+            this.circle_width = this.circle_radius;
+        }
+    };
+    Circle.prototype.update_when_rect = function () {
+        this.circle_width = convergeTo(this.circle_width, this.parent.width + 5, this.radius_increase);
+        this.circle_height = convergeTo(this.circle_height, this.parent.height + 5, this.radius_increase);
+        this.circle_radius = max(convergeTo(this.circle_radius, 0, -this.radius_increase), 0);
+        this.position.x = constrain(convergeTo(this.position.x, this.parent.x, -this.radius_increase), 0, viewportWidth);
+        this.position.y = constrain(convergeTo(this.position.y, this.parent.y, -this.radius_increase), 0, viewportHeight);
+    };
+    Circle.prototype.checkEdges = function () {
+        if (this.position.x >
+            this.parent.x + this.parent.width - this.intermediate_radius / 2 ||
+            this.position.x < this.parent.x + this.intermediate_radius / 2) {
+            this.position.x = (this.position.x >
+                this.parent.x + this.parent.width - this.intermediate_radius / 2 ? this.parent.x + this.parent.width - this.intermediate_radius / 2 - 0.1 : this.parent.x + this.intermediate_radius / 2 + 0.1);
+            this.velocity.x =
+                0 *
+                    (this.position.x < this.parent.x + this.intermediate_radius / 2 ? 1 : -1);
+        }
+        if (this.position.y >
+            this.parent.y + this.parent.height - this.intermediate_radius / 2 ||
+            this.position.y < this.parent.y + this.intermediate_radius / 2) {
+            this.position.y = (this.position.y >
+                this.parent.y + this.parent.height - this.intermediate_radius / 2 ? this.parent.y + this.parent.height - this.intermediate_radius / 2 : this.parent.y + this.intermediate_radius / 2);
+            this.velocity.y =
+                0 *
+                    (this.position.y < this.parent.y + this.intermediate_radius / 2 ? 1 : -1);
+        }
+    };
+    Circle.prototype.handleMouseOver = function () {
+        if (this.mouseOverQueue > -1) {
+            var distanceFromCounter = (gradientTrailCounter - this.mouseOverQueue + maxGradientColors) % maxGradientColors;
+            this.Color = lerpColor(this.TargetColor, this.baseColor, distanceFromCounter / maxGradientColors);
+        }
+        else {
+            this.Color = this.baseColor;
+        }
+    };
+    return Circle;
 }());
-var PolygonHelper = (function () {
-    function PolygonHelper() {
+document.addEventListener("wheel", function (event) {
+    var wheelTimer;
+    clearTimeout(wheelTimer);
+    if (tile_array[0][0].circle.velocity.mag() <= 1) {
+        tile_array.forEach(function (row) {
+            row.forEach(function (rectangle) {
+                rectangle.circle.velocity = createVector(random(-1, 1), random(-1, 1)).mult(3);
+            });
+        });
     }
-    PolygonHelper.draw = function (numberOfSides, width) {
-        push();
-        var angle = TWO_PI / numberOfSides;
-        var radius = width / 2;
-        beginShape();
-        for (var a = 0; a < TWO_PI; a += angle) {
-            var sx = cos(a) * radius;
-            var sy = sin(a) * radius;
-            vertex(sx, sy);
-        }
-        endShape(CLOSE);
-        pop();
-    };
-    return PolygonHelper;
-}());
+    wheelTimer = setTimeout(function () {
+        tile_array.forEach(function (row) {
+            row.forEach(function (rectangle) {
+                rectangle.circle.velocity = createVector(0, 0);
+            });
+        });
+    }, 150);
+});
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = function (d, b) {
         extendStatics = Object.setPrototypeOf ||
@@ -74,30 +182,6 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-var viewportWidth = window.innerWidth;
-var viewportHeight = window.innerHeight;
-var number_of_circle = Math.floor(Math.random() * 10) + 10;
-var itemWidth = viewportWidth / number_of_circle;
-var itemHeight = viewportHeight / number_of_circle;
-var haflWidth = itemWidth / 2;
-var halfHeight = itemHeight / 2;
-var gap = Math.min(itemWidth, itemHeight) * 0.4;
-var factor = 0.4;
-var numColumns = Math.floor((viewportWidth - 0) / itemWidth);
-var numRows = Math.floor((viewportHeight - 0) / itemHeight);
-var number_initial_points = Math.floor(numColumns * numRows * Math.random() * 0.2) + 1;
-var tile_array = [];
-var lineList = [];
-function get_element(x, y) {
-    return tile_array[y][x];
-}
-function positiveModulo(dividend, divisor) {
-    var remainder = dividend % divisor;
-    if (remainder < 0) {
-        remainder += divisor;
-    }
-    return remainder;
-}
 function findIntersection(point1, point2, point3, point4) {
     if (point1.x === point2.x) {
         if (point3.x === point4.x) {
@@ -135,7 +219,7 @@ var Line = (function () {
         this.end = end;
         this.drawn_end = createVector(start.position.x, start.position.y);
         this.step = 0.0;
-        this.step_increase = random(0.075, 0.125);
+        this.step_increase = random(0.15, 0.2);
     }
     Line.prototype.display = function () {
         this.update();
@@ -146,7 +230,7 @@ var Line = (function () {
             this.delay -= 1 / 60;
         }
         if (this.step < 1) {
-            if (this.start.finished_growing && this.delay <= 0) {
+            if (this.start.finished_growing_circle && this.delay <= 0) {
                 this.step += this.step_increase;
             }
             this.drawn_end = p5.Vector.lerp(this.start.position, this.end.position, this.step);
@@ -281,7 +365,7 @@ var SpecialLine = (function (_super) {
             this.delay -= 1 / 60;
         }
         if (this.step_1 < 1) {
-            if (this.start.finished_growing && this.delay <= 0) {
+            if (this.start.finished_growing_circle && this.delay <= 0) {
                 this.step_1 += this.step_increase;
             }
             this.drawn_end_1 = p5.Vector.lerp(this.start.position, this.inter_point_1, this.step_1);
@@ -310,114 +394,6 @@ var SpecialLine = (function (_super) {
     };
     return SpecialLine;
 }(Line));
-var Circle = (function () {
-    function Circle(x, y, inter_radius, parent) {
-        this.initial_radius = 0;
-        this.propagated = false;
-        this.finished_growing = false;
-        this.radius_increase = random(2, 5);
-        this.position = createVector(x, y);
-        this.inter_radius = inter_radius;
-        this.radius = this.initial_radius;
-        this.velocity = createVector(0, 0);
-        this.parent = parent;
-        this.Neighbors = null;
-        this.SpecialNeighbors = null;
-    }
-    Circle.prototype.getNeighbours = function () {
-        var neighbours = [];
-        var special_neighbors = [];
-        for (var i = -1; i < 2; i++) {
-            for (var j = -1; j < 2; j++) {
-                if (i === 0 && j === 0)
-                    continue;
-                if (this.parent.i + i >= 0 &&
-                    this.parent.j + j >= 0 &&
-                    this.parent.i + i < numColumns &&
-                    this.parent.j + j < numRows) {
-                    neighbours.push(get_element(this.parent.i + i, this.parent.j + j).circle);
-                }
-                else {
-                    special_neighbors.push(get_element(positiveModulo(this.parent.i + i, numColumns), positiveModulo(this.parent.j + j, numRows)).circle);
-                }
-            }
-        }
-        this.Neighbors = neighbours;
-        this.SpecialNeighbors = special_neighbors;
-    };
-    Circle.prototype.propagate_while_creating_lines_to_neighbours = function () {
-        var _this = this;
-        if (!this.Neighbors) {
-            this.getNeighbours();
-        }
-        this.propagated = true;
-        this.Neighbors.forEach(function (neighbour) {
-            if (!neighbour.propagated) {
-                lineList.push(new Line(_this, neighbour));
-            }
-        });
-        this.SpecialNeighbors.forEach(function (neighbour) {
-            if (!neighbour.propagated) {
-                lineList.push(new SpecialLine(_this, neighbour));
-            }
-        });
-    };
-    Circle.prototype.display = function () {
-        this.update();
-        circle(this.position.x, this.position.y, this.radius);
-    };
-    Circle.prototype.update = function () {
-        if (this.radius < this.inter_radius && this.propagated) {
-            this.radius += this.radius_increase;
-        }
-        if (this.radius > this.inter_radius) {
-            this.finished_growing = true;
-            this.radius = this.inter_radius;
-        }
-        this.position.add(this.velocity);
-        this.checkEdges();
-    };
-    Circle.prototype.checkEdges = function () {
-        if (this.position.x >
-            this.parent.x + this.parent.width - this.inter_radius / 2 ||
-            this.position.x < this.parent.x + this.inter_radius / 2) {
-            this.position.x = (this.position.x >
-                this.parent.x + this.parent.width - this.inter_radius / 2 ? this.parent.x + this.parent.width - this.inter_radius / 2 : this.parent.x + this.inter_radius / 2);
-            this.velocity.x =
-                random(0, 1) *
-                    (this.position.x < this.parent.x + this.inter_radius / 2 ? 1 : -1);
-        }
-        if (this.position.y >
-            this.parent.y + this.parent.height - this.inter_radius / 2 ||
-            this.position.y < this.parent.y + this.inter_radius / 2) {
-            this.position.y = (this.position.y >
-                this.parent.y + this.parent.height - this.inter_radius / 2 ? this.parent.y + this.parent.height - this.inter_radius / 2 : this.parent.y + this.inter_radius / 2);
-            this.velocity.y =
-                random(0, 1) *
-                    (this.position.y < this.parent.y + this.inter_radius / 2 ? 1 : -1);
-        }
-    };
-    return Circle;
-}());
-var wheelTimer = 1;
-document.addEventListener("wheel", function (event) {
-    clearTimeout(wheelTimer);
-    if (tile_array[0][0].circle.velocity.mag() <= 1) {
-        tile_array.forEach(function (row) {
-            row.forEach(function (rectangle) {
-                rectangle.circle.velocity = createVector(random(-1, 1), random(-1, 1)).mult(3);
-            });
-        });
-    }
-    console.log("the length of line list is", lineList.length);
-    wheelTimer = setTimeout(function () {
-        tile_array.forEach(function (row) {
-            row.forEach(function (rectangle) {
-                rectangle.circle.velocity = createVector(0, 0);
-            });
-        });
-    }, 150);
-});
 var Rectangle = (function () {
     function Rectangle(i, j, x, y, width, height) {
         this.gap = 0;
@@ -431,14 +407,66 @@ var Rectangle = (function () {
         var offset_x = Math.random() * width * factor - (width * factor) / 2;
         var offset_y = Math.random() * height * factor - (height * factor) / 2;
         this.circle = new Circle(x + offset_x + this.width / 2, y + offset_y + this.height / 2, Math.min(this.width, this.height) - this.gap, this);
+        if (j === 0) {
+            TopCircles.push(this.circle);
+        }
+        else if (j === numRows - 1) {
+            BottomCircles.push(this.circle);
+        }
     }
     Rectangle.prototype.display = function () {
-        rect(this.x, this.y, this.width, this.height);
+        this.handleMouseOver();
+    };
+    Rectangle.prototype.handleMouseOver = function () {
+        var _this = this;
+        if (mouseX > this.x && mouseX < this.x + this.width && mouseY > this.y && mouseY < this.y + this.height) {
+            this.circle.mouseOverQueue = gradientTrailCounter;
+            if (gradientLastTile !== this) {
+                gradientTrailCounter++;
+                gradientTrailCounter = gradientTrailCounter % maxGradientColors;
+            }
+            gradientLastTile = this;
+            setTimeout(function () {
+                _this.circle.mouseOverQueue = -1;
+            }, 200);
+        }
     };
     return Rectangle;
 }());
+var viewportWidth = window.innerWidth;
+var viewportHeight = window.innerHeight;
+var number_of_circle = Math.floor(Math.random() * 10) + 10;
+var itemWidth = viewportWidth / number_of_circle;
+var itemHeight = viewportHeight / number_of_circle;
+var haflWidth = itemWidth / 2;
+var halfHeight = itemHeight / 2;
+var gap = Math.min(itemWidth, itemHeight) * 0.4;
+var factor = 0.4;
+var numColumns = Math.floor((viewportWidth - 0) / itemWidth);
+var numRows = Math.floor((viewportHeight - 0) / itemHeight);
+var number_initial_points = Math.floor(numColumns * numRows * Math.random() * 0.2) + 1;
+var tile_array = [];
+var lineList = [];
+var growing_circle_counter = 0;
+var TopCircles = [];
+var BottomCircles = [];
+var gradientTrailCounter = 0;
+var gradientLastTile = null;
+var maxGradientColors = 20;
+function get_element(x, y) {
+    return tile_array[y][x];
+}
+function positiveModulo(dividend, divisor) {
+    var remainder = dividend % divisor;
+    if (remainder < 0) {
+        remainder += divisor;
+    }
+    return remainder;
+}
 function setup() {
-    createCanvas(viewportWidth, viewportHeight);
+    console.log("number of columns and rows are", numColumns, numRows);
+    var canvas = createCanvas(viewportWidth, viewportHeight);
+    canvas.parent('canvas-container');
     for (var j = 0; j < numRows; j++) {
         tile_array[j] = [];
         for (var i = 0; i < numColumns; i++) {
@@ -454,8 +482,22 @@ function setup() {
 }
 function draw() {
     background(255);
+    if (growing_circle_counter == numColumns * numRows) {
+        growing_circle_counter += 1;
+        tile_array.forEach(function (row) {
+            row.forEach(function (rectangle) {
+                if (rectangle.circle.circle_type === 'inner') {
+                    rectangle.circle.toggle_rect_mode = true;
+                }
+            });
+        });
+    }
+    if (growing_circle_counter > numColumns * numRows) {
+        handleScrollCircles();
+    }
     tile_array.forEach(function (row) {
         row.forEach(function (rectangle) {
+            rectangle.display();
         });
     });
     lineList.forEach(function (line) { return line.display(); });
@@ -468,4 +510,16 @@ function draw() {
 window.addEventListener("resize", function () {
     location.reload();
 });
+function handleScrollCircles() {
+    if (window.scrollY === 0) {
+        TopCircles.forEach(function (circle) {
+            circle.toggle_rect_mode = true;
+        });
+    }
+    if (window.scrollY + viewportHeight === document.body.scrollHeight) {
+        BottomCircles.forEach(function (circle) {
+            circle.toggle_rect_mode = true;
+        });
+    }
+}
 //# sourceMappingURL=build.js.map
