@@ -1,0 +1,1332 @@
+text
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a 25 basis point cut in the federal funds rate, which is a dovish move. Additionally, the Committee expresses a willingness to adjust policy as needed to support economic growth and inflation targets, indicating a flexible and accommodative stance."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses a rate cut which is dovish, but also expresses a strong commitment to combating inflation, which is hawkish. The balance of these opposing signals makes the overall tone neutral."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses a balance of risks and a commitment to both maximum employment and inflation targets, indicating a neutral stance. The decision to lower the federal funds rate by 1/2 percentage point suggests a cautious approach rather than a clear hawkish or dovish direction."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses lowering the federal funds rate by 50 basis points to 4-3/4 to 5 percent, indicating a more accommodative stance to support economic growth and reduce unemployment, which is characteristic of dovish monetary policy."
+"label: hawkish,
+probability: 80%,
+explanation: The text emphasizes the Committee's strong commitment to reducing inflation to its 2% objective, maintaining the target range for the federal funds rate, and continuing to reduce its holdings of securities. These actions indicate a hawkish stance aimed at controlling inflation and managing economic risks."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses the Federal Reserve's decision to maintain the target range for the federal funds rate, indicating a neutral stance. While there is mention of inflation easing and some progress toward the 2% inflation objective, there is also caution about the uncertainty of the economic outlook and the need for more data to ensure sustainable progress toward the inflation goal before considering a rate cut. The Committee's emphasis on carefully assessing incoming data and the evolving outlook, along with the balanced view of risks, suggests a neutral rather than hawkish or dovish stance."
+"label: hawkish,
+probability: 80%,
+explanation: The text emphasizes the Committee's commitment to bringing inflation down to 2% and indicates that rate cuts are not expected until inflation is sustainably moving toward that goal. The language highlights a strong focus on controlling inflation, which is typical of a hawkish stance."
+"label: neutral
+probability: 85%
+explanation: The text indicates that the Committee maintained the target range for the federal funds rate and did not signal any immediate plans to raise or lower it. The discussion focused on the balance of risks and the need for further data to guide policy decisions. The language used suggests a wait-and-see approach, which is neither overtly hawkish nor dovish."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text emphasizes the Committee's strong commitment to reducing inflation to its 2 percent objective and indicates a cautious approach to lowering interest rates until inflation is sustainably moving toward this target. The decision to maintain the federal funds rate and continue reducing securities holdings also suggests a hawkish stance."
+"label: hawkish,
+probability: 90%,
+explanation: The text discusses the persistence of inflation, the lack of progress toward the 2% inflation objective, and the Committee's intention to maintain a restrictive policy stance until inflation shows sustainable movement toward the target. The Committee also decided to slow the pace of balance sheet reduction but emphasized that this does not imply a less restrictive monetary policy. The overall tone and content of the discussion are indicative of a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's strong commitment to reducing inflation to 2 percent and mentions that rate cuts are not expected until inflation is sustainably moving towards this target. The language indicates a cautious and vigilant stance on inflation risks, which is characteristic of a hawkish policy."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses both the easing of financial conditions and the increase in policy rate expectations, which are indicative of a hawkish stance. However, it also mentions the Committee's cautious approach to balance sheet runoff and the uncertainty regarding the level of reserves consistent with operating in an ample-reserves regime, which are more dovish signals. The overall tone is balanced, with a strong commitment to returning inflation to the 2 percent objective while being attentive to inflation risks and economic uncertainties."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's strong commitment to combating inflation and returning it to the 2 percent objective. It also highlights the need for further confidence in inflation trends before considering rate cuts, indicating a hawkish stance."
+"label: neutral
+probability: 80%
+explanation: The text discusses the Federal Reserve's minutes from the January 30â31, 2024, meeting, which includes a balanced view of economic conditions and inflation. While the committee acknowledges that inflation has eased, it remains elevated, and they are highly attentive to inflation risks. The committee decided to maintain the target range for the federal funds rate, indicating a neutral stance on monetary policy."
+"label: neutral
+probability: 85%
+explanation: The text discusses both the easing of financial conditions and the commitment to maintain a restrictive stance until inflation is sustainably moving down to 2 percent, indicating a neutral stance on monetary policy."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's strong commitment to reducing inflation to 2%, mentions the maintenance of the federal funds rate, and notes the continuation of reducing holdings of securities, all of which are indicative of a hawkish stance. The mention of tighter financial conditions and the need to assess further policy firming also supports this view."
+"label: hawkish,
+probability: 80%,
+explanation: The text discusses the need to maintain a restrictive monetary policy to bring down inflation, which is still considered elevated. Participants are resolute in their commitment to achieving the 2 percent inflation objective and mention the possibility of further policy firming if incoming data indicates insufficient progress. The overall tone and content indicate a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's strong commitment to combating elevated inflation and returning it to the 2 percent objective. It also mentions the likelihood of tighter financial and credit conditions weighing on economic activity and hiring, and the potential for additional policy firming. These factors indicate a hawkish stance."
+"label: hawkish,
+probability: 80%,
+explanation: The text repeatedly emphasizes the Committee's determination to bring inflation down to the 2% objective, notes that inflation remains well above this level, and discusses the need for further policy firming. Additionally, the Committee agrees to maintain the restrictive stance of monetary policy, indicating a hawkish leaning."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's strong commitment to combating elevated inflation and returning it to the 2 percent objective. It also mentions the maintenance of the federal funds rate and the continued reduction of holdings, indicating a hawkish stance to control inflation."
+"label: hawkish,
+probability: 95%,
+explanation: The text repeatedly emphasizes the Committee's commitment to combating elevated inflation and the decision to raise the federal funds rate, indicating a hawkish stance aimed at tightening monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text repeatedly emphasizes the need to combat inflation, the resilience of the economy, and the continued tightening of monetary policy, including a rate hike. These are all indicative of a hawkish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text repeatedly emphasizes concerns about elevated inflation, the need to maintain a restrictive stance on monetary policy, and the possibility of further rate increases. These factors strongly suggest a hawkish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text emphasizes the Committee's strong commitment to combating inflation and returning it to the 2 percent objective. It also mentions the likelihood of tighter credit conditions weighing on economic activity and the need for possible further policy firming, indicating a hawkish stance. However, the decision to maintain the current federal funds rate and continue monitoring incoming data adds some uncertainty, hence not a 90% or above probability."
+"label: hawkish,
+probability: 95%,
+explanation: The text emphasizes the commitment to combating inflation, mentions raising the federal funds rate, and highlights the need for possible further policy firming, all of which are indicative of a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses a 25 basis point rate increase and mentions that inflation remains elevated. Participants agreed that further policy firming might be appropriate, indicating a hawkish stance."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate by 25 basis points to a target range of 4-3/4 to 5 percent, indicating a continued effort to combat elevated inflation. Participants acknowledged the need for further policy firming to achieve a sufficiently restrictive stance. Despite recognizing the potential economic impact of recent banking-sector developments, the Committee remained committed to returning inflation to its 2 percent objective, suggesting a hawkish stance."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text repeatedly emphasizes the commitment to combat inflation, the increase in the federal funds rate, and the anticipation of additional policy firming, all of which are indicative of a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's strong commitment to combating elevated inflation, including raising the target range for the federal funds rate and anticipating ongoing increases. This stance indicates a hawkish approach to monetary policy, aiming to tighten financial conditions to curb inflation."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses the Federal Reserve's commitment to raising interest rates to combat high inflation, indicating a hawkish stance. Key phrases include ""ongoing increases in the target range for the federal funds rate would be appropriate,"" ""inflation remains well above the Committee's longer-run goal of 2 percent,"" and ""a restrictive policy stance would need to be maintained."""
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Reserve's commitment to raising interest rates to combat high inflation, indicating a hawkish stance. Key phrases include ""inflation remained well above the Committee's longer-run goal,"" ""unacceptably high,"" and ""ongoing increases in the target range for the federal funds rate would be appropriate."""
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Committee is raising the federal funds rate and anticipates ongoing increases to combat elevated inflation, indicating a clear hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Open Market Committee's decision to raise the target range for the federal funds rate by 75 basis points due to elevated inflation and the need to achieve a sufficiently restrictive stance to return inflation to 2 percent. The committee also anticipates ongoing increases in the target range, indicating a hawkish stance on monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions ""ongoing increases in the target range"" for the federal funds rate and aims for a ""sufficiently restrictive"" monetary policy to combat elevated inflation, indicating a strong hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions raising the federal funds rate and the Committee's strong commitment to combating inflation, which are clear indicators of a hawkish stance."
+"label: hawkish,
+probability: 90%,
+explanation: The text discusses the Federal Open Market Committee's decision to raise the federal funds rate by 75 basis points and continues reducing its holdings of Treasury securities and agency debt and agency mortgage-backed securities. The committee expresses concerns about elevated inflation and the need for a restrictive policy stance to combat it. The language and actions described in the text strongly suggest a hawkish monetary policy stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions raising the federal funds rate and the strong commitment to combating inflation, which are clear indicators of a hawkish monetary policy stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Open Market Committee's decision to raise the federal funds rate by 75 basis points due to elevated inflation and the need to tighten monetary policy. The committee also anticipates ongoing increases in the target range for the federal funds rate, indicating a hawkish stance to combat inflation."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions raising the federal funds rate and reducing holdings of securities, both of which are actions typically associated with a hawkish monetary policy aimed at combating inflation."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses a 75 basis point rate increase and the committee's strong commitment to returning inflation to its 2 percent objective. It also mentions the possibility of more aggressive tightening and a largely synchronous shift toward monetary policy tightening across most advanced economies."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions raising the federal funds rate and reducing the Federal Reserve's balance sheet, which are clear indicators of a hawkish stance aimed at controlling inflation."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses multiple rate hikes, balance sheet runoff, and the need to address high inflation, indicating a strong hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Committee decided to raise the federal funds rate and anticipates ongoing increases. It also mentions reducing holdings of Treasury securities and agency debt, indicating a clear hawkish stance to combat elevated inflation."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Open Market Committee's (FOMC) decision to raise the target range for the federal funds rate by 25 basis points, with all participants agreeing that ongoing increases would be warranted to achieve the Committee's objectives. The text emphasizes the need to address elevated inflation and the possibility of more rapid removal of policy accommodation. The participants also discussed the plan to reduce the size of the Federal Reserve's balance sheet, indicating a more aggressive stance on monetary policy tightening."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Reserve's plans to reduce its balance sheet and increase interest rates sooner and faster than previously expected due to elevated inflation and a strong labor market. The Committee expects to raise the federal funds rate soon and continues to reduce asset purchases, indicating a hawkish stance."
+"label: hawkish,
+probability: 90%,
+explanation: The text indicates a clear intention to raise interest rates and reduce asset purchases, both of which are hawkish signals. The focus on strong labor markets and high inflation also supports this stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text mentions reducing the pace of net asset purchases, which is a sign of tightening monetary policy. However, it also states that interest rates will remain low, which is dovish. On balance, the reduction in asset purchases is a more hawkish signal."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Open Market Committee's (FOMC) decision to reduce the monthly pace of its net asset purchases and the possibility of raising the federal funds rate sooner than previously anticipated due to elevated inflation pressures and a strengthening labor market. The committee also removed the reference to ""transitory"" factors affecting inflation, indicating a more concerned stance on inflation. The discussions and decisions outlined in the text strongly suggest a hawkish stance on monetary policy."
+"label: hawkish,
+ probability: 75%,
+ explanation: The text discusses the Federal Reserve's plan to begin tapering asset purchases, which is a hawkish move indicating a tightening of monetary policy. The Committee also acknowledges elevated inflation and the possibility of earlier rate hikes than previously expected."
+"label: neutral,
+probability: 70%,
+explanation: The text acknowledges elevated inflation but attributes it to transitory factors and reaffirms the commitment to maintaining an accommodative stance until employment and inflation targets are met. It also announces a tapering of asset purchases, which is somewhat hawkish, but the overall tone is balanced, hence neutral."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses maintaining accommodative policies until certain economic goals are met, but it also mentions the possibility of moderating asset purchases, indicating a balanced stance."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses the potential for tapering asset purchases and the possibility of raising the target range for the federal funds rate by the end of the next year, indicating a hawkish stance."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses maintaining accommodative financial conditions and keeping the federal funds rate low, which are dovish policies. However, it also mentions the possibility of adjusting the stance of monetary policy if risks emerge, which is slightly hawkish. On balance, the text is neutral."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy, but it does not strongly lean towards a hawkish or dovish stance. While there is mention of potential tapering of asset purchases and concerns about inflation, there is also an emphasis on the need for continued accommodative policy to support the economy. The overall tone is balanced, acknowledging both the progress made and the remaining uncertainties."
+"label: dovish,
+probability: 95%,
+explanation: The text repeatedly emphasizes the Federal Reserve's commitment to maintaining accommodative monetary policy, including keeping interest rates low and continuing asset purchases until specific economic goals are achieved. This stance is characteristic of a dovish policy aimed at supporting economic growth and employment."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining accommodative monetary policy, keeping interest rates low, and continuing asset purchases to support the economy. There is also mention of inflation being transitory and the need to support the flow of credit to households and businesses. The overall tone is cautious and supportive, indicating a dovish stance."
+"label: dovish,
+probability: 80%,
+explanation: The text emphasizes the Federal Reserve's commitment to maintaining low interest rates and continuing asset purchases until employment and inflation targets are met, indicating a dovish stance. The focus is on supporting the economy through accommodative measures."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's commitment to maintaining accommodative monetary policy until substantial further progress is made toward maximum employment and price stability goals. While there are mentions of economic improvement and inflation rising due to transitory factors, the overall tone is balanced, with a focus on continued support and monitoring of economic conditions. The Committee's decision to keep the target range for the federal funds rate unchanged and continue asset purchases at the current pace suggests a neutral stance, neither overly hawkish nor dovish."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and the Federal Reserve's commitment to maintaining accommodative monetary policy until substantial progress is made toward maximum employment and price stability goals. While there are mentions of improved economic outlook and optimism, there are also discussions of continued risks and uncertainties, as well as the need for ongoing support. The overall tone is balanced, leaning neither strongly hawkish nor dovish."
+"label: dovish,
+ probability: 95%,
+ explanation: The text emphasizes the Federal Reserve's commitment to maintaining accommodative monetary policy, including keeping interest rates low and continuing asset purchases. It highlights the need to support the economy due to the challenges posed by the COVID-19 pandemic and the goal of achieving inflation moderately above 2 percent for some time."
+"label: dovish,
+probability: 90%,
+explanation: The text extensively discusses the economic hardships and uncertainties caused by the COVID-19 pandemic, emphasizing the need for accommodative monetary policy to support the economy. The Federal Reserve's commitment to maintaining low interest rates and continuing asset purchases until substantial progress is made towards maximum employment and price stability goals indicates a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text repeatedly emphasizes the Federal Reserve's commitment to maintaining accommodative monetary policy, keeping interest rates low, and continuing asset purchases until employment and inflation goals are met, all of which are indicative of a dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text emphasizes the Federal Reserve's commitment to maintaining accommodative monetary policy, including keeping interest rates low and continuing asset purchases to support the economy and achieve inflation targets. This stance is indicative of a dovish policy."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses maintaining an accommodative stance of monetary policy, keeping the federal funds rate low, and continuing asset purchases until substantial progress is made toward maximum employment and price stability goals. This indicates a dovish stance focused on supporting the economy and encouraging growth."
+"label: dovish,
+ probability: 95%,
+ explanation: The text repeatedly emphasizes the accommodative stance of monetary policy, the need to support the economy during the pandemic, and the commitment to maintaining low interest rates until employment and inflation goals are met. The tone is cautious and supportive, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the Federal Reserve's commitment to maintaining accommodative financial conditions, keeping interest rates low, and increasing holdings of Treasury securities and mortgage-backed securities to support the economy. These actions are characteristic of a dovish monetary policy aimed at promoting economic growth and stability."
+"label: dovish,
+probability: 80%,
+explanation: The text emphasizes the Federal Reserve's commitment to accommodative monetary policy, including keeping the federal funds rate low and increasing asset purchases. This stance suggests a dovish approach aimed at stimulating the economy and supporting employment and price stability goals."
+"label: dovish,
+probability: 75%,
+explanation: The text discusses accommodative monetary policy, the commitment to maintaining low interest rates, and supporting the flow of credit to households and businesses. The focus is on sustaining the recovery and managing the ongoing economic and public health crisis, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the Federal Reserve's commitment to maintaining a target range for the federal funds rate at 0 to 1/4 percent and continuing asset purchases to support the economy during the COVID-19 pandemic. The tone is cautious and supportive, emphasizing the need for accommodative monetary policy to achieve maximum employment and price stability goals."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes the Federal Reserve's commitment to supporting the economy, maintaining low interest rates, and increasing its holdings of securities. These actions indicate a dovish stance aimed at promoting economic recovery and stability."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the Federal Reserve's commitment to supporting the economy through low interest rates and increased asset purchases, indicating a dovish stance aimed at stimulating economic activity and fostering financial stability."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the Federal Reserve's commitment to maintaining a highly accommodative monetary policy to support the economy during the COVID-19 pandemic. Key dovish indicators include the Fed's plan to keep the federal funds rate at its effective lower bound for an extended period, the continuation of large-scale asset purchases, and the emphasis on using all available tools to support economic recovery. The Fed also expresses concerns about the considerable risks to the economic outlook and the need for sustained support from fiscal policy."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses the Federal Reserve's commitment to maintaining low interest rates and continuing asset purchases to support the economy during the COVID-19 pandemic. The language emphasizes the need for accommodative monetary policy to address economic hardship and uncertainty, which is characteristic of a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the Federal Reserve's commitment to supporting the economy through various measures, including maintaining low interest rates and purchasing securities to ensure market stability. The focus on promoting maximum employment and price stability, along with addressing the economic challenges posed by the coronavirus outbreak, indicates a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the Federal Reserve's commitment to supporting the economy through various measures, including large-scale purchases of Treasury securities and agency mortgage-backed securities, maintaining the federal funds rate at a low level (0 to 1/4 percent), and ensuring ample reserves through repurchase agreement operations. These actions are indicative of a dovish monetary policy aimed at promoting economic stability and growth."
+"label: dovish,
+probability: 95%,
+explanation: The text describes measures taken by the Federal Reserve to lower the federal funds rate and increase its holdings of Treasury securities and mortgage-backed securities, which are actions typically associated with a dovish monetary policy aimed at stimulating the economy and increasing the flow of credit."
+"label: dovish
+probability: 90%
+explanation: The text discusses significant actions taken by the Federal Reserve to lower interest rates and support the economy in response to the COVID-19 pandemic. The measures include a 100 basis point cut in the federal funds rate to 0-0.25%, large-scale asset purchases, and various liquidity provisions. The tone of the meeting minutes is clearly dovish, emphasizing the need for aggressive monetary policy to address the economic downturn and financial market stress caused by the pandemic."
+"label: dovish,
+probability: 95%,
+explanation: The text explicitly states that the Federal Open Market Committee decided to lower the federal funds rate by 1/2 percentage point, which is a dovish action aimed at supporting the economy in light of the risks posed by the coronavirus."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple measures taken by the Federal Open Market Committee to support the economy during the COVID-19 pandemic, including lowering the federal funds rate to 0 to 1/4 percent and increasing holdings of Treasury securities and agency MBS. The language used emphasizes the need to support economic activity, maintain financial stability, and promote maximum employment and price stability, all of which are indicative of a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text largely maintains a neutral stance, emphasizing the continuation of current monetary policy without indicating a strong inclination towards tightening (hawkish) or loosening (dovish) measures. The focus is on monitoring economic conditions and maintaining the target range for the federal funds rate."
+"label: neutral,
+ probability: 80%,
+ explanation: The text primarily consists of meeting minutes from the Federal Open Market Committee, detailing organizational matters, discussions on monetary policy strategy, and economic outlooks. While it mentions discussions on financial stability and potential risks, it does not provide a clear indication of a hawkish or dovish stance. The tone is neutral, focusing on procedural and organizational details rather than advocating for a specific monetary policy direction."
+"label: neutral,
+probability: 85%,
+explanation: The text indicates that the Federal Reserve is maintaining the current interest rate and sees the economy as generally strong, but it also acknowledges weak points such as business fixed investment and exports. The language is balanced, neither strongly suggesting a rate hike (hawkish) nor a rate cut (dovish)."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses maintaining the current stance of monetary policy, noting that economic activity has been rising at a moderate rate with a strong labor market but weak business fixed investment and exports. Inflation is running below 2 percent, and the Committee plans to monitor incoming information. The language does not strongly indicate a clear hawkish or dovish stance, hence it is neutral."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses a rate cut and expresses concerns about weak business investment, exports, and muted inflation pressures, indicating a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses multiple factors that point towards a dovish stance. The Federal Reserve is considering various tools to provide additional economic stimulus, especially in scenarios where the policy rate is constrained by the effective lower bound. The discussion includes the potential use of forward guidance, balance sheet policy tools, and even the consideration of negative interest rates, although the latter was deemed not attractive. The committee members express concerns about downside risks to the economic outlook, muted inflation pressures, and the need to support economic activity. The decision to lower the target range for the federal funds rate to 1-1/2 to 1-3/4 percent further supports a dovish interpretation."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple instances where the Federal Reserve considers and implements measures to ease monetary policy, including reducing the federal funds rate and conducting repo operations to maintain reserve balances. The tone is cautious and focused on providing accommodation to support economic activity and inflation objectives, which are characteristic of a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text focuses on technical measures to maintain ample reserves and ensure effective monetary policy implementation without indicating a clear direction towards tightening (hawkish) or easing (dovish) monetary policy."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses a rate cut and emphasizes sustaining economic expansion and a strong labor market, which are dovish indicators. Additionally, the mention of ""muted inflation pressures"" and uncertainties suggests a cautious approach to monetary policy, further supporting a dovish stance."
+"label: dovish,
+probability: 75%,
+explanation: The text discusses a 25 basis point reduction in the federal funds rate, mentions downside risks to the economy, and emphasizes the need to support economic activity and inflation objectives. These points suggest a dovish stance."
+"label: dovish
+probability: 80%
+explanation: The text discusses a 25 basis point cut in the federal funds rate, which is a dovish move. The Committee noted that the overall outlook remained favorable, but there were significant risks and uncertainties. The decision to lower the target range for the federal funds rate was made to counter the effects of weak global growth and trade policy uncertainty, insure against downside risks, and promote a faster return of inflation to the Committee's symmetric 2 percent objective."
+"label: dovish,
+probability: 85%,
+explanation: The text mentions a rate cut and emphasizes sustaining economic expansion and a strong labor market, which are dovish indicators. Additionally, the Committee's decision to lower the federal funds rate target range and the mention of muted inflation pressures contribute to a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses a significant increase in risks and uncertainties surrounding the economic outlook, with many participants noting that a rate cut may be appropriate. The language emphasizes monitoring incoming information and acting as appropriate to sustain economic expansion, indicating a dovish stance."
+"label: neutral,
+probability: 80%,
+explanation: The text indicates that the Federal Open Market Committee decided to maintain the target range for the federal funds rate, suggesting a neutral stance. However, it also mentions increased uncertainties and muted inflation pressures, which hint at a potential future adjustment, but the current decision is neutral."
+"label: neutral
+probability: 80%
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy, noting both strong economic growth and muted inflation pressures. The Committee decided to maintain the target range for the federal funds rate, indicating a neutral stance on monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text indicates a balanced stance, maintaining the federal funds rate and expressing a commitment to patience and careful assessment of future adjustments based on economic conditions. There are no clear indications of immediate rate hikes (hawkish) or cuts (dovish)."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses a variety of economic indicators and monetary policy considerations without a strong bias towards tightening or easing policy. The Committee's decision to maintain the target range for the federal funds rate and its patient approach to future adjustments suggest a neutral stance."
+"label: neutral,
+probability: 85%,
+explanation: The text indicates a balanced stance, maintaining the federal funds rate and expressing a commitment to patience and data-dependency. It acknowledges slowing economic growth and muted inflation pressures but does not signal immediate rate changes, suggesting a neutral monetary policy."
+"label: neutral,
+ probability: 80%,
+ explanation: The text indicates a balanced stance, acknowledging strong economic activity and low unemployment, but also mentions ""muted inflation pressures"" and a plan to ""be patient"" with future rate adjustments, suggesting a neutral policy outlook."
+"label: neutral,
+probability: 80%,
+explanation: The text is largely procedural and descriptive, focusing on the minutes of the Federal Open Market Committee meeting. It provides detailed discussions on economic conditions, financial markets, and monetary policy considerations without a strong bias towards hawkish or dovish sentiments. The tone is balanced, reflecting a mix of positive and cautious views, which makes it difficult to classify as either hawkish or dovish."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy considerations, including both strong economic data and potential downside risks. While the Committee decided to raise the target range for the federal funds rate, the discussion also emphasizes data dependency and the need to monitor global economic and financial developments, suggesting a balanced or neutral stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a strong economy with low unemployment, strong job gains, and inflation near the target rate. The Committee's decision to raise the federal funds rate and its expectation of ""some further gradual increases"" suggest a hawkish stance to prevent the economy from overheating."
+"label: hawkish,
+probability: 70%,
+explanation: The text indicates a strong economy with strong job gains, a low unemployment rate, and inflation near the 2% target. The Committee expects further gradual rate increases, suggesting a hawkish stance to prevent the economy from overheating. However, the decision to maintain the target range for the federal funds rate at the current level adds some uncertainty, hence the probability is not higher."
+"label: neutral
+
+probability: 60%,
+
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy considerations, but it does not provide a clear hawkish or dovish stance. The committee members acknowledge both risks and uncertainties in the economic outlook, but they also note the continued strength of the labor market and the economy overall. The decision to maintain the target range for the federal funds rate and the discussion of future gradual increases suggest a balanced approach, neither strongly hawkish nor dovish."
+"label: hawkish,
+probability: 90%,
+explanation: The text indicates a strong labor market, robust economic activity, and inflation near the target rate of 2 percent. The Committee's decision to raise the target range for the federal funds rate and its expectation for further gradual increases suggest a hawkish stance aimed at maintaining price stability."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses a unanimous vote to raise the federal funds rate, expectations for further gradual increases, and a strong economic outlook with inflation near the target. The removal of language stating that ""the stance of monetary policy remains accommodative"" also signals a hawkish stance."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses the strength of the economy, the labor market, and inflation rates that are near the Committee's 2 percent objective. Participants generally agreed on the need for gradual increases in the federal funds rate, indicating a hawkish stance. However, there is some uncertainty and discussion about potential risks and the future path of monetary policy, which is why the probability is not higher."
+"label: hawkish,
+probability: 85%,
+explanation: The text mentions ""further gradual increases in the target range for the federal funds rate,"" indicating a tightening of monetary policy, which is typically hawkish. The Committee's expectation for strong economic activity and inflation near the 2 percent objective also suggests a hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses a unanimous vote to raise the target range for the federal funds rate, indicating a hawkish stance. The committee's outlook suggests a strong economy, with expectations of further gradual increases in the federal funds rate to achieve their objectives. The removal of accommodative language and the plan for gradual policy firming also point towards hawkishness."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a rate hike and expectation for further gradual increases, which is typically hawkish. It also mentions strong economic activity, a strong labor market, and inflation near the target rate, all of which support a hawkish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy but does not strongly lean towards tightening (hawkish) or easing (dovish) monetary policy. The committee maintains a balanced view, acknowledging both positive economic developments and potential risks, without clear signals of imminent policy changes."
+"label: hawkish,
+probability: 80%,
+explanation: The text indicates a positive economic outlook with strong labor market conditions, moderate economic activity, and inflation nearing the 2 percent target. The Committee expects further gradual increases in the federal funds rate, suggesting a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses a unanimous vote to raise the federal funds rate, expectations of further gradual increases, and a strengthening economic outlook. These factors indicate a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a strong labor market, expectations of inflation moving up to the 2% target, and a decision to raise the federal funds rate. These factors collectively suggest a hawkish stance."
+"label: neutral,
+ probability: 70%,
+ explanation: The text is primarily a detailed record of a Federal Open Market Committee meeting, focusing on organizational matters, financial market conditions, and economic outlooks. While it discusses various economic indicators and the committee's views on monetary policy, it does not strongly lean towards a hawkish or dovish stance. The committee maintains a balanced approach, expecting gradual adjustments in monetary policy without clear indications of immediate tightening or easing."
+"label: hawkish,
+probability: 70%,
+explanation: The text suggests a bias towards future rate hikes, as the Committee expects economic conditions to warrant further gradual increases in the federal funds rate. The Committee's focus on inflation reaching its 2% objective and the labor market remaining strong indicates a hawkish stance. However, the use of the term ""gradual"" and the expectation that the rate will remain below long-term levels for some time suggests a measured approach to hawkishness."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses a unanimous vote to raise the federal funds rate, which is a clear indicator of a hawkish stance. Additionally, the committee members express concerns about inflation not reaching the 2 percent target and the need for gradual increases in the federal funds rate. The discussion of monitoring inflation developments closely and the votes against raising the rate due to inflation concerns also contribute to the hawkish tone."
+"igate
+label:hawkish,
+probability: 85%,
+explanation: The text indicates that the Federal Open Market Committee decided to raise the target range for the federal funds rate, which is a hawkish move. Additionally, the Committee expects gradual increases in the federal funds rate, suggesting a continued tightening of monetary policy. The focus on controlling inflation and the mention of a strong labor market also contribute to a hawkish tone."
+"label: hawkish,
+probability: 70%,
+explanation: The text suggests that the Committee expects economic conditions to warrant gradual increases in the federal funds rate, indicating a lean towards tightening monetary policy. However, it also mentions that the stance of monetary policy remains accommodative, which adds a slight dovish tone, thus not making it a strong hawkish statement."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and the Federal Reserve's cautious approach to monetary policy, highlighting both positive economic developments and concerns about low inflation. The overall tone is balanced, with no clear hawkish or dovish stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses both positive economic indicators and concerns about inflation remaining below the target rate, suggesting a balanced or neutral stance. The decision to maintain the federal funds rate and initiate balance sheet normalization indicates cautious optimism rather than a clear hawkish or dovish position."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses various economic indicators and the Federal Reserve's plans for maintaining the federal funds rate and initiating balance sheet normalization. While it acknowledges concerns about low inflation, it also notes improvements in the labor market and economic activity. The overall tone is balanced, neither strongly hawkish nor dovish."
+"label: neutral,
+probability: 70%,
+explanation: The text indicates a balanced approach, with the Federal Reserve aiming to maintain a moderate pace of economic expansion and a gradual increase in the federal funds rate. While there are mentions of potential rate hikes, the overall tone is cautious and data-dependent, suggesting a neutral stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's plans to gradually remove policy accommodation. While there are mentions of strong economic activity and a tight labor market, there are also concerns about low inflation and uncertainty about future economic policies. The Committee decided to maintain the target range for the federal funds rate, indicating a neutral stance on hawkishness."
+"label: hawkish,
+probability: 75%,
+explanation: The text discusses the Federal Open Market Committee's decision to raise the target range for the federal funds rate, indicating a tightening of monetary policy. Additionally, the committee plans to gradually reduce its securities holdings, further signaling a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a raise in the federal funds rate and outlines plans for gradual increases in the future, which are characteristic of a hawkish monetary policy. The Committee's focus on inflation stabilizing around 2 percent and the labor market strengthening further supports this stance."
+"label: neutral,
+probability: 75%,
+explanation: The text indicates that the Federal Open Market Committee sees the economic slowdown as transitory and expects moderate economic growth with inflation stabilizing around 2 percent. However, it also states that the federal funds rate will remain below long-term levels, suggesting a balanced approach. The decision to maintain the target range for the federal funds rate and the emphasis on gradual increases point to a neutral stance."
+"label: neutral
+probability: 80%
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy decision to maintain the target range for the federal funds rate. While the discussion acknowledges a slowdown in economic growth and inflation, it also notes that these developments are likely to be transitory. The committee members express a range of views on the appropriate pace of future rate hikes, with some advocating for a gradual approach and others suggesting a potentially faster pace depending on economic conditions. Overall, the text does not strongly lean towards a hawkish or dovish stance, hence it is neutral."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a raise in the federal funds rate, which is a clear sign of hawkishness. The Committee expects further gradual increases, aiming to stabilize inflation around 2 percent, which also supports a hawkish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text discusses a unanimous vote to raise the federal funds rate, which is a clear indicator of a hawkish stance. The committee members express concerns about inflation reaching the 2 percent target and the need to gradually remove policy accommodation. Additionally, there is a detailed discussion on the timing and approach to ending reinvestment policy, which also leans towards a hawkish approach."
+"label: neutral,
+probability: 95%,
+explanation: The text is a detailed account of the Federal Open Market Committee meeting minutes and does not contain strong indicators of hawkish or dovish sentiment. The discussion focuses on maintaining the current policy, monitoring economic conditions, and considering future adjustments based on incoming data. There is no clear bias towards tightening or easing monetary policy, hence it is neutral."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses the Federal Reserve's decision to maintain the current federal funds rate and emphasizes a gradual approach to future adjustments. It acknowledges both positive and negative economic indicators, suggesting a balanced outlook."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a rate hike and a plan for gradual future increases, which aligns with a hawkish stance aiming to tighten monetary policy."
+"Label: Hawkish,
+Probability: 90%,
+Explanation: The text discusses a unanimous vote to raise the federal funds rate, indicating a hawkish stance. Keywords and phrases such as ""raise the target range for the federal funds rate,"" ""increase in the target range,"" and ""inflation is expected to rise"" suggest a tightening of monetary policy. The committee's decision to increase the interest rates on required and excess reserve balances and the primary credit rate also supports this view."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and their implications for monetary policy. While it acknowledges improvements in the labor market and increased inflation, it also notes that inflation remains below the target rate. The Committee decides to maintain the target range for the federal funds rate, indicating a neutral stance on monetary policy hawkishness."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses both positive economic indicators and cautious measures, indicating a balanced approach. While it mentions the strengthening case for a rate increase, it also highlights the decision to wait for further evidence, maintaining an accommodative policy."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's decision to maintain the target range for the federal funds rate. While it acknowledges that the case for increasing the federal funds rate has strengthened, it also notes that some slack remains in the labor market and inflation continues to run below the Committee's objective. The decision to wait for further evidence of progress toward the Committee's objectives suggests a neutral stance, neither strongly hawkish nor dovish."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a strengthening case for an increase in the federal funds rate, with several members voting for an immediate hike. This suggests a hawkish stance, leaning towards tightening monetary policy."
+"```
+label: neutral,
+probability: 70%,
+explanation: The text indicates a balanced approach, with the FOMC maintaining the federal funds rate and expecting gradual adjustments. While it notes improving labor market conditions and a moderate pace of economic activity, it also highlights low inflation and the need for cautious monitoring. The Committee's decision to keep rates unchanged and its reinvestment policy suggest a neutral stance.
+```"
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy without a strong bias towards tightening or easing. While there are mentions of economic improvement and inflation approaching the target, there are also concerns about global economic uncertainties and downside risks. The decision to maintain the target range for the federal funds rate suggests a neutral stance."
+"label: neutral,
+probability: 80%,
+explanation: The text indicates a balanced approach, with a commitment to maintaining low interest rates while monitoring economic conditions. It acknowledges slow job growth and low inflation but expects gradual improvements, suggesting a neutral stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and the Federal Open Market Committee's decision to keep the federal funds rate unchanged. While there are mentions of slowing job gains and concerns about inflation, there are also positive notes about economic growth and the Committee's wait-and-see approach, making the overall tone neutral rather than distinctly hawkish or dovish."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses maintaining the current interest rate and mentions gradual future increases, indicating a neutral stance with a slight hawkish lean due to the mention of future rate hikes."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses the Federal Open Market Committee's decision to maintain the target range for the federal funds rate, indicating a cautious approach to raising interest rates. The Committee noted weak economic data and low inflation, suggesting a dovish stance on monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and the Federal Reserve's cautious approach to raising interest rates, but it does not strongly lean towards immediate tightening or easing of monetary policy. The committee decided to maintain the target range for the federal funds rate, indicating a wait-and-see approach."
+"head: neutral
+probability: 70%
+explanation: The text indicates a balanced approach, acknowledging both positive and negative economic indicators. The Federal Open Market Committee decided to maintain the target range for the federal funds rate, suggesting a neutral stance. While there is mention of future rate increases, the Committee emphasizes a gradual approach dependent on economic conditions, which does not strongly lean towards hawkish or dovish policy."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses maintaining the current federal funds rate and emphasizes a gradual approach to future rate increases, which suggests a neutral stance. It acknowledges improvements in the labor market and expects inflation to rise to the 2% target over the medium term, but also notes the current shortfall in inflation. The Committee's decision to maintain accommodative financial conditions further supports a neutral interpretation."
+"label: neutral
+
+probability: 75%
+
+explanation: The text primarily consists of meeting minutes from the Federal Open Market Committee, detailing organizational matters, economic reviews, and monetary policy decisions. While the document mentions various economic indicators and discusses the potential risks to the economic outlook, it does not explicitly advocate for a more aggressive (hawkish) or a more accommodative (dovish) monetary policy stance. The decision to leave the target range for the federal funds rate unchanged suggests a neutral stance."
+"label: hawkish,
+ probability: 90%,
+ explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate target range to 1/4 to 1/2 percent, indicating a hawkish stance. The Committee expresses confidence in the economic outlook and expects inflation to rise to 2 percent over the medium term. The language used, such as ""gradual increases in the federal funds rate"" and ""the Committee will carefully monitor actual and expected progress toward its inflation goal,"" suggests a cautious but hawkish approach to monetary policy."
+"label: hawkish,
+probability: 85%,
+explanation: The text mentions a rate hike (""the Committee decided to raise the target range for the federal funds rate"") and expresses confidence in achieving inflation targets, indicating a shift towards tightening monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text largely maintains current policy and does not indicate immediate changes, reflecting a balanced approach to monetary policy."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and the Federal Open Market Committee's views on the economy, but it does not strongly suggest an immediate increase or decrease in interest rates. While some participants expressed concerns about delaying policy firming, others noted downside risks and the need for cautiousness. The committee decided to maintain the target range for the federal funds rate, indicating a wait-and-see approach."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses both positive economic indicators and concerns about global economic developments, with a balanced view on inflation and labor market improvements. It mentions maintaining accommodative policies while anticipating future rate increases, indicating a neutral stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses both the improvements in the economy and the cautious approach of the FOMC, indicating a balanced view without a strong hawkish or dovish stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy, but it does not strongly lean towards immediate policy tightening (hawkish) or further easing (dovish). The Committee acknowledges economic improvements but also expresses cautious sentiments regarding inflation and external risks."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses a balanced approach to monetary policy, acknowledging improvements in the labor market and expectations of gradual inflation rise towards the 2% target. It mentions maintaining low interest rates and reinvesting principal payments, indicating a continuation of accommodative policies without immediate hawkish actions."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses balanced economic growth, steady unemployment, and a gradual rise in inflation towards the 2% target. It emphasizes maintaining the current federal funds rate and a balanced approach to policy accommodation removal, indicating a neutral stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's policy considerations, but it does not strongly lean towards immediate policy tightening or easing. The Committee acknowledges economic improvements but also notes continued uncertainty and a desire for more data before making policy changes."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses a balanced outlook for economic activity and the labor market, while also acknowledging that inflation is expected to rise gradually toward the 2 percent target. The Committee maintains a cautious approach, indicating that it will raise the federal funds rate only when further improvement in the labor market and inflation confidence are achieved. The overall tone is neither strongly hawkish nor dovish, leaning more towards a neutral stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and the Federal Reserve's considerations for future policy actions, but it does not strongly lean towards immediate policy tightening (hawkish) or further easing (dovish). The Committee's decision to maintain the target range for the federal funds rate and its data-dependent approach to future rate hikes suggest a neutral stance."
+"Label: Neutral
+Probability: 60%
+Explanation: The text discusses various factors that influence the Federal Reserve's monetary policy decisions, including economic conditions, labor market improvements, and inflation trends. While there is a mention of the possibility of raising interest rates in the future, the overall tone is balanced and does not strongly suggest an imminent hawkish or dovish stance. The discussion about the timing of policy normalization and the conditions under which it might occur indicates a cautious and data-dependent approach."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses both positive economic indicators and concerns about inflation, suggesting a balanced approach to monetary policy. The Committee acknowledges improvements in the labor market and expects inflation to rise gradually, but it also mentions that an increase in the target range for the federal funds rate remains unlikely at the April FOMC meeting, indicating a neutral stance."
+"label: neutral,
+probability: 95%,
+explanation: The text is a detailed record of a Federal Open Market Committee meeting, discussing various economic indicators, monetary policy tools, and market conditions. While it mentions considerations about policy normalization and the timing of policy firming, it does not provide a clear direction towards a hawkish or dovish stance. The discussion is balanced, acknowledging both the risks of early and late policy normalization, and the need for data-dependent decision-making."
+"label: neutral,
+probability: 85%,
+explanation: The text balances positive economic indicators with cautionary notes on inflation and a commitment to maintain low interest rates, indicating a neutral stance."
+"Label: Neutral,
+Probability: 70%,
+Explanation: The text discusses a balanced outlook with moderate economic expansion and gradual inflation rise, indicating a neutral stance. The Committee's decision to maintain the federal funds rate and its policy of reinvesting principal payments suggests a wait-and-see approach, which is neither strongly hawkish nor dovish."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's policy decisions, but it does not strongly lean towards either a hawkish or dovish stance. The Committee acknowledges improvements in the labor market and economic activity but also notes that inflation remains below the target. The decision to maintain the federal funds rate and the guidance on being ""patient"" in normalizing policy suggests a neutral stance, balancing the need for continued accommodation with the potential for future rate increases."
+"label: neutral
+probability: 70%
+explanation: The text discusses various aspects of the Federal Reserve's monetary policy, including the conclusion of the asset purchase program, maintaining the target range for the federal funds rate, and considerations for future policy normalization. While it acknowledges improvements in the labor market and economic activity, it also notes concerns about inflation and global economic conditions. The overall tone is balanced, with no clear hawkish or dovish stance."
+"label: neutral,
+probability: 70%,
+explanation: The text does not strongly lean towards either a hawkish or dovish stance. It acknowledges improvements in the labor market and economic activity, but also notes that inflation remains below the Committee's target. The decision to conclude the asset purchase program is balanced by the commitment to maintain low interest rates for a considerable time. The statement also includes contingencies for both faster and slower progress towards the Committee's objectives."
+"label: hawkish,
+probability: 75%,
+explanation: The text discusses reducing the pace of asset purchases and anticipates ending the program soon, indicating a move towards tightening monetary policy. However, it also mentions maintaining a highly accommodative stance, which is why the probability is not higher."
+"label: neutral
+
+probability: 80%
+
+explanation: The text discusses various economic indicators and the Federal Open Market Committee's plans for normalizing monetary policy, including the tapering of asset purchases. While the Committee acknowledges improvements in the labor market and expects inflation to move towards its 2% objective, it also notes that inflation remains below target and that there is still significant slack in the labor market. The Committee plans to maintain a highly accommodative stance, suggesting a dovish leaning. However, some members express concerns about financial market excesses and the need for earlier policy normalization, which are hawkish sentiments. Given the mixed signals, the overall tone is neutral."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses the Federal Reserve's plan to reduce the pace of asset purchases, which is a sign of tightening monetary policy. Additionally, there is mention of the economy rebounding and improving labor market conditions, which could indicate a hawkish stance. However, there is also discussion of maintaining accommodative policy, which adds some uncertainty."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses both the improvements in economic conditions and the need for continued accommodative policy, balancing hawkish and dovish sentiments. It acknowledges progress but also emphasizes the need for continued support, indicating a neutral stance."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses both the continuation of accommodative policies and a measured reduction in asset purchases, suggesting a balanced approach. It acknowledges improvements in the economy but also notes concerns about inflation being below the target, indicating a neutral stance overall."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses both the continuation of accommodative monetary policy and the potential future tightening of policy, including the tapering of asset purchases and the eventual increase in the federal funds rate. While it mentions concerns about inflation persistently below the target, it also acknowledges the potential need for a more rapid tightening if economic growth is stronger than expected. Therefore, the text does not strongly lean towards either a hawkish or dovish stance, but rather presents a balanced view."
+"label: neutral,
+ probability: 85%,
+ explanation: The text discusses various aspects of monetary policy, including the consideration of policy normalization tools and the decision to continue tapering asset purchases. However, it does not provide a clear indication of a hawkish or dovish stance. The Committee's decision to taper asset purchases is offset by its commitment to maintain low interest rates for a considerable time, indicating a balanced approach."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses both the ongoing need for accommodative monetary policy and the measured reduction in asset purchases, indicating a balanced stance between hawkish and dovish views."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses a measured reduction in asset purchases but also emphasizes the need for continued accommodative monetary policy, indicating a balanced approach."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses the Federal Reserve's plan to continue tapering its asset purchases, which is a hawkish policy stance. The Committee's decision to reduce the pace of asset purchases and the discussion around the timing of interest rate increases indicate a bias towards tightening monetary policy. However, the mention of monitoring inflation developments and the acknowledgment of possible risks associated with low inflation add some uncertainty, hence the probability is not higher."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy without a clear hawkish or dovish stance. It acknowledges economic slowdowns and mixed labor market indicators but also notes continued improvement in economic activity and labor market conditions. The discussion on monetary policy focuses on adjusting forward guidance and maintaining accommodative policy, indicating a balanced approach."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses both the improvement in economic activity and labor market conditions, which could be seen as hawkish, but also emphasizes the need for continued accommodative monetary policy and a gradual reduction in asset purchases, which is dovish. The balanced approach and the maintenance of a low target range for the federal funds rate suggest a neutral stance overall."
+"label: neutral,
+probability: 80%,
+explanation: The text is a detailed account of the Federal Open Market Committee meeting minutes and does not contain strong indicators of hawkish or dovish sentiment. It discusses various economic indicators, monetary policy actions, and future considerations without a clear bias towards tightening or easing monetary policy."
+"label³: neutral,
+probability: 75%,
+explanation: The text discusses both the improvements in the economy and the labor market, as well as the concerns about low inflation and the need for continued accommodative monetary policy. While the decision to begin tapering asset purchases is noted, the Committee's stance remains largely dovish, emphasizing the need for continued policy accommodation. However, the dissenting voice and the discussion around the timing of tapering add a hawkish element, thus making the overall tone neutral."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses both the improvement in economic activity and labor market conditions, which could be seen as hawkish, but it also emphasizes the need for continued accommodative monetary policy to support the economic recovery and maintain low interest rates, which is dovish. The decision to modestly reduce asset purchases is balanced by the commitment to maintain a highly accommodative stance, making the overall tone neutral."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses both the need for continued monetary policy accommodation to support the economy and the potential risks of future economic imbalances and inflation. It mentions improvements in economic conditions but also highlights ongoing concerns, such as elevated unemployment and inflation below the target, indicating a balanced perspective."
+"label: dovish,
+probability: 75%,
+explanation: The text discusses maintaining a highly accommodative stance of monetary policy, including continuing asset purchases and keeping the federal funds rate low. It also mentions concerns about inflation being below the target and the need for further economic growth, indicating a dovish stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy, but it does not strongly lean towards either a hawkish or dovish stance. The committee members have mixed views, and the overall tone is balanced, with a focus on maintaining accommodative policy while also considering future adjustments based on economic data."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes continued accommodative monetary policy, maintaining low interest rates, and ongoing asset purchases to support economic recovery and stabilize inflation, indicating a dovish stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy decisions, but it does not strongly lean towards either a hawkish or dovish stance. The Committee decided to maintain the pace of asset purchases and keep the federal funds rate low, indicating a neutral stance aimed at supporting economic recovery without signaling immediate policy tightening or easing."
+"label: neutral,
+ probability: 70%,
+ explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy but does not strongly lean towards a hawkish or dovish stance. The committee members have mixed views on the economic outlook and the appropriate timing for adjusting asset purchases."
+"label: dovish,
+ probability: 95%,
+ explanation: The text emphasizes a highly accommodative monetary policy, including continuing asset purchases and maintaining low federal funds rate targets. It also highlights the Committee's commitment to supporting economic recovery and ensuring price stability, which are indicative of a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes continued accommodative monetary policy, including maintaining low interest rates and ongoing asset purchases to support economic recovery and employment. It also mentions concerns about inflation being below the target, indicating a dovish stance."
+"Label: Neutral,
+Probability: 80%,
+Explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy but does not strongly lean towards tightening (hawkish) or easing (dovish) policy. The committee members have differing views, with some believing that improvement in the labor market warrants a reduction in asset purchases soon, while others see a need for further improvement before tapering. The overall tone is balanced, with a wait-and-see approach based on incoming data."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and the Federal Reserve's monetary policy stance without expressing a strong bias towards tightening or easing policy. The committee members have differing views, with some expressing concerns about potential risks of the accommodative policy and others emphasizing the need for continued support for economic recovery. The overall tone is balanced, reflecting a neutral stance on monetary policy hawkishness."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes the need for continued monetary policy accommodation to support economic recovery and maintain low interest rates. The Committee's decision to continue purchasing assets and keep the federal funds rate exceptionally low indicates a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses both the benefits and potential risks of the Federal Reserve's asset purchase program, indicating a balanced view. While there is mention of continuing accommodative monetary policy, there is also discussion of the potential need to slow or end purchases, indicating a neutral stance on hawkishness."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes continued accommodative monetary policy, including maintaining low interest rates and ongoing asset purchases, to support economic recovery and inflation objectives. It explicitly states that policy will remain accommodative for a considerable time, indicating a dovish stance."
+"label: neutral
+probability: 80%
+explanation: The text primarily consists of minutes from the Federal Open Market Committee (FOMC) meeting, which outlines organizational matters, discussions on economic conditions, and the committee's decisions on monetary policy. While the document includes discussions on the continuation of asset purchases and the maintenance of a highly accommodative stance of monetary policy, it also mentions concerns about the potential costs and risks of such policies. The overall tone is balanced, reflecting both the continuation of accommodative policies and the acknowledgment of risks, thus indicating a neutral stance on monetary policy hawkishness."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes continued accommodation, such as maintaining low interest rates and purchasing securities to support economic recovery. It also highlights concerns about downside risks and the need for a highly accommodative policy stance, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses continued asset purchases and maintaining a highly accommodative stance of monetary policy, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the need for continued policy accommodation to support economic recovery and achieve maximum employment and price stability. It highlights concerns about economic growth and labor market conditions, and it announces additional asset purchases to maintain downward pressure on interest rates and support mortgage markets. The Committee also anticipates keeping the federal funds rate exceptionally low for a considerable time. These are all indicative of a dovish monetary policy stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses maintaining a highly accommodative stance of monetary policy, continuing asset purchases, and keeping the federal funds rate low at least through mid-2015. These are all indications of a dovish monetary policy stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text repeatedly emphasizes the need for continued policy accommodation, expresses concerns about economic growth and labor market conditions, and commits to maintaining low interest rates and asset purchases to support economic recovery. These are all indicative of a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple measures to increase policy accommodation, including purchasing additional securities and maintaining low interest rates until mid-2015, indicating a dovish stance aimed at stimulating economic growth and reducing unemployment."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses various measures to increase monetary accommodation, including the purchase of additional agency mortgage-backed securities and the continuation of a maturity extension program. The Committee expresses concern about the slow pace of improvement in labor market conditions and the need for further policy accommodation to support economic recovery. The language and the actions described, such as increasing policy accommodation and maintaining a highly accommodative stance, strongly indicate a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the need for continued accommodative monetary policy, mentions that many members expect further accommodation, and highlights downside risks to economic growth. It also mentions that inflation is expected to remain subdued."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the need for continued monetary accommodation, including keeping the federal funds rate exceptionally low until late 2014 and extending the program to lengthen the maturity of its securities holdings. These measures are aimed at supporting economic recovery and ensuring price stability, which are indicative of a dovish stance."
+"label: neutral
+
+probability: 75%
+
+explanation: The text discusses the Federal Reserve's monetary policy stance, noting that the Committee decided to maintain a highly accommodative stance and continue its maturity extension program. The tone is balanced, acknowledging both downside risks to economic growth and the Committee's preparedness to take further action if necessary. However, there is no clear indication of a shift towards a more hawkish or dovish stance, hence the neutral label."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the need for a highly accommodative monetary policy, with the Federal Reserve aiming to keep interest rates low at least through late 2014. It also mentions continuing programs to extend the maturity of securities holdings and reinvesting principal payments, all of which are indicative of a dovish stance to support economic recovery and maintain price stability."
+"label: dovish,
+probability: 75%,
+explanation: The text discusses maintaining a highly accommodative stance of monetary policy, extending low levels for the federal funds rate at least through late 2014, and continuing the program to extend the average maturity of its holdings of securities. These actions suggest a dovish stance aimed at supporting economic recovery and stability."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes maintaining a ""highly accommodative stance for monetary policy,"" including keeping the federal funds rate at exceptionally low levels through late 2014. It also highlights the continuation of programs to extend the maturity of securities holdings and reinvesting principal payments, all indicative of a dovish approach to support economic recovery and stable inflation."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the need for a ""highly accommodative stance for monetary policy,"" including keeping interest rates low through late 2014 and continuing the program to extend the maturity of its securities holdings, which are indicative of dovish policy."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining a highly accommodative stance of monetary policy, keeping the federal funds rate at 0 to 1/4 percent, and continuing the program to extend the average maturity of its holdings of securities. These are all indicative of a dovish stance, focusing on supporting economic recovery and keeping inflation at or below the target rate."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes maintaining a ""highly accommodative stance for monetary policy,"" including keeping interest rates low and continuing a program to extend the maturity of securities holdings, which are indicative of a dovish approach aimed at supporting economic recovery and ensuring price stability."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses maintaining a highly accommodative stance of monetary policy, extending the period of exceptionally low levels for the federal funds rate at least through late 2014, and considering additional securities purchases if necessary. These are all indications of a dovish stance."
+"label: neutral,
+probability: 95%,
+explanation: The text is a detailed account of a Federal Open Market Committee meeting, discussing economic conditions, outlook, and monetary policy. While it mentions concerns about inflation and economic growth, it does not strongly lean towards either tightening (hawkish) or easing (dovish) monetary policy. The committee decided to maintain the existing policy stance, indicating a neutral position."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes maintaining low interest rates and continuing a program to extend the maturity of securities holdings, indicating a dovish stance aimed at stimulating the economy and promoting a stronger recovery."
+"Label: neutral,
+Probability: 80%,
+Explanation: The text discusses various economic indicators, financial market developments, and monetary policy considerations. While it mentions strains in global financial markets and downside risks to economic activity, it does not strongly suggest any imminent changes to monetary policy, maintaining the existing stance. The tone is largely factual and balanced, reflecting both positive and negative aspects of the economic situation."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and monetary policy strategies without a clear hawkish or dovish stance. It mentions both positive and negative aspects of the economic outlook, and the committee decides to maintain its existing policies."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes continued support for economic recovery, low interest rates until mid-2013, and additional policy accommodation, indicating a dovish stance."
+"label: dovish,
+probability: 75%,
+explanation: The text discusses various measures to provide additional monetary policy accommodation, including a maturity extension program and reinvesting principal payments from agency debt and MBS into agency MBS. These actions are aimed at supporting a stronger economic recovery and ensuring price stability, indicating a dovish stance."
+"label: dovish,
+probability: 90%,
+explanation: The text is leaning towards dovish policy. Key indicators are the extension of securities holdings to lower long-term interest rates, reinvestment of principal payments into mortgage-backed securities, and maintaining the target range for the federal funds rate at 0 to 1/4 percent with an anticipation of keeping it low at least through mid-2013. These actions suggest a desire to stimulate the economy, which is characteristic of a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the slow pace of economic recovery, weak labor market conditions, and a deterioration in the economic outlook. The Federal Open Market Committee (FOMC) members agree to keep the federal funds rate exceptionally low at least through mid-2013, indicating a dovish stance to support economic growth and stability."
+"label: dovish,
+probability: 85%,
+explanation: The text indicates a slowdown in economic growth, weak labor market conditions, and a decision to keep interest rates low until mid-2013, all of which suggest a dovish stance aimed at stimulating the economy."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses the slow pace of economic recovery, weak labor market conditions, and increased downside risks to the economic outlook. The Committee's decision to keep the federal funds rate exceptionally low and its willingness to employ additional policy tools to promote economic recovery indicates a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses a range of economic indicators and considerations from a Federal Open Market Committee meeting. While it acknowledges slower-than-expected economic recovery and increased inflation, it also notes stable long-term inflation expectations and a commitment to maintaining accommodative monetary policy. The balanced view of economic conditions and the lack of clear indications of immediate policy changes suggest a neutral stance."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses both the moderate pace of economic recovery and the temporary factors slowing it down, as well as the stability of long-term inflation expectations. The Committee decided to keep the federal funds rate unchanged and continue its existing policy of reinvesting principal payments, indicating a neutral stance in maintaining current monetary policy without immediate changes."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses various economic indicators and the Federal Reserve's plans for normalizing monetary policy, but it does not strongly indicate a immediate change in policy direction. While there is mention of inflation risks and the possibility of adjusting policy, the Committee agrees to continue its accommodative policy, suggesting a neutral stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses both positive economic indicators (such as expanding household spending and business investment) and negative ones (such as weak investment in nonresidential structures and a depressed housing sector). It acknowledges rising inflation but expects it to be transitory. The Committee maintains a low federal funds rate and continues its securities purchase program, indicating a neutral stance aimed at fostering economic recovery while managing inflation."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses both positive economic indicators and ongoing concerns, such as weak investment in nonresidential structures and a depressed housing sector. It acknowledges rising commodity prices but maintains that inflation expectations are stable. The Federal Reserve's decision to continue its asset-purchase program and keep the federal funds rate low suggests a neutral stance, aiming to balance economic recovery with price stability."
+"label: neutral,
+ probability: 85%,
+ explanation: The text discusses maintaining the current policy and does not indicate a clear hawkish or dovish stance. It mentions both improved economic conditions and continued accommodative policy, suggesting a neutral monetary policy stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses maintaining a low federal funds rate for an extended period and continuing to purchase Treasury securities to promote economic recovery. It also mentions that the unemployment rate is elevated and inflation is low, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses continuing asset purchases, maintaining low interest rates, and expresses concern about slow economic recovery and low inflation, all of which are indicative of a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the continuation of asset purchases and maintaining a low federal funds rate to support economic recovery, indicating a dovish stance."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses maintaining low interest rates and expanding securities holdings to support economic recovery and inflation stability, indicating a dovish stance aimed at stimulating the economy."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses multiple measures to stimulate the economy, including the purchase of $600 billion in longer-term Treasury securities and maintaining low federal funds rates. The language emphasizes concerns about slow economic recovery, high unemployment, and low inflation, indicating a dovish stance aimed at providing more monetary accommodation."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses expanding securities holdings and maintaining a low federal funds rate to promote economic recovery and ensure price stability, which are dovish policies aimed at stimulating the economy."
+"label: dovish,
+ probability: 90%,
+ explanation: The text discusses the need for further monetary accommodation due to slow economic recovery and low inflation, indicating a dovish stance."
+"label: neutral,
+ probability: 85%,
+ explanation: The text is a detailed account of a Federal Reserve meeting, discussing various economic indicators and monetary policy options. While it mentions considerations for additional monetary accommodation, it also highlights cautious approaches and mixed economic data. The overall tone is balanced, with no strong lean towards immediate hawkish or dovish actions."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining exceptionally low levels for the federal funds rate for an extended period and indicates a willingness to provide additional accommodation if needed, which are dovish indicators. The Committee also expresses concerns about modest economic recovery and subdued inflation, further supporting a dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses the slowing pace of economic recovery, subdued inflation, and the Federal Reserve's decision to maintain a low federal funds rate and reinvest principal payments to support the economy. These factors indicate a dovish stance, focusing on supportive monetary policy."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes maintaining low interest rates and supporting economic recovery, indicating a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining low interest rates for an extended period and mentions concerns about the economic outlook and financial stability, indicating a dovish stance."
+"label: dovish,
+probability: 80%,
+explanation: The text emphasizes maintaining low interest rates for an extended period to promote economic recovery and price stability, indicating a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining low interest rates for an extended period and considers further policy stimulus if the outlook worsens, indicating a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses coordinated efforts by central banks to improve liquidity and address funding market pressures, which is neither explicitly hawkish nor dovish. It focuses on stabilizing market conditions rather than tightening or easing monetary policy."
+"label: neutral,
+ probability: 85%,
+ explanation: The text discusses various economic indicators, monetary policy tools, and the Federal Reserve's plans for normalizing its balance sheet. While it mentions concerns about inflation and financial imbalances, it also highlights subdued inflation trends and stable inflation expectations. The Committee's decision to maintain the federal funds rate at 0 to ¼ percent and the dissenting opinion of one member add to the neutral stance."
+"label: dovish,
+ probability: 85%,
+ explanation: The text emphasizes maintaining low interest rates for an extended period and highlights the need for continued support for economic recovery, indicating a dovish stance."
+"label: dovish,
+ probability: 75%,
+ explanation: The text indicates that the FOMC decided to maintain a target range for the federal funds rate of 0 to 1/4 percent and anticipated that economic conditions would warrant exceptionally low levels of the federal funds rate for an extended period. This dovish stance is reinforced by the Committee's decision to complete its previously announced purchases of agency MBS and agency debt, aiming to support mortgage lending and housing markets. The emphasis on ""exceptionally low levels of the federal funds rate"" and the continuation of asset purchases suggests a dovish policy stance."
+"label: dovish,
+probability: 80%,
+explanation: The text emphasizes maintaining low interest rates for an extended period and ongoing support for mortgage lending and housing markets, indicating a dovish stance aimed at promoting economic recovery."
+"label: neutral
+probability: 95%
+explanation: The text is a detailed account of a Federal Open Market Committee (FOMC) meeting, including discussions on monetary policy, economic outlook, and market conditions. It does not contain any strong language indicating a hawkish or dovish stance. Instead, it presents a balanced view of the current economic situation and future plans, emphasizing the need to maintain low interest rates for an extended period while also considering various tools to withdraw policy accommodation when appropriate. The discussion is nuanced and considers both the upside and downside risks to inflation, making it neutral."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses both positive economic indicators (such as strengthening economic activity and supportive financial market conditions) and negative indicators (such as a weak labor market and subdued inflation). The Federal Reserve's decision to maintain low interest rates and gradually wind down certain facilities suggests a neutral stance, aiming to support economic growth without indicating immediate tightening or easing of monetary policy."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses various economic indicators and monetary policy tools, but it does not strongly lean towards tightening (hawkish) or easing (dovish) monetary policy. The Committee maintained its target range for the federal funds rate and agreed to continue with its existing asset purchase programs. While there was some discussion about possibly providing more stimulus or scaling back purchases, the Committee ultimately decided to keep policy unchanged."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining low interest rates for an extended period and continuing asset purchases to support the economy, which are dovish policies."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and monetary policy tools, but it does not strongly lean towards either a hawkish or dovish stance. The Federal Reserve maintains a cautious and wait-and-see approach, acknowledging both positive signs of economic recovery and persistent challenges such as high unemployment and tight credit conditions. The decision to keep the federal funds rate unchanged and continue with asset purchases suggests a neutral monetary policy stance."
+"label: neutral,
+probability: 80%,
+explanation: The text contains mixed signals. It acknowledges economic improvements but also highlights ongoing challenges and the need for continued monetary stimulus. The Committee's decision to maintain low interest rates and gradually slow asset purchases suggests a neutral stance, balancing concerns about economic recovery and inflation."
+"label: dovish,
+probability: 85%,
+explanation: The text indicates a continuation of low interest rates and quantitative easing measures, such as purchasing mortgage-backed securities and agency debt, which are typically dovish policies aimed at stimulating the economy."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses the Federal Reserve's plan to maintain a low federal funds rate for an extended period and continue with large-scale asset purchases to support economic recovery. The tone is cautious and emphasizes the need to support the economy, indicating a dovish stance."
+"label: neutral
+probability: 80%
+explanation: The text discusses a range of economic indicators and monetary policy actions without a strong bias towards tightening or easing monetary policy. The Federal Reserve maintains its target range for the federal funds rate and continues its asset purchase programs, indicating a neutral stance."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes the continuation of low interest rates, the purchase of securities to support the economy, and the anticipation of subdued inflation, all indicative of a dovish stance."
+"label: neutral,
+probability: 95%,
+explanation: The text discusses a Federal Reserve meeting where participants acknowledge signs of economic stabilization but also highlight significant ongoing weaknesses and uncertainties. They agree to maintain the target range for the federal funds rate at 0 to 1/4 percent and continue with existing asset purchase programs. The language is balanced, noting both improvements and risks, without a strong bias towards tightening or easing monetary policy."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses maintaining low interest rates for an extended period and implementing quantitative easing measures, such as purchasing mortgage-backed securities and Treasury securities, to support economic recovery. These are dovish policies aimed at stimulating the economy."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses a range of economic indicators and monetary policy tools without a clear bias towards tightening (hawkish) or easing (dovish) policy. The committee maintains a cautious stance, acknowledging both improvements and ongoing risks in the economy, and decides to keep the federal funds rate unchanged."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining low federal funds rates for an extended period and continuing asset purchases to support economic recovery. It also mentions subdued inflation expectations and the willingness to employ all available tools to promote economic recovery, indicating a dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses maintaining low interest rates for an extended period, purchasing securities to support the economy, and expresses concern about low inflation, all of which are indicative of a dovish stance."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses various measures taken by the Federal Reserve to support the economy during a period of significant economic contraction and financial market stress. The measures include expanding the balance sheet, purchasing agency mortgage-backed securities, agency debt, and longer-term Treasury securities, as well as launching the Term Asset-Backed Securities Loan Facility (TALF). The tone of the discussion is focused on providing monetary stimulus to address the weak economic outlook and to reduce the risk of inflation persisting below desired levels. The Committee's decision to maintain the target range for the federal funds rate at 0 to 1/4 percent and anticipate that economic conditions are likely to warrant exceptionally low levels of the federal funds rate for an extended period further supports a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses economic contraction, job losses, and tight credit conditions, which are indicative of a weak economy. The Federal Reserve's actions, such as maintaining a low federal funds rate and purchasing securities, are aimed at stimulating the economy and promoting recovery, which are characteristic of dovish monetary policy."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses various measures to support the economy, including asset purchases and low interest rates, indicating a dovish stance focused on stimulating economic growth and combating deflation risks."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses various measures to support and stimulate the economy, including purchasing agency debt and mortgage-backed securities, and mentions the need to keep the federal funds rate at a low level. The tone is cautious and focused on economic recovery, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text emphasizes the need to keep interest rates low, mentions a weak economy, and highlights the Federal Reserve's commitment to using all available tools to stimulate the economy and promote financial market functioning, which are all indicative of a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses the Federal Reserve's efforts to support the economy through various measures, including maintaining low federal funds rates, purchasing agency debt, and mortgage-backed securities, and implementing programs like the TALF to improve credit markets. The focus is on stimulating the economy and preserving price stability, which are dovish policies aimed at encouraging economic growth and easing financial conditions."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a Federal Open Market Committee meeting where the economic outlook is described as weakened, with significant contractions in various sectors, tightening credit conditions, and decreasing inflationary pressures. The Committee decided to lower the target federal funds rate to a range of 0 to 1/4 percent and employ other measures to support the economy, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses lowering the federal funds rate to a very low range, notes deteriorating economic conditions, and emphasizes the need for exceptionally low interest rates for an extended period. It also highlights the Federal Reserve's commitment to purchasing assets and implementing programs to support financial markets and stimulate the economy, all of which are characteristics of a dovish monetary policy."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a significant 50 basis point cut in the federal funds rate to 1 percent, indicating a dovish stance aimed at stimulating economic growth and reducing downside risks. The Committee's concern about the weakening economic outlook, financial market turmoil, and the need to support economic recovery all point towards a dovish policy."
+"label: dovish,
+probability: 95%,
+explanation: The text describes a significant rate cut and expresses concerns about economic slowdown, weakening business spending, and financial market turmoil, all of which are indicative of a dovish stance aimed at stimulating the economy."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses coordinated efforts by central banks to reduce interest rates and ease monetary conditions in response to a slowing economy and diminishing inflationary pressures, which are clear indications of a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a significant cut in the federal funds rate by 50 basis points to 1 percent, indicating a dovish stance to support economic growth and stability amidst financial market turmoil and a slowing economy. The Committee's focus on reducing downside risks to growth and promoting a return to moderate economic growth, as well as the coordinated interest rate cuts by central banks, further supports a dovish interpretation."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses a significant easing of monetary policy, including a 50 basis point cut in the federal funds rate to 1 percent. The Committee noted a marked deterioration in economic conditions, increased financial market strains, and a reduction in inflationary pressures, all of which point to a dovish stance."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses both the concerns about economic slowdown and inflation, indicating a balanced view. The FOMC decided to keep the federal funds rate unchanged, suggesting a neutral stance."
+"label: neutral,
+ probability: 85%,
+ explanation: The text acknowledges both slowing economic growth and high inflation, but it does not indicate a clear intention to tighten or loosen monetary policy, hence it is neutral."
+"label: neutral,
+ probability: 70%,
+ explanation: The text discusses both economic growth and inflation concerns, with committee members expressing views on both sides. While there is acknowledgment of inflation risks and one member even favors raising rates, the overall tone is balanced, with many members seeing the current stance as appropriate. The text does not strongly lean towards immediate policy tightening or easing, hence it is neutral."
+"label: hawkish,
+probability: 75%,
+explanation: The text highlights concerns about high inflation and the uncertainty of the inflation outlook, which are hawkish signals. The Committee's emphasis on the upside risks to inflation and the vote by Richard W. Fisher for an increase in the federal funds rate also indicate a hawkish stance. However, the decision to keep the federal funds rate unchanged and the acknowledgment of downside risks to growth add some neutral elements, hence not reaching a higher probability for hawkishness."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses a range of economic indicators and financial market conditions, highlighting both positive and negative aspects. While it acknowledges inflationary pressures and financial market stresses, it also notes moderating inflation expectations and a cautious approach to monetary policy, suggesting a balanced stance."
+"label: neutral,
+probability: 70%,
+explanation: The text acknowledges both growth risks and inflation risks but decides to maintain the current rate, indicating a neutral stance."
+"label: neutral,
+ probability: 70%,
+ explanation: The text discusses both economic growth and inflation concerns, with participants noting improved economic activity but also highlighting increased inflation risks. The Committee decided to keep the federal funds rate unchanged, indicating a balanced stance."
+"label: neutral,
+probability: 55%,
+explanation: The text discusses both the economic slowdown and the inflation outlook, indicating a balanced view of the economy. It mentions concerns about both downside risks to growth and upside risks to inflation. Therefore, the stance is neither distinctly hawkish nor dovish, but neutral."
+"label: dovish,
+probability: 95%,
+explanation: The text describes a decrease in the federal funds rate and the discount rate, indicating a dovish stance aimed at promoting economic growth and mitigating risks to economic activity. The mention of weak economic activity, subdued spending, and stressed financial markets further supports a dovish interpretation."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a Federal Reserve meeting where the Committee voted to lower the federal funds rate by 75 basis points due to a weakened economic outlook, tightening credit conditions, and a deepening housing market contraction. The language emphasizes concerns about economic growth and the need for monetary policy easing, indicating a dovish stance."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses lowering the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic growth and reducing financial market stress. The mention of weakened economic outlook, slowed consumer spending, and softened labor markets also supports a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses measures to address liquidity pressures and promote market functioning but does not indicate a clear stance on raising or lowering interest rates, which are typical hawkish or dovish indicators."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses a 75 basis point cut in the federal funds rate, indicating a dovish stance to support economic growth amidst signs of weakening economic activity, tightening credit conditions, and elevated inflation."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple rate cuts and the Federal Open Market Committee's (FOMC) concern about economic slowdown, housing market contraction, and tightening credit conditions. The language used, such as ""downside risks to growth,"" ""weakening of the economic outlook,"" and ""deteriorating conditions in financial markets,"" strongly suggests a dovish stance, indicating a higher probability of further monetary easing."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses lowering the federal funds rate and the discount rate, which are actions typically taken to stimulate economic growth and ease financial conditions. The mention of financial market stress, credit tightening, housing contraction, and labor market softening also indicates a dovish stance aimed at supporting economic activity and mitigating downside risks."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses lowering the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic growth."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses multiple easing of monetary policy, including a 50 basis point reduction in the federal funds rate and mentions of continued easing. The committee expresses concerns about downside risks to growth, tightening credit conditions, and a deepening housing contraction, all of which suggest a dovish stance aimed at stimulating economic growth and mitigating risks."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses multiple easing actions by the FOMC, including a 50 basis point reduction in the federal funds rate to 3%, indicating a dovish stance. The Committee expresses concerns about economic growth, housing market contractions, and tightening credit conditions, which are all indicative of a dovish outlook focused on stimulating the economy."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses lowering the federal funds rate and acknowledges slowing economic growth, which are dovish indicators. However, it also mentions inflation risks, which is a hawkish signal, but the overall tone and action lean more towards dovish policy."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a Federal Open Market Committee meeting where the members voted to lower the federal funds rate by 25 basis points, indicating a dovish stance. The committee expressed concerns about slowing economic growth, increased financial market strains, and downside risks to the economy. They also mentioned the need for a more accommodative monetary policy to support growth and mitigate risks. Even the dissenting member advocated for a more aggressive policy response to address economic weaknesses."
+"Label: Dovish,
+Probability: 95%,
+Explanation: The text discusses multiple easing actions, including a 25 basis point reduction in the federal funds rate and the establishment of a Term Auction Facility to provide liquidity. The Committee expresses concern about slowing economic growth, financial market strains, and increased uncertainty, all of which point to a dovish stance aimed at fostering economic growth and mitigating downside risks."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses a 25 basis point reduction in the federal funds rate, indicating a dovish stance. The Committee expresses concerns about economic slowdown and financial market strains, and aims to promote moderate growth while monitoring inflation."
+"label: dovish,
+probability: 85%,
+explanation: The text describes a decrease in the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic growth. The mention of slowing economic expansion and the need to forestall adverse effects also supports a dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses a 50 basis point rate cut and repeatedly mentions concerns about economic growth, credit market tightening, and increased downside risks. The committee's actions and statements indicate a dovish stance, focusing on promoting economic growth and alleviating market strains."
+"label: dovish,
+probability: 95%,
+explanation: The text describes a 50 basis point cut in the federal funds rate, which is a dovish move as it aims to stimulate the economy and increase economic growth. Additionally, the mention of uncertainty surrounding the economic outlook and the intention to foster economic growth reinforces this dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses both the potential for economic slowdown and the need for monetary policy easing, as well as acknowledging inflation risks. It does not strongly lean towards either hawkish or dovish sentiments, maintaining a balanced view."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes downside risks to growth and the need to mitigate adverse effects, indicating a dovish stance."
+"label: dovish
+probability: 90%
+explanation: The text strongly suggests a dovish stance by the Federal Open Market Committee (FOMC). The Committee unanimously decided to ease monetary policy by 50 basis points to offset the effects of tightening financial conditions and to promote moderate growth. There is a clear concern about downside risks to economic growth, coupled with a recognition that inflation pressures have moderated, indicating a dovish approach to monetary policy."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes providing liquidity and maintaining low interest rates, which are characteristics of a dovish monetary policy aimed at supporting the economy."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses both inflationary pressures and downside risks to economic growth, indicating a balanced view. While there is concern about inflation, there is also recognition of increasing downside risks to growth, particularly due to the housing market and financial market conditions. The Committee maintained the federal funds rate, suggesting a neutral stance awaiting more data."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes the Committee's predominant concern about inflation risks, indicating a hawkish stance. The decision to keep the federal funds rate at 5-1/4 percent despite acknowledging downside risks to growth suggests a focus on controlling inflation."
+"label: hawkish,
+probability: 90%,
+explanation: The text emphasizes concerns about inflation and the potential need for future policy adjustments, indicating a hawkish stance. The focus on inflation risks and the acknowledgment of high resource utilization suggest a bias towards tightening monetary policy if necessary."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses a variety of economic indicators and the Federal Reserve's considerations on monetary policy. While it mentions concerns about inflation and the risk that it might not moderate as expected, it also highlights balanced risks to economic growth and a general agreement to maintain the current federal funds rate. The tone is cautious but does not strongly lean towards either hawkish or dovish sentiments, hence it is largely neutral."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text emphasizes concerns about inflation risks and the need for inflation to moderate, indicating a hawkish stance. The Committee's predominant policy concern is the risk that inflation will fail to moderate as expected, suggesting a bias towards tightening monetary policy if necessary."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes concerns about elevated core inflation and the risk that inflation may not moderate as expected, suggesting a hawkish stance to control inflation."
+"label: hawkish,
+probability: 75%,
+explanation: The text discusses concerns about elevated inflation levels and the potential need for further policy firming to address inflation risks. The Committee's predominant concern is the risk that inflation will fail to moderate as expected, indicating a hawkish stance. However, there is also mention of increased uncertainty about the outlook for both growth and inflation, which adds some neutrality to the overall tone."
+"label: hawkish,
+probability: 85%,
+explanation: The text emphasizes concerns about inflation and the need to monitor it closely, indicating a hawkish stance. The Committee's predominant policy concern is the risk that inflation will fail to moderate as expected, which suggests a focus on controlling inflation rather than stimulating growth."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses concerns about inflation risks and the need for potential policy firming, indicating a hawkish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text mentions ""some inflation risks remain"" and the possibility of ""additional firming,"" which suggests a hawkish stance, indicating a likelihood of raising interest rates to combat inflation."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text discusses concerns about inflation risks and the need for potential further policy firming to address these risks. Several members express the view that inflation remains uncomfortably high and that the risks to the inflation outlook are to the upside. Additionally, one member dissented, advocating for further tightening to control inflation."
+"label: hawkish,
+probability: 65%,
+explanation: The text mentions concerns about elevated core inflation and potential inflation pressures, indicating a hawkish stance. However, it also suggests that inflation pressures may moderate over time, and the Committee decided to keep the federal funds rate unchanged, which adds some neutral sentiment. The dissenting vote for a rate increase also contributes to the hawkish tone."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text repeatedly expresses concern about inflation risks and the need for further moderation in inflation. Key phrases like ""inflation risks remained the dominant concern,"" ""additional policy firming was possible,"" and ""some inflation risks remain"" indicate a hawkish stance. Additionally, one member dissented because they believed further tightening was needed to control inflation."
+"label: hawkish,
+probability: 70%,
+explanation: The text mentions concerns about elevated core inflation and remaining inflation risks, suggesting a hawkish stance. Additionally, one member voted for a rate increase."
+"label: hawkish,
+probability: 70%,
+explanation: The text mentions ""inflation risks remain"" and a committee member preferred an increase in the federal funds rate, indicating a hawkish stance. However, the decision to keep the rate unchanged and the expectation that inflation pressures may moderate over time add some neutral sentiment, thus the probability is not higher."
+"label: neutral,
+ probability: 70%,
+ explanation: The text discusses both inflationary pressures and signs of economic slowdown, indicating a balanced view. While there are mentions of inflation risks and the possibility of additional policy firming, the overall tone is not decisively hawkish nor dovish, hence neutral."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses both inflationary pressures and the need for potential further tightening, but also mentions factors that could lead to a moderation in inflation. The Committee decided to keep the policy rate unchanged, indicating a neutral stance while closely monitoring incoming data."
+"label: hawkish,
+probability: 70%,
+explanation: The text mentions ""inflation risks remain"" and a committee member preferred an increase in the federal funds rate, indicating a hawkish stance despite the decision to keep the rate unchanged."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text discusses multiple instances of inflation concerns and the need for policy firming, indicating a hawkish stance on monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions a raise in the federal funds rate and the discount rate, indicating a tightening of monetary policy. Additionally, it highlights concerns about inflation risks and the need to address them, which are clear hawkish signals."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses multiple indications of strong economic growth, increased inflation pressures, and the Federal Open Market Committee's decision to raise the federal funds rate by 25 basis points to address these pressures. The Committee also indicates the possibility of further policy firming, suggesting a hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions a rate hike and expresses concern about inflation risks, indicating a clear hawkish stance."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate by 25 basis points to 4½ percent, indicating a hawkish stance. The Committee expresses concern about potential inflation pressures due to increased resource utilization and elevated energy prices, and notes that further policy firming may be needed. The focus on controlling inflation and the willingness to continue raising rates point to a hawkish monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions a raise in the federal funds rate and the discount rate, indicating a tightening of monetary policy. Additionally, the Committee suggests that further policy firming may be needed to manage inflation pressures, which is a clear hawkish stance."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text discusses the Federal Open Market Committee's decision to raise the federal funds rate by 25 basis points to 4.5% due to concerns about potential inflation pressures from increased resource utilization and elevated energy prices. The Committee also indicated that further policy firming might be needed to maintain price stability and sustainable economic growth, suggesting a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses a raise in the federal funds rate by 25 basis points and mentions the potential for further policy firming to manage inflation pressures, indicating a hawkish stance."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text discusses the Federal Open Market Committee's decision to increase the federal funds rate by 25 basis points to 4-1/4 percent, indicating a hawkish stance. The Committee expresses concerns about potential inflation pressures and the need for further policy firming to keep inflation in check. The language used, such as ""some further measured policy firming is likely to be needed,"" strongly suggests a hawkish approach to monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Federal Open Market Committee decided to raise the federal funds rate by 25 basis points, indicating a tightening of monetary policy. Additionally, the Committee mentions the need for ""some further measured policy firming,"" suggesting a continued hawkish stance to manage inflation pressures."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Federal Open Market Committee decided to raise its target for the federal funds rate by 25 basis points, indicating a tightening of monetary policy which is characteristic of hawkishness. The Committee also expresses its commitment to maintaining price stability, further supporting a hawkish stance."
+"Label: Hawkish,
+Probability: 85%,
+Explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate by 25 basis points to 4 percent due to concerns about inflation risks and the need to keep inflation expectations contained. The Committee's focus on ""upside risks to inflation"" and the statement that ""policy accommodation can be removed at a pace that is likely to be measured"" indicate a hawkish stance aimed at tightening monetary policy to control inflation."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses the Federal Open Market Committee's decision to increase the federal funds rate by 25 basis points, indicating a hawkish stance aimed at controlling inflation. The Committee expresses concerns about inflationary pressures, particularly due to rising energy prices, and notes that further rate increases may be necessary. The discussion focuses on the need to maintain price stability, which is a clear indication of a hawkish monetary policy."
+"label: hawkish,
+ probability: 90%,
+ explanation: The text explicitly states that the Federal Open Market Committee decided to raise the federal funds rate by 25 basis points, indicating a tightening of monetary policy, which is a clear sign of hawkishness. Additionally, the text mentions concerns about inflation pressures and the need to maintain price stability, further supporting a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate by 25 basis points and emphasizes the need to contain inflation pressures. The Committee acknowledges elevated inflation pressures and the likelihood of further policy tightening, indicating a hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Federal Open Market Committee decided to raise the federal funds rate, indicating a tightening of monetary policy. Additionally, the language about removing policy accommodation and responding to changes in economic prospects to maintain price stability suggests a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses a unanimous vote to increase the federal funds rate by 25 basis points, indicating a hawkish stance aimed at controlling inflation. The Committee expresses concerns about inflation pressures and the need to remove policy accommodation at a measured pace, which are clear indicators of hawkish monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Federal Open Market Committee decided to raise the federal funds rate, which is a clear indication of a hawkish stance aimed at controlling inflation and maintaining price stability."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses the Federal Open Market Committee's decision to raise the federal funds rate by 25 basis points, indicating a hawkish stance. The Committee expresses concerns about inflation risks and the need to remove policy accommodation at a measured pace. The language used, such as ""upside risks to the attainment of both sustainable growth and price stability"" and the focus on containing inflation, suggests a hawkish approach to monetary policy."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly states that the Federal Open Market Committee decided to raise the federal funds rate, indicating a tightening of monetary policy. Additionally, it mentions that inflation pressures have picked up and that the Committee will act to maintain price stability, all of which are hawkish indicators."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text discusses concerns about increased inflation pressures, the need to remove policy accommodation, and the possibility of accelerating the pace of policy firming. These factors suggest a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text indicates a raise in the federal funds rate by 25 basis points, which is a hawkish move. Additionally, the Committee acknowledges increased inflationary pressures and expresses a commitment to maintaining price stability, further supporting a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text describes the Federal Reserve's decision to raise the federal funds rate by 25 basis points, indicating a tightening of monetary policy. The language suggests a measured but ongoing removal of policy accommodation, which is typically hawkish."
+"label: hawkish,
+ probability: 95%,
+ explanation: The text indicates a unanimous decision to raise the federal funds rate by 25 basis points, signaling a clear intent to tighten monetary policy. The Committee's discussion emphasizes concerns about inflation pressures, the need to remove policy accommodation, and the expectation of continued economic growth. These factors strongly suggest a hawkish stance."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text discusses a unanimous vote to increase the federal funds rate, indicating a hawkish stance to tighten monetary policy. The committee expresses concerns about inflation risks and the need to remove policy accommodation, further supporting hawkishness."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text indicates a raise in the federal funds rate by 25 basis points, which is a clear sign of a tightening monetary policy. Additionally, the statement mentions that policy accommodation can be removed at a measured pace, suggesting a hawkish stance."
+"label: hawkish,
+ probability: 85%,
+ explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate by 25 basis points to 2 percent, indicating a tightening of monetary policy. The Committee also expresses a balanced view on risks to sustainable growth and price stability but emphasizes the need to remove policy accommodation at a measured pace while remaining vigilant about price stability. These factors suggest a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses a rate hike by the Federal Open Market Committee, which is a clear indication of a hawkish stance. However, it also mentions that the policy remains accommodative, which adds a slight dovish element, hence not 100% probability."
+"label: hawkish,
+probability: 70%,
+explanation: The text discusses an increase in the federal funds rate and a plan to remove policy accommodation, indicating a hawkish stance to control inflation and maintain economic stability. However, there are also mentions of cautious optimism and uncertainty about future economic prospects, which introduces some ambiguity."
+"label: hawkish,
+probability: 85%,
+explanation: The text describes a rate hike by the Federal Open Market Committee, which is a clear indication of hawkish policy. The Committee also expresses its intention to remove policy accommodation, albeit at a measured pace, and emphasizes its commitment to maintaining price stability, which aligns with a hawkish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text discusses a unanimous vote to increase the federal funds rate, indicating a hawkish stance. The Committee expresses concern about inflation expectations and the need for significant cumulative policy tightening. However, they also mention a measured pace for policy accommodation removal, which adds some neutral sentiment, hence not a 90% or higher probability."
+"label: Hawkish,
+ probability: 85%,
+ explanation: The text describes a decision to raise the federal funds rate by 25 basis points, indicating a tightening of monetary policy. The Committee acknowledges that inflation has been elevated and emphasizes the need to maintain price stability, which are clear hawkish signals."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses the Federal Reserve's decision to raise the federal funds rate due to solid economic growth, improved labor market conditions, and signs of increased inflation. The Committee's focus on containing inflationary pressures and the mention of further policy tightening actions indicate a hawkish stance."
+"label: hawkish,
+probability: 85%,
+explanation: The text mentions a raise in the federal funds rate and the discount rate, indicating a tightening of monetary policy. The Committee also expresses its commitment to maintaining price stability, suggesting a hawkish stance. However, the mention of a ""measured"" pace for removing policy accommodation adds some uncertainty, hence not a 100% probability."
+"label: neutral,
+ probability: 70%,
+ explanation: The text discusses both positive economic indicators and concerns about potential inflation, suggesting a balanced view. The Committee decided to maintain the federal funds rate at 1 percent, indicating a neutral stance on monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text indicates a balanced view with no clear hawkish or dovish stance. The Committee sees equal risks to growth and inflation, and while it acknowledges an expansion in output and hiring, it also notes that inflation is contained and resource use is slack. The decision to keep the federal funds rate at 1 percent further supports a neutral stance."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes that monetary policy is accommodative, economic growth is solid, and inflation is low and expected to remain so. The Committee believes it can be patient in removing its policy accommodation, indicating a dovish stance."
+"label: neutral,
+ probability: 85%,
+ explanation: The text discusses both continued economic expansion and low inflation, but also mentions disappointing employment data and potential future inflation risks. The Committee decided to keep the federal funds rate unchanged, suggesting a neutral stance."
+"label: neutral,
+probability: 80%,
+explanation: The text is largely procedural and discusses organizational matters, past decisions, and economic outlook without strong indications of immediate policy changes. The decision to maintain the federal funds rate at 1 percent and the discussion of future policy flexibility suggest a neutral stance."
+"label: dovish,
+probability: 80%,
+explanation: The text indicates a dovish stance due to the Committee's decision to keep the federal funds rate at 1%, mentioning that inflation is low and resource use is slack, suggesting they are willing to maintain accommodative monetary policy."
+"label: neutral,
+ probability: 95%,
+ explanation: The text discusses various economic indicators and the Federal Open Market Committee's decision to maintain an accommodative monetary policy. While there are mentions of economic growth and improved conditions, there are also discussions about low inflation and the need to keep the federal funds rate at 1 percent. The tone is balanced, with no strong indications of hawkishness or dovishness."
+"label: dovish,
+probability: 85%,
+explanation: The text mentions that the Federal Open Market Committee decided to keep the federal funds rate at 1 percent and emphasizes the need for an accommodative stance of monetary policy. It also notes that inflation is low and resource use is slack, suggesting that the Committee is inclined to maintain a dovish policy to support economic growth."
+"label: neutral,
+ probability: 80%,
+ explanation: The text discusses a variety of economic indicators and the Federal Reserve's decision to maintain the federal funds rate at 1 percent. While there are mentions of economic strengthening, there are also concerns about potential disinflation and the need for accommodative monetary policy. The overall tone is balanced, with no strong indication of a hawkish or dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text emphasizes maintaining accommodative monetary policy and expresses concern about inflation being too low, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses maintaining an accommodative policy stance with a federal funds rate target of 1 percent due to concerns about disinflation and a large output gap. The Committee views the risks to inflation as weighted toward the downside, indicating a dovish stance."
+"label: dovish,
+probability: 80%,
+explanation: The text emphasizes maintaining an accommodative stance, with concerns about inflation becoming ""undesirably low,"" suggesting a dovish policy."
+"label: neutral,
+probability: 75%,
+explanation: The text discusses various economic indicators and the Federal Reserve's decision to maintain an accommodative monetary policy. While it acknowledges risks of disinflation, it does not strongly indicate immediate policy tightening or easing, hence a neutral stance is most likely."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses the FOMC's decision to maintain an accommodative monetary policy stance with a target federal funds rate of 1 percent due to concerns about low inflation and the need to support economic growth. The committee expresses a willingness to keep policy accommodative for an extended period, indicating a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes maintaining policy accommodation for a considerable period and expresses concern over the risk of inflation becoming undesirably low, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a reduction in the federal funds rate and discount rate, indicating a move towards easier monetary policy to support economic growth and stabilize markets. The Committee's concern about the risk of deflation further supports a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the need for additional monetary policy easing to support economic growth and combat disinflation. The Committee members agree on a ½ percentage point reduction in the federal funds rate to provide further accommodation, indicating a dovish stance."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses various economic indicators and the Federal Reserve's decision to maintain the federal funds rate at 1-1/4 percent, without clear signals of a hawkish or dovish stance. The Committee acknowledges risks of further disinflation but decides to hold policy unchanged, indicating a neutral position."
+"label: dovish,
+ probability: 85%,
+ explanation: The text indicates that the Federal Open Market Committee is maintaining a low federal funds rate and expects economic improvements. It also notes that the risks to economic growth are balanced, but the risks to inflation are tilted towards further weakness. This suggests a dovish stance, as the committee is more concerned about potential economic weakness and low inflation."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses maintaining an accommodative monetary policy due to economic uncertainty, subdued growth, and low inflation, indicating a dovish stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses various economic indicators and uncertainties, particularly geopolitical risks, but does not strongly indicate a clear hawkish or dovish stance on monetary policy. The Committee decided to maintain an unchanged policy stance, suggesting a neutral position."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses various economic indicators and uncertainties, particularly geopolitical risks, but does not strongly indicate a clear hawkish or dovish stance. The Committee decided to maintain an unchanged policy stance, suggesting a neutral position."
+"label: neutral,
+probability: 95%,
+explanation: The text discusses various economic indicators and uncertainties, particularly geopolitical concerns, but does not strongly lean towards tightening or easing monetary policy. The Committee decided to maintain an unchanged policy stance, indicating a neutral position."
+"label: neutral,
+ probability: 95%,
+ explanation: The text discusses various economic indicators and uncertainties, particularly geopolitical risks, but does not signal a clear intention to tighten or loosen monetary policy, maintaining a wait-and-see approach."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses keeping the federal funds rate unchanged and acknowledges uncertainties in the economic outlook without clear indications of tightening or loosening monetary policy."
+"label: neutral,
+ probability: 85%,
+ explanation: The text primarily discusses procedural and organizational matters, with a balanced view on economic conditions and future uncertainties. There are no strong indications of a hawkish or dovish stance on monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text indicates that the Federal Open Market Committee decided to keep the federal funds rate unchanged and sees balanced risks to its long-run goals of price stability and sustainable economic growth, suggesting a neutral stance on monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses a range of economic indicators and considers both upside and downside risks, but ultimately decides to maintain the current stance of policy, indicating a neutral monetary policy stance."
+"label: neutral,
+probability: 90%,
+explanation: The text indicates that the Federal Open Market Committee has decided to keep the federal funds rate unchanged, suggesting a neutral stance. Additionally, the Committee believes that risks are balanced with respect to the prospects for both price stability and sustainable economic growth, further reinforcing a neutral monetary policy."
+"label: dovish,
+ probability: 100%,
+ explanation: The text explicitly mentions lowering the federal funds rate and the discount rate, which are clear indicators of a dovish monetary policy stance aimed at stimulating economic activity."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses a 50 basis point reduction in the federal funds rate, indicating a dovish stance aimed at stimulating economic growth and mitigating risks of economic weakness. The Committee's concern about subpar economic performance and the need for aggressive easing actions strongly suggests a dovish policy."
+"label: dovish,
+probability: 85%,
+explanation: The text mentions that the Federal Open Market Committee decided to keep the federal funds rate unchanged and acknowledges uncertainty and risks tilted towards economic weakness. Additionally, two members voted for a rate reduction, indicating a dovish stance."
+"label: neutral,
+probability: 60%,
+explanation: The text discusses the Federal Open Market Committee's meeting and provides a detailed overview of economic conditions and monetary policy considerations. While there are mentions of economic weakness and uncertainties, the Committee ultimately decides to maintain the current policy stance, indicating a neutral position. The dissenting votes for easing monetary policy suggest a dovish leaning, but the overall decision and the majority vote for maintaining the status quo point towards a neutral stance."
+"label: dovish,
+probability: 75%,
+explanation: The text discusses a slowing economy, weak business investment, and a cautious outlook from the Committee members. The decision to maintain the federal funds rate at 1-3/4 percent and the shift in the risks statement toward economic weakness indicates a dovish stance. However, there is some uncertainty, hence not a 90% or higher probability."
+"label: dovish,
+probability: 75%,
+explanation: The text mentions that the FOMC decided to keep the federal funds rate unchanged and acknowledges risks weighted towards economic weakness. The phrase ""current accommodative stance of monetary policy"" and the recognition of risks towards economic weakness suggest a dovish tone."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses the economic outlook and monetary policy, mentioning both positive and negative factors. It highlights uncertainty and a balanced risk assessment, indicating a neutral stance."
+"label: neutral,
+probability: 90%,
+explanation: The text indicates that the Federal Open Market Committee decided to keep the federal funds rate unchanged, and it describes economic activity as continuing to increase, but with some moderation. The Committee expects future growth in final demand but acknowledges uncertainty about its strength. The stance of monetary policy is described as accommodative, but the Committee believes the risks are balanced for both price stability and sustainable economic growth. This balanced view and the decision to keep the rate unchanged suggest a neutral stance."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses both the potential for economic growth and the need to monitor inflation, but it does not strongly lean towards immediate policy tightening or easing. The Committee votes to maintain the federal funds rate and keeps a neutral stance on risks."
+"label: neutral,
+probability: 85%,
+explanation: The text indicates that the Federal Open Market Committee decided to keep the federal funds rate unchanged and views the risks to its goals of price stability and sustainable economic growth as balanced, suggesting a neutral stance on monetary policy."
+"label: neutral,
+probability: 85%,
+explanation: The text discusses both the strengths and uncertainties in the economic outlook. While there are signs of economic recovery, the Committee expresses caution about the pace of expansion and notes that substantial uncertainty remains. The decision to maintain an unchanged policy stance and the move to a neutral position on the balance of risks indicate a neutral monetary policy stance."
+"label: neutral,
+probability: 80%,
+explanation: The text suggests that the Federal Open Market Committee (FOMC) decided to keep the target for the federal funds rate unchanged, indicating a neutral stance. The Committee acknowledges economic growth but also notes uncertainty about the sustainability of this growth. The risks are described as ""balanced with respect to the prospects for both goals"" of price stability and sustainable economic growth, further supporting a neutral interpretation."
+"label: neutral,
+ probability: 85%,
+ explanation: The text is a detailed account of a Federal Open Market Committee meeting, discussing various economic indicators and monetary policy. While it mentions concerns about economic weakness and the need for monetary easing, it also notes signs of economic stabilization and recovery. The committee decides to keep the policy stance unchanged, indicating a neutral rather than hawkish or dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text suggests that the Federal Reserve is maintaining a low federal funds rate and sees signs of economic improvement but remains cautious about potential weaknesses. The phrase ""risks are weighted mainly toward conditions that may generate economic weakness"" indicates a dovish stance, as it suggests the Fed is more concerned about economic weakness than inflation."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a reduction in the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic growth and easing financial conditions. The mention of economic weakness and the need to support the economy further supports a dovish stance."
+"label: dovish,
+ probability: 90%,
+ explanation: The text discusses the Federal Reserve's decision to lower the federal funds rate by 25 basis points, indicating a dovish stance aimed at stimulating the economy and mitigating risks of economic weakness. The Committee's focus on economic weakness and the need for further monetary stimulus supports this classification."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses a reduction in the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic activity. The mention of economic weakness and concerns about business conditions further supports a dovish stance."
+"label: hawkish,
+ probability: 70%,
+ explanation: The text discusses a 50 basis point reduction in the federal funds rate, which is typically a hawkish move. However, the Committee's concern about economic weakness and the need for further easing suggests a dovish stance. The balance between these factors leans slightly towards hawkishness due to the rate reduction, but the overall tone is cautious."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple rate cuts, concerns about economic weakness, and a focus on supporting economic growth and confidence, all of which indicate a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a significant reduction in the federal funds rate and the discount rate, which are clear indicators of a dovish monetary policy aimed at stimulating economic growth and mitigating weakness."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a significant reduction in both the federal funds rate and the discount rate, which are clear indicators of a dovish monetary policy aimed at stimulating the economy. Additionally, the mention of supplying large volumes of liquidity and the recognition of economic weakness further support a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple instances of economic weakness, concerns about future growth, and the need for monetary policy easing. The Committee's decision to reduce the federal funds rate and their repeated emphasis on the risks being weighted toward economic weakness indicate a dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses multiple easing actions and the need for further monetary policy stimulus due to economic weakness and uncertainty, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple easing actions and mentions concerns about economic weakness and uncertainty, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a reduction in the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic growth. The language also emphasizes economic weakness and the need to support the economy."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple instances of economic slowdown, weakness in business spending, and the need for further monetary easing. The Committee voted to reduce the federal funds rate and expressed concerns about economic weakness, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text explicitly mentions a rate cut by the FOMC, which is a dovish move. Additionally, it highlights economic weakness and contained inflation, further supporting a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a reduction in the federal funds rate and the discount rate, which are actions typically taken to stimulate the economy and ease monetary conditions, indicating a dovish stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple easing actions and a 50 basis point reduction in the federal funds rate, indicating a dovish stance focused on promoting economic growth and combating weakness."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a reduction in the federal funds rate and the discount rate, which are actions typically associated with a dovish monetary policy aimed at stimulating economic growth and reducing the risk of economic weakness."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses multiple easing of monetary policy, including reducing the federal funds rate by 50 basis points twice, indicating a dovish stance to support economic growth and prevent weakness."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses multiple easing of monetary policy, including reducing the federal funds rate by 50 basis points multiple times. The Committee expresses concern about economic weakness and the need for further easing, indicating a dovish stance."
+"label: dovish,
+ probability: 95%,
+ explanation: The text discusses multiple rate cuts and the need for further easing, indicating a dovish stance focused on stimulating economic growth and mitigating risks of economic weakness."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses the Federal Reserve's decision to lower the federal funds rate and discount rate, which are typical dovish actions aimed at stimulating the economy and indicating concerns about economic weakness. The mention of ""substantial risks that demand and production could remain soft"" further supports this stance."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a slowing economy, weakening consumer and business spending, and a decision to lower the federal funds rate by 50 basis points. The Committee expresses concern about economic weakness and votes to maintain a dovish stance to support economic growth."
+"label: dovish,
+probability: 95%,
+explanation: The text discusses a significant reduction in interest rates and expresses concerns about economic weakness, which are indicative of a dovish stance aimed at stimulating the economy."
+"label: dovish,
+probability: 90%,
+explanation: The text discusses lowering the federal funds rate and the discount rate, which are actions typically taken to stimulate the economy. It also mentions concerns about economic weakness and contained inflation pressures, all indicative of a dovish stance."
+"label: dovish,
+probability: 85%,
+explanation: The text discusses a slowing economy, decreased consumer spending, and a shift in the Committee's view that risks are ""weighted mainly toward conditions that may generate economic weakness."" The decision to reduce the federal funds rate by 50 basis points also indicates a dovish stance."
+"label: neutral,
+probability: 70%,
+explanation: The text discusses a shift in the Federal Reserve's stance from concern about inflation to concern about economic weakness, but it does not indicate a clear hawkish or dovish position. The Committee decided to maintain the federal funds rate at 6-1/2 percent, but they also expressed a willingness to ease policy if further weakness in the economy materialized. The decision to shift the balance of risks statement to reflect concerns about economic weakness suggests a neutral stance, as it does not explicitly advocate for immediate tightening or easing of monetary policy."
+"label: dovish,
+probability: 85%,
+explanation: The text emphasizes economic weakness, slowing growth, and diminished inflation risks, suggesting a dovish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text emphasizes the risk of heightened inflation pressures multiple times, indicating a hawkish stance despite the decision to maintain the current federal funds rate."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses concerns about inflation pressures, the need to remain on guard for signs of rising inflation, and the decision to maintain a risk statement weighted toward more inflation pressures. These are strong indicators of a hawkish stance."
+"label: neutral,
+probability: 80%,
+explanation: The text discusses various economic indicators and uncertainties but does not strongly indicate a clear hawkish or dovish stance. The Committee voted to maintain the federal funds rate and acknowledged risks of inflation, but also noted signs of moderating economic growth and uncertainty about future inflation."
+"label: hawkish,
+probability: 75%,
+explanation: The text highlights concerns about heightened inflation pressures in the future and mentions the risk of rising inflation expectations, despite maintaining the current federal funds rate. This suggests a hawkish stance as the Committee is cautious about potential inflation risks."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses concerns about inflation risks and the need to maintain a federal funds rate of 6-1/2 percent. The Committee members agree that risks are weighted toward higher inflation in the foreseeable future, indicating a hawkish stance."
+"label: hawkish,
+probability: 75%,
+explanation: The text expresses concern about inflation pressures and the risk of demand outpacing supply, which are typically hawkish viewpoints. However, the decision to maintain the existing stance of monetary policy adds some uncertainty, hence not giving it a 90% probability."
+"label: hawkish,
+probability: 85%,
+explanation: The text discusses concerns about inflationary pressures, the need for policy tightening, and the risks weighted toward heightened inflation. These are strong indicators of a hawkish stance."
+"label: hawkish,
+probability: 70%,
+explanation: The text emphasizes concerns about ""heightened inflation pressures"" and the need to monitor demand growth and utilization of workers, which are indicative of a hawkish stance despite maintaining the current interest rate."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Reserve's concern about rising inflation, tight labor markets, and the need for further monetary tightening. The Committee voted to raise the federal funds rate by 0.5 percentage points and indicated that risks are tilted toward rising inflation, which are clear indicators of hawkish sentiment."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions a rate hike and expresses concern about inflation pressures, which are clear indicators of a hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the need for further tightening of monetary policy due to concerns about inflation pressures, rapid economic growth, and tight labor markets. The Committee voted to increase the federal funds rate and highlighted the risks of heightened inflation pressures, indicating a hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions raising the federal funds rate and the discount rate, indicating a tightening of monetary policy. The Committee's concern about inflationary pressures and the risk of heightened inflation also suggest a hawkish stance."
+"label: hawkish,
+probability: 95%,
+explanation: The text discusses the Federal Open Market Committee's decision to increase the federal funds rate by 25 basis points to 5-3/4 percent, indicating a hawkish stance. The Committee expresses concern about inflationary pressures and the need to tighten monetary policy to maintain price stability and sustainable economic growth. The language used, such as "" heightened inflation pressures"" and the need for ""further tightening actions,"" strongly suggests a hawkish approach."
+"label: hawkish,
+probability: 95%,
+explanation: The text explicitly mentions raising interest rates and expresses concern about inflationary pressures, which are clear indicators of a hawkish stance."
