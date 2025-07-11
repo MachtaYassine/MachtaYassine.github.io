@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Cheat Sheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling - Adapted from SLURM Guide */
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh; /* Ensure it takes full viewport height */
+            box-sizing: border-box; /* Include padding in element's total width and height */
+        }
+
+        /* Container for content - Adapted from SLURM Guide */
+        .container {
+            max-width: 1000px; /* Slightly wider for Git commands */
+            width: 100%;
+            background-color: #1e1e1e; /* Slightly lighter dark background for content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        /* Headings - Adapted from SLURM Guide */
+        h1, h2, h3 {
+            color: #00cc99; /* Accent color for headings */
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 20px;
+            color: #00e6a7; /* Slightly brighter for main title */
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 5px;
+        }
+
+        /* Grid Layout for Sections */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px; /* Adjusted gap */
+            margin-top: 20px;
+        }
+
+        /* Section Styling - Adapted from SLURM Guide's command sections */
+        .section {
+            background-color: #252525; /* Matches .command background from SLURM Guide */
+            padding: 20px;
+            border-radius: 8px; /* Slightly more rounded */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 1px solid #303030; /* Subtle border */
+        }
+
+        .section h2 {
+            color: #00cc99; /* Accent color for section titles */
+            font-size: 1.3em; /* Adjusted size */
+            margin-bottom: 15px;
+            border-bottom: 1px solid #444; /* Lighter border for sub-headings */
+            padding-bottom: 8px;
+            font-weight: 600;
+        }
+
+        /* Command Styling - Adapted from SLURM Guide's code blocks */
+        .command {
+            margin-bottom: 12px;
+            padding: 0; /* Remove extra padding */
+        }
+
+        .command code {
+            background-color: #2c2c2c; /* Darker background for code */
+            color: #ffcc66; /* Yellowish color for commands/code */
+            padding: 10px 12px; /* Adjusted padding */
+            border-radius: 6px; /* Rounded corners */
+            font-size: 0.95em;
+            display: block; /* Make it a block element */
+            overflow-x: auto; /* Allow horizontal scrolling */
+            white-space: pre-wrap; /* Preserve whitespace and wrap */
+            word-break: break-all; /* Break long words */
+            border: none; /* Remove original border */
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2); /* Subtle inner shadow */
+        }
+
+        /* Description text - Adapted from SLURM Guide */
+        .command .desc {
+            color: #b0b0b0; /* Lighter gray for descriptions */
+            margin-top: 5px;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        /* Specific color highlights - Adapted to new theme */
+        .important code {
+            color: #ffaa44; /* Distinct orange */
+        }
+
+        .danger code {
+            color: #e74c3c; /* Darker red */
+        }
+
+        .success code {
+            color: #2ecc71; /* Vibrant green */
+        }
+
+        /* Ignore Examples Section */
+        .ignore-examples {
+            background-color: #2c2c2c; /* Matches code block background */
+            border: 1px solid #303030;
+            border-radius: 8px;
+            padding: 15px;
+            margin-top: 15px;
+            font-size: 0.9em;
+            color: #b0b0b0;
+        }
+
+        .ignore-examples strong {
+            color: #e0e0e0; /* Lighter white for strong text */
+        }
+
+        /* Tips Section */
+        .tips {
+            margin-top: 40px;
+            padding: 25px;
+            background-color: #252525; /* Matches section background */
+            border: 1px solid #303030;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .tips h3 {
+            color: #00cc99;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 5px;
+        }
+
+        .tips ul {
+            list-style: none; /* Remove default bullet */
+            padding-left: 0;
+            margin-left: 0;
+        }
+
+        .tips li {
+            margin-bottom: 8px;
+            color: #b0b0b0;
+            position: relative;
+            padding-left: 20px; /* Space for custom bullet */
+        }
+
+        .tips li::before {
+            content: "•"; /* Custom bullet point */
+            color: #00cc99; /* Accent color for bullet */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+            line-height: 1.6;
+        }
+
+        .tips code {
+            background-color: #3a3a3a; /* Inline code background */
+            color: #ffdd88; /* Inline code color */
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.9em;
+        }
+
+        /* Sources Section */
+        .Sources {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #b0b0b0;
+        }
+
+        .Sources h3 {
+            color: #00cc99;
+            margin-bottom: 10px;
+            border-bottom: none; /* Remove border for this H3 */
+            padding-bottom: 0;
+        }
+
+        .Sources ul {
+            list-style-type: none; /* Remove default bullets */
+            margin-left: 0;
+            padding-left: 0;
+        }
+
+        .Sources li {
+            margin-bottom: 5px;
+        }
+
+
+        /* Responsive adjustments - Adapted from SLURM Guide */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            body {
+                padding: 10px;
+            }
+            .grid {
+                grid-template-columns: 1fr; /* Stack sections on small screens */
+            }
+            .command code {
+                font-size: 0.9em; /* Slightly smaller font for commands on mobile */
+            }
+        }
+
+        /* Click to copy feedback */
+        .copied {
+            color: #7ee787 !important; /* Green for copied feedback */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Git Cheat Sheet</h1>
+        
+        <div class="grid">
+            <div class="section">
+                <h2>Setup & Configuration</h2>
+                <div class="command">
+                    <code>git config --global user.name "[name]"</code>
+                    <div class="desc">Set your name for commits</div>
+                </div>
+                <div class="command">
+                    <code>git config --global user.email "[email]"</code>
+                    <div class="desc">Set your email for commits</div>
+                </div>
+                <div class="command">
+                    <code>git config --global color.ui auto</code>
+                    <div class="desc">Enable colorized output</div>
+                </div>
+                <div class="command">
+                    <code>git init</code>
+                    <div class="desc">Initialize a new Git repository</div>
+                </div>
+                <div class="command">
+                    <code>git clone [url]</code>
+                    <div class="desc">Clone a repository from URL</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Stage & Snapshot</h2>
+                <div class="command">
+                    <code>git status</code>
+                    <div class="desc">Show modified files in working directory</div>
+                </div>
+                <div class="command">
+                    <code>git add [file]</code>
+                    <div class="desc">Add a file to staging area</div>
+                </div>
+                <div class="command">
+                    <code>git add .</code>
+                    <div class="desc">Add all files to staging area</div>
+                </div>
+                <div class="command">
+                    <code>git reset [file]</code>
+                    <div class="desc">Unstage a file while keeping changes</div>
+                </div>
+                <div class="command">
+                    <code>git diff</code>
+                    <div class="desc">Show changes not yet staged</div>
+                </div>
+                <div class="command">
+                    <code>git diff --staged</code>
+                    <div class="desc">Show changes staged but not committed</div>
+                </div>
+                <div class="command">
+                    <code>git commit -m "[message]"</code>
+                    <div class="desc">Commit staged changes with message</div>
+                </div>
+                <div class="command">
+                    <code>git commit -am "[message]"</code>
+                    <div class="desc">Add all tracked files and commit</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Branch & Merge</h2>
+                <div class="command">
+                    <code>git branch</code>
+                    <div class="desc">List all branches (* = current)</div>
+                </div>
+                <div class="command">
+                    <code>git branch [branch-name]</code>
+                    <div class="desc">Create a new branch</div>
+                </div>
+                <div class="command">
+                    <code>git checkout [branch]</code>
+                    <div class="desc">Switch to another branch</div>
+                </div>
+                <div class="command">
+                    <code>git checkout -b [branch]</code>
+                    <div class="desc">Create and switch to new branch</div>
+                </div>
+                <div class="command">
+                    <code>git checkout -b [branch] origin/[branch]</code>
+                    <div class="desc">Clone remote branch and switch to it</div>
+                </div>
+                <div class="command">
+                    <code>git merge [branch]</code>
+                    <div class="desc">Merge specified branch into current</div>
+                </div>
+                <div class="command danger">
+                    <code>git branch -d [branch]</code>
+                    <div class="desc">Delete a branch (safe)</div>
+                </div>
+                <div class="command danger">
+                    <code>git branch -D [branch]</code>
+                    <div class="desc">Force delete a branch</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Remote & Sync</h2>
+                <div class="command">
+                    <code>git remote add [alias] [url]</code>
+                    <div class="desc">Add a Git URL as an alias</div>
+                </div>
+                <div class="command">
+                    <code>git remote -v</code>
+                    <div class="desc">Show remote repositories</div>
+                </div>
+                <div class="command">
+                    <code>git fetch [alias]</code>
+                    <div class="desc">Fetch all branches from remote</div>
+                </div>
+                <div class="command">
+                    <code>git pull</code>
+                    <div class="desc">Fetch and merge remote changes</div>
+                </div>
+                <div class="command">
+                    <code>git push [alias] [branch]</code>
+                    <div class="desc">Push local branch to remote</div>
+                </div>
+                <div class="command important">
+                    <code>git push -u origin [branch]</code>
+                    <div class="desc">Publish new branch to remote</div>
+                </div>
+                <div class="command danger">
+                    <code>git push --force</code>
+                    <div class="desc">Force push (can overwrite remote history)</div>
+                </div>
+                <div class="command">
+                    <code>git push --tags</code>
+                    <div class="desc">Push all tags to remote</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>History & Revert</h2>
+                <div class="command">
+                    <code>git log</code>
+                    <div class="desc">Show commit history</div>
+                </div>
+                <div class="command">
+                    <code>git log --oneline</code>
+                    <div class="desc">Show compact commit history</div>
+                </div>
+                <div class="command">
+                    <code>git log --graph</code>
+                    <div class="desc">Show branch graph</div>
+                </div>
+                <div class="command">
+                    <code>git revert [commit]</code>
+                    <div class="desc">Create new commit that undoes changes</div>
+                </div>
+                <div class="command danger">
+                    <code>git reset --soft [commit]</code>
+                    <div class="desc">Reset to commit, keep changes staged</div>
+                </div>
+                <div class="command danger">
+                    <code>git reset --hard [commit]</code>
+                    <div class="desc">Reset to commit, discard all changes</div>
+                </div>
+                <div class="command danger">
+                    <code>git rebase [branch]</code>
+                    <div class="desc">Apply current branch commits ahead of specified branch</div>
+                </div>
+                <div class="command danger">
+                    <code>git rebase -i [commit]</code>
+                    <div class="desc">Interactive rebase (can rewrite history)</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Inspect & Compare</h2>
+                <div class="command">
+                    <code>git show [commit]</code>
+                    <div class="desc">Show details of a specific commit</div>
+                </div>
+                <div class="command">
+                    <code>git diff [branch1]..[branch2]</code>
+                    <div class="desc">Show differences between branches</div>
+                </div>
+                <div class="command">
+                    <code>git log [branch1]..[branch2]</code>
+                    <div class="desc">Show commits on branch2 not on branch1</div>
+                </div>
+                <div class="command">
+                    <code>git log --follow [file]</code>
+                    <div class="desc">Show commits that changed file</div>
+                </div>
+                <div class="command">
+                    <code>git blame [file]</code>
+                    <div class="desc">Show who changed each line</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Temporary Storage</h2>
+                <div class="command">
+                    <code>git stash</code>
+                    <div class="desc">Save modified and staged changes</div>
+                </div>
+                <div class="command">
+                    <code>git stash save "[message]"</code>
+                    <div class="desc">Save stash with custom message</div>
+                </div>
+                <div class="command">
+                    <code>git stash list</code>
+                    <div class="desc">List all stashes</div>
+                </div>
+                <div class="command">
+                    <code>git stash pop</code>
+                    <div class="desc">Apply and remove latest stash</div>
+                </div>
+                <div class="command">
+                    <code>git stash apply</code>
+                    <div class="desc">Apply latest stash without removing</div>
+                </div>
+                <div class="command">
+                    <code>git stash drop</code>
+                    <div class="desc">Delete latest stash</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>File Operations</h2>
+                <div class="command danger">
+                    <code>git rm [file]</code>
+                    <div class="desc">Remove file from project and stage removal</div>
+                </div>
+                <div class="command">
+                    <code>git rm --cached [file]</code>
+                    <div class="desc">Remove from tracking but keep locally</div>
+                </div>
+                <div class="command">
+                    <code>git mv [old-path] [new-path]</code>
+                    <div class="desc">Move/rename file and stage the move</div>
+                </div>
+                <div class="command">
+                    <code>git log --stat -M</code>
+                    <div class="desc">Show commit logs with moved files</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Ignore Patterns</h2>
+                <div class="command">
+                    <code>git check-ignore [file]</code>
+                    <div class="desc">Check if file is ignored</div>
+                </div>
+                <div class="ignore-examples">
+                    <strong>.gitignore examples:</strong>
+                    <pre><code># Ignore all .o files
+*.o
+
+# Ignore all files named foo.txt
+foo.txt
+
+# Ignore all files in the build/ directory
+build/
+
+# Ignore all .log files in any directory
+*.log
+
+# Ignore a specific file even if it's in a directory that's ignored
+!/my_ignored_dir/keep_this_file.txt</code></pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="Sources">
+            <h3>Sources</h3>
+            <ul>
+                <li>GitHub Education</li>
+                <li>Trial and error</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add copy functionality to code blocks
+        document.querySelectorAll('code').forEach(code => {
+            code.style.cursor = 'pointer';
+            code.addEventListener('click', function() {
+                // Use execCommand for broader compatibility in iframes
+                const textArea = document.createElement('textarea');
+                textArea.value = this.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const original = this.textContent;
+                    this.classList.add('copied');
+                    this.textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        this.textContent = original;
+                    }, 800);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                } finally {
+                    document.body.removeChild(textArea);
+                }
+            });
+        });
+    </script>
+</body>
+</html>

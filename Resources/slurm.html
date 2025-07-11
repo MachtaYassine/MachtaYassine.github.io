@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLURM Guide & Cheatsheet</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        /* General Body Styling */
+        body {
+            background-color: #121212; /* Dark background */
+            color: #e0e0e0; /* Light text */
+            font-family: 'Inter', sans-serif;
+            padding: 20px;
+            line-height: 1.6;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh; /* Ensure it takes full viewport height */
+        }
+
+        /* Container for content */
+        .container {
+            max-width: 900px;
+            width: 100%;
+            background-color: #1e1e1e; /* Slightly lighter dark background for content */
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            box-sizing: border-box;
+        }
+
+        /* Headings */
+        h1, h2, h3 {
+            color: #00cc99; /* Accent color for headings */
+            border-bottom: 2px solid #333;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            font-weight: 600;
+            border-radius: 2px;
+        }
+
+        h1 {
+            font-size: 2.2em;
+            text-align: center;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin-bottom: 20px;
+            color: #00e6a7; /* Slightly brighter for main title */
+        }
+
+        h2 {
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.4em;
+            border-bottom: 1px dashed #444;
+            padding-bottom: 5px;
+        }
+
+        /* Paragraphs and Lists */
+        p {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        /* Code Blocks */
+        pre {
+            background-color: #2c2c2c; /* Darker background for code */
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto; /* Allow horizontal scrolling for long lines */
+            margin-bottom: 20px;
+            box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+        }
+
+        code {
+            font-family: 'Consolas', 'Monaco', monospace;
+            color: #ffcc66; /* Yellowish color for commands/code */
+            font-size: 0.95em;
+            white-space: pre-wrap; /* Preserve whitespace and wrap */
+            word-break: break-all; /* Break long words */
+        }
+
+        /* Inline code */
+        p code {
+            background-color: #3a3a3a;
+            padding: 2px 6px;
+            border-radius: 4px;
+            color: #ffdd88;
+        }
+
+        /* Description text for commands */
+        .description {
+            color: #b0b0b0; /* Lighter gray for descriptions */
+            margin-top: 5px;
+            font-style: italic;
+            font-size: 0.9em;
+        }
+
+        /* Specific styling for command sections in cheatsheet */
+        .command-section {
+            margin-bottom: 30px;
+        }
+
+        .command {
+            background-color: #252525;
+            padding: 12px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+                margin: 10px;
+            }
+            h1 {
+                font-size: 1.8em;
+            }
+            h2 {
+                font-size: 1.5em;
+            }
+            h3 {
+                font-size: 1.2em;
+            }
+            body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>SLURM Guide & Cheatsheet</h1>
+
+        <section>
+            <h2>Essential SLURM Commands</h2>
+
+            <h3>Job Management</h3>
+            <pre><code>sbatch [script.sh]</code><div class="description">Submit a job script.</div></pre>
+            <pre><code>squeue</code><div class="description">Check job status (all users).</div></pre>
+            <pre><code>squeue -u $USER</code><div class="description">Check your jobs.</div></pre>
+            <pre><code>scontrol show job [jobid]</code><div class="description">View job details.</div></pre>
+            <pre><code>scancel [jobid]</code><div class="description">Cancel a specific job.</div></pre>
+            <pre><code>scancel -u $USER</code><div class="description">Cancel all your jobs.</div></pre>
+
+            <h3>Resource Information</h3>
+            <pre><code>sinfo</code><div class="description">View node status and partitions.</div></pre>
+            <pre><code>sinfo -o "%P %G %D %N %T"</code><div class="description">Check node status (detailed).</div></pre>
+            <pre><code>sstat --format=JobID,JobName,User,CPUTime,AveRSS</code><div class="description">View cluster usage.</div></pre>
+
+            <h3>Interactive Sessions</h3>
+            <pre><code>salloc --nodes=1 --cpus-per-task=4 --time=01:00:00</code><div class="description">Allocate resources for an interactive shell.</div></pre>
+            <pre><code>srun --pty bash -i</code><div class="description">Start an interactive shell on a compute node (requires prior <code>salloc</code> or equivalent).</div></pre>
+        </section>
+
+        <section>
+            <h2>Bash Script Snippet for Custom SLURM Commands</h2>
+            <pre><code># SLURM Custom Commands and Aliases
+
+
+# Alias: Check your running jobs (Assuming 'ymachta' is the username)
+alias wyd='squeue -u ymachta'
+
+# Alias: View node information (Partition, GRES, Cores, Node Names)
+alias nodes='sinfo -o "%P %G %D %N"'
+
+# Function: Allocate resources for GPU development
+# Usage: gpu &lt;GPU_TYPE&gt; [COUNT] [-h HOURS]
+# Example: gpu a100 1 -h 8  (Allocates 1 A100 GPU for 8 hours)
+gpu() {
+    local hours=8
+    local gpu_type=""
+    local gpu_count=1
+
+    # Parse arguments
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            -h|--hours)
+                hours="$2"
+                shift 2
+                ;;
+            *)
+                # Capture GPU type and count
+                if [[ -z "$gpu_type" ]]; then
+                    gpu_type="$1"
+                elif [[ -z "$gpu_count" && "$1" =~ ^[0-9]+$ ]]; then
+                    gpu_count="$1"
+                fi
+                shift
+                ;;
+        esac
+    done
+
+    # Construct the GRES argument
+    if [ -n "$gpu_type" ]; then
+        gres_arg="--gres=gpu:${gpu_type}:${gpu_count}"
+    else
+        # Default to generic GPU if type not specified, ensuring count is used
+        gres_arg="--gres=gpu:${gpu_count}"
+    fi
+
+    # Display chosen arguments before execution
+    echo "Allocating: $gres_arg --time=$(printf '%02d:00:00' "$hours")"
+
+    # Start the interactive session
+    salloc --partition=gpu \
+           $gres_arg \
+           --cpus-per-task=4 \
+           --mem=64G \
+           --time=$(printf '%02d:00:00' "$hours") \
+           --job-name=dev \
+           --ntasks=1 \
+           --nodes=1
+}</code></pre>
+        </section>
+
+    
+
+        <section>
+            <h2>Custom <code>sbatch</code> Script Template (GPU Job)</h2>
+            <pre><code>#!/bin/bash
+
+#----------------------------------------------------
+# SBATCH Directives
+#----------------------------------------------------
+
+# Name of the job
+#SBATCH --job-name=gpu_job_minimal
+
+# Standard output and error logs
+#SBATCH --output=slurm_output_%j.out
+#SBATCH --error=slurm_error_%j.err
+
+# Time limit (HH:MM:SS)
+#SBATCH --time=08:00:00
+
+# Specify the partition (e.g., 'gpu', 'default')
+#SBATCH --partition=gpu
+
+# Request 1 node
+#SBATCH --nodes=1
+
+# Request 1 task (process)
+#SBATCH --ntasks=1
+
+# Request 4 CPUs per task
+#SBATCH --cpus-per-task=4
+
+# Request 32GB of memory
+#SBATCH --mem=32G
+
+# Request 1 GPU, specifying type (e.g., a100, v100)
+#SBATCH --gres=gpu:a100:1
+
+#----------------------------------------------------
+# Setup and Execution
+#----------------------------------------------------
+
+# Load necessary modules (e.g., CUDA, Conda)
+# module load cuda/11.8
+# source activate my_env
+
+echo "Starting job on $(hostname)"
+echo "SLURM Job ID: ${SLURM_JOB_ID}"
+echo "Running on ${SLURM_NNODES} nodes, with ${SLURM_CPUS_PER_TASK} CPUs per task"
+
+# Your application command goes here
+# python my_gpu_script.py
+
+echo "Job finished"</code></pre>
+        </section>
+    </div>
+
+    <script>
+        // Add copy functionality to code blocks
+        document.querySelectorAll('code').forEach(code => {
+            code.style.cursor = 'pointer';
+            code.addEventListener('click', function() {
+                // Use execCommand for broader compatibility in iframes
+                const textArea = document.createElement('textarea');
+                textArea.value = this.textContent;
+                document.body.appendChild(textArea);
+                textArea.select();
+                try {
+                    document.execCommand('copy');
+                    const original = this.textContent;
+                    this.classList.add('copied');
+                    this.textContent = 'Copied!';
+                    setTimeout(() => {
+                        this.classList.remove('copied');
+                        this.textContent = original;
+                    }, 800);
+                } catch (err) {
+                    console.error('Failed to copy text: ', err);
+                } finally {
+                    document.body.removeChild(textArea);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
