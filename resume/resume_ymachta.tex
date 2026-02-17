@@ -1,40 +1,156 @@
-\documentclass[a4paper,12pt]{letter}
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage{lmodern}
+\documentclass[letterpaper,11pt,twocolumn]{article}
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
 \usepackage[hidelinks]{hyperref}
-\usepackage[top=1.8cm, bottom=2cm, left=2.2cm, right=2.2cm]{geometry}
-\usepackage{setspace}
+\usepackage{fancyhdr}
+\usepackage{multicol}
+\usepackage{fontawesome5}
 \usepackage{xcolor}
+\usepackage[T1]{fontenc}
+\usepackage{tgcursor}
+\usepackage{geometry}
 
-\address{}
-\date{}
+% -------------------- FONT AND MARGINS --------------------
+\geometry{left=0.5in, right=0.5in, top=0.5in, bottom=0.5in, columnsep=20pt}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
 
+% Section formatting
+\titleformat{\section}{\large\bfseries}{}{0em}{}[\titlerule]
+\titleformat{\subsection}{\normalsize\bfseries}{}{0em}{}
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item \small{#1}}
+\newcommand{\resumeSubheading}[4]{
+	\vspace{-2pt}\item \textbf{#1} \hfill #2 \\
+	\textit{\small #3} \hfill \textit{\small #4} 
+	\vspace{-7pt}
+}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeItemListStart}{\begin{itemize}[leftmargin=*]}
+	\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% -------------------- START OF DOCUMENT --------------------
 \begin{document}
+	
+	% Header
+	\begin{center}
+		{\LARGE \textbf{Yassine Machta}} \\[5pt]
+		\href{mailto:machtayassine@gmail.com}{\faIcon{envelope} \underline{Gmail}} $\cdot$ 
+		\href{https://github.com/MachtaYassine}{\faIcon{github} \underline{GitHub}} $\cdot$ 
+		\href{https://www.linkedin.com/in/yassine-machta-a00307206/}{\faIcon{linkedin} \underline{LinkedIn}} $\cdot$ 
+		\href{https://machtayassine.github.io}{\faIcon{chrome} \underline{Web page}}
+	\end{center}
+	
+	\vspace{-10pt}
+	\hrule
+	\vspace{-15pt}
+	
+	% Education
+	\section{Education}
+	\begin{itemize}[leftmargin=*]
+		\resumeSubheading
+		{\href{https://www.ensae.fr/en}{ENSAE Paris}}{2021--2025}
+		{Engineering Curriculum: Data Science, Statistics and Learning. GPA: 3.8}{}
+		\resumeSubheading
+		{\href{https://www.ip-paris.fr/}{Institut Polytechnique de Paris}}{2024--2025}
+		{Master 2 Data Science}{}
+        \resumeSubheading
+		{\href{https://fermat.mon-ent-occitanie.fr/}{Lycée Pierre de Fermat}}{2019-2021}
+		{Prepa MPSI/MP*}{}
+	\end{itemize}
+	
+	% Work Experience
+	\section{Work Experience}
+	\begin{itemize}[leftmargin=*]
+        \resumeSubheading
+    		{Research Engineer}{Inria - \href{https://articulab.hcii.cs.cmu.edu/}{\underline{ARTICULAB}}, Paris}{Jan 2026 -- Jun 2026}{}
+        \resumeItemListStart
+    	\resumeItem{\textbf{Real-time gesture generation:} Building a data-driven model to produce co-speech gestures for the team's embodied conversational agent.}
+    	\resumeItemListEnd
 
-\begin{letter}{}
+		\resumeSubheading
+		{Research Intern}{Inria - \href{https://articulab.hcii.cs.cmu.edu/}{\underline{ARTICULAB}}, Paris}{May 2025 -- Nov 2025}{\textit{Supervised by: \href{https://scholar.google.com/citations?user=wkC9xHMAAAAJ&hl=en}{\underline{Cassell, J}} and \href{https://fr.linkedin.com/in/marius-le-chapelier-7694b5172}{\underline{Le Chapelier, M}}}} 
+	
+	\resumeItemListStart
+	\resumeItem{\textbf{Gesture retrieval engine (NLP + embeddings):} Built a real-time system for an embodied conversational agent combining rule-based heuristics and embedding similarity to select contextually appropriate gestures. Published at ACM MM GENEA 2025.}
+	\resumeItemListEnd
+	
+	\resumeSubheading
+	{Research Intern}{\href{https://www.sony.com/en/SonyInfo/research/about/stuttgart-laboratory1/}{\underline{Sony R\&D}}, Stuttgart}{Jan 2024 -- Jun 2024}{\textit{Supervised by: \href{https://de.linkedin.com/in/zoltan-facius-6b424112}{\underline{Facius, Z}} and \href{https://de.linkedin.com/in/roberto-franceschi}{\underline{Franceschi, R}}} \vspace{5pt} \href{https://machtayassine.github.io/resume/Sony_LoR.pdf}{\underline{\textit{Letter of Recommendation}}}}
+	
+	\resumeItemListStart
+	\resumeItem{\textbf{3D reconstruction pipeline:} Developed an automated end-to-end pipeline for image preprocessing and 3D mesh reconstruction; evaluated the impact of uncontrolled capture conditions on output quality.}
+	\resumeItem{\textbf{Internal web app:} Built a tool to streamline mesh alignment and quality evaluation for engineering teams.}
+	\resumeItemListEnd
+	
+	\resumeSubheading
+	{Research Intern}{Inria - \href{https://team.inria.fr/simbiotx/}{\underline{SIMBIOTX}}, Saclay}{May 2023 -- Nov 2023}{\textit{Supervised by: \href{https://scholar.google.com/citations?user=tKRo0ewAAAAJ&hl=en}{\underline{Ali, O}} and \href{https://team.inria.fr/simbiotx/team-members/irene-vignon-clementel/}{\underline{Vignon-Clementel, I.}}}}
+	
+	\resumeItemListStart
+	\resumeItem{\textbf{3D liver vessel segmentation (deep learning):} Implemented topology-preserving losses to improve segmentation accuracy; analyzed vessel tree morphometry. Published at MICCAI ADSMI 2024 (\underline{\href{https://gitlab.inria.fr/simbiotx/LiverVesselSeg}{Code}}).}
+	\resumeItemListEnd
+	
+	\resumeSubheading
+	{Data Science Intern}{Cour des Comptes, Paris}{Jun 2022 -- Sep 2022}{\textit{Supervised by: \href{https://fr.linkedin.com/in/paulgrignon}{\underline{Grignon, P}}}}
+	
+	\resumeItemListStart
+	\resumeItem{\textbf{Network analysis (R):} Built descriptive statistics and cartography pipeline to map the French Airport Network for a national audit.}
+	\resumeItemListEnd
+\end{itemize}
 
-\opening{Dear InstaDeep Team,}
+% Skills
+\section{Skills}
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Programming Languages:} Python (PyTorch, Scikit-learn/image, Selenium, pandas, Numpy, matplotlib), Docker, Kubernetes, ArgoCD, Slurm, Git, GitHub Actions, CI/CD. learning CUDA/C++ and Godot.
+\end{itemize}
 
-My name is \textbf{Yassine Machta}, and I’m currently finishing my final-year internship at \href{https://www.justinecassell.com/articulab/}{\textbf{Inria Articulab}}, where I work on gesture generation for embodied conversational agents. Previously, I interned at \textbf{Sony R\&D}(SL-1) on 3D surface reconstruction, and at \href{https://team.inria.fr/simbiotx/}{\textbf{Inria SimbiotX}} on medical segmentation of the liver.
+% Projects
+\section{Projects \& Labs}
+\begin{itemize}[leftmargin=*]
+	\resumeItem{\textbf{LLM fine-tuning (LoRA + DPO):} Fine-tuned LLMs; reimplemented \textit{Unsupervised Multimodal Translation} to learn transformer and multimodal architectures.}
+	\resumeItem{\textbf{RL in game environments:} Trained agents to navigate environments and play Skull King using reinforcement learning.}
+	\resumeItem{\textbf{Generative models (diffusion + flow matching):} \underline{\href{https://github.com/MachtaYassine/GGSP-ALTEGRAD/tree/main}{Conditional graph generation}}; music sheet generation via diffusion and \underline{\href{https://colab.research.google.com/drive/1HT1E62hvaACGgLNt3xu5m51AO4m_fTxO}{Flow Matching}}.}
+	\resumeItem{\textbf{GPU programming (CUDA):} Monte Carlo simulation for Variance Gamma model; rewrote and optimized PyTorch GPU kernels to reduce inference time for a torch model.}
+\end{itemize}
 
-I've explored several AI domains like text, vision, audio, 3D, and motion. But I’m especially drawn to \textbf{Reinforcement Learning}, particularly in real-world contexts. \textbf{I'm reaching out to express my interest in any Research Engineer or Scientist role, ideally within your Applied AI, DeepPCB, or Research teams.}
+% Publications
+\section{Publications}
+\begin{itemize}[leftmargin=*]
+    \resumeItem{\textbf{Machta, Y.}, Le Chapellier, M., Silem, O., Cassel, J (2025). "Semantic Gesture Retrieval for real-time co-speech gestures." \textit{ACM Multimedia GENEA Workshop}, 2025. (\href{https://MachtaYassine.github.io/Papers/GENEA2025-PosterDraft-YMACHTA-ARTICULAB.pdf}{\underline{Poster}})}
 
-I’ve done a few RL projects so far. I tried solving the card game \textit{Skull King} using RL (in order to crush my roommates during game nights), tackled a sailing problem across wind fields in class, and joined a swarm drone challenge where communication was limited. \textbf{I haven’t yet validated this experience in a professional setting, which is why I’m reaching out now.}
+	\resumeItem{\textbf{Machta, Y.}, Ali, O., Facque, A., Vlascenau A., Hakkakian, K., Golse N., Vignon-Clementel, I. (2024). "Improving 3D Liver Vessel Segmentation through Topology Preservation." \textit{MICCAI ADSMI Workshop}, 2024. (\href{https://arxiv.org/abs/2411.15778}{\underline{Paper}}, \href{https://MachtaYassine.github.io/Papers/2024_ADSMI_poster.pdf}{\underline{Poster}}, \underline{\href{https://gitlab.inria.fr/simbiotx/LiverVesselSeg}{Code}})}
+\end{itemize}
 
-Since I’m no longer eligible for internships, I’d also be happy with a \textbf{6-month fixed-term contract as a pseudo internship} as I’m mostly looking to \textbf{learn and contribute in a serious RL environment}. That being said, if RL isn’t the right fit for now, I’d still be equally excited to work on any research project at InstaDeep. My goal is to \textbf{grow by learning from top technical teams}.
+% Extracurriculars
+\section{Extracurricular Activities}
+\begin{itemize}[leftmargin=*]
+	\resumeSubheading
+	{ENSAE English Debating Team}{2022--2023}{\href{https://www.frenchdebatingassociation.fr/\#fda}{\underline{FDA Tournament Winner}} }{}
+	\resumeSubheading
+	{Sports and Student Councils}{2022--2023}{Organized various events and activities at ENSAE Paris. Played on the volleyball team.}{}
+\end{itemize}
 
-If you find my profile suitable, I'll be looking forward to partaking in your next rounds of technical exams.
+% Languages
+\section{Languages}
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Arabic}: Native
+	\item \textbf{French}: Native
+	\item \textbf{English}: C1
+\end{itemize}
 
-\vspace{1em}
-Thank you very much for your time.\\
-You’ll find my resume and a letter of recommendation from Sony attached.
-
-\vspace{1em}
-Sincerely, \\
-Yassine Machta\\
-\href{mailto:yassine.machta@polytechnique.edu}{yassine.machta@polytechnique.edu}
-
-\end{letter}
+\begin{flushright}
+	\vspace{-4pt}
+	\color{gray}
+	Last built on \today.  \\
+	Underlined text indicates clickable links. \\
+	For the latest version, click \href{https://machtayassine.github.io/resume/resume_ymachta.pdf}{\underline{\textit{here}}}.
+\end{flushright}
 
 \end{document}
